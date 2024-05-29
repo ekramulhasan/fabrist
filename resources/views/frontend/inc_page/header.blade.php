@@ -23,8 +23,8 @@
                                 class="clone-main-menu akasha-clone-mobile-menu akasha-nav main-menu">
                                 <li id="menu-item-230"
                                     class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-230 parent parent-megamenu item-megamenu menu-item-has-children">
-                                    <a class="akasha-menu-item-title" title="Home" href="index.html">Home</a>
-                                    <span class="toggle-submenu"></span>
+                                    <a class="akasha-menu-item-title" title="Home" href="/">Home</a>
+                                    {{-- <span class="toggle-submenu"></span>
                                     <div class="submenu megamenu megamenu-home">
                                         <div class="demo-item">
                                             <div class="row">
@@ -112,7 +112,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </li>
                                 <li id="menu-item-228"
                                     class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-228 parent parent-megamenu item-megamenu menu-item-has-children">
@@ -496,11 +496,11 @@
                                         <li id="menu-item-987"
                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-987">
                                             <a class="akasha-menu-item-title" title="About"
-                                               href="about.html">About</a></li>
+                                               href="/about">About</a></li>
                                         <li id="menu-item-988"
                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-988">
                                             <a class="akasha-menu-item-title" title="Contact"
-                                               href="contact.html">Contact</a></li>
+                                               href="/contact">Contact</a></li>
                                         <li id="menu-item-990"
                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990">
                                             <a class="akasha-menu-item-title" title="Page 404"
@@ -586,29 +586,42 @@
                                 </div>
                                 <div class="akasha-dropdown-close">x</div>
                                 <div class="menu-item block-user block-dreaming akasha-dropdown">
-                                    <a class="block-link" href="my-account.html">
+                                    <a class="block-link" href="/login">
                                         <span class="flaticon-profile"></span>
                                     </a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--dashboard is-active">
-                                            <a href="#">Dashboard</a>
-                                        </li>
-                                        <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--orders">
-                                            <a href="#">Orders</a>
-                                        </li>
-                                        <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--downloads">
-                                            <a href="#">Downloads</a>
-                                        </li>
-                                        <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--edit-adchair">
-                                            <a href="#">Addresses</a>
-                                        </li>
-                                        <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--edit-account">
-                                            <a href="#">Account details</a>
-                                        </li>
-                                        <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--customer-logout">
-                                            <a href="#">Logout</a>
-                                        </li>
-                                    </ul>
+
+                                    @auth
+                                        <ul class="sub-menu">
+                                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--dashboard is-active">
+                                                <a href="#">Dashboard</a>
+                                            </li>
+                                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--orders">
+                                                <a href="#">Orders</a>
+                                            </li>
+                                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--downloads">
+                                                <a href="#">Downloads</a>
+                                            </li>
+                                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--edit-adchair">
+                                                <a href="#">Addresses</a>
+                                            </li>
+                                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--edit-account">
+                                                <a href="#">Account details</a>
+                                            </li>
+                                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--customer-logout">
+                                                <a href="#">Logout</a>
+                                            </li>
+                                        </ul>
+                                    @else
+
+                                        <ul class="sub-menu">
+                                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--dashboard is-active">
+                                                <a href="/login">Login</a>
+                                            </li>
+
+                                        </ul>
+
+                                    @endauth
+
                                 </div>
                                 <div class="block-minicart block-dreaming akasha-mini-cart akasha-dropdown">
                                     <div class="shopcart-dropdown block-cart-link" data-akasha="akasha-dropdown">
