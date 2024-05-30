@@ -13,5 +13,10 @@
 <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyC3nDHy1dARR-Pa_2jjPCjvsOR4bcILYsM'></script>
 <script src="{{ asset('assets') }}/js/functions.js"></script>
 
+{{-- toaster js --}}
+<script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+{!! Toastr::message() !!}
+
+
 
 @stack('frontend_js')

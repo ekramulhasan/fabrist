@@ -41,7 +41,7 @@
                         </div>
                         <div class="product-info equal-elem">
                             <h3 class="product-name product_title">
-                                <a href="#"
+                                <a href="/single-product"
                                    tabindex="0">Black Shirt</a>
                             </h3>
                             <div class="rating-wapper nostar">

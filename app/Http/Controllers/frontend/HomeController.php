@@ -21,7 +21,7 @@ class HomeController extends Controller {
         $product = Product::where( 'is_active', 1 )->latest( 'id' )->with( 'category', 'sizes', 'subcategory' )->paginate( 8 );
         // dd($categoryWithSub);
         // return $product;
-        return view( 'frontend.pages.home_page', compact( 'testimonial', 'product', 'categories', 'categoryWithSub' ) );
+        return view('frontend.pages.home', compact( 'testimonial', 'product', 'categories', 'categoryWithSub' ) );
 
     }
 
@@ -42,7 +42,7 @@ class HomeController extends Controller {
         // return $product;
         $related_product = Product::whereNot( 'slug', $product_slug )->latest( 'id' )->with( 'category', 'sizes', 'subcategory' )->limit( 7 )->get();
 
-        return view( 'frontend.pages.product', compact( 'product', 'related_product' ) );
+        return view( 'frontend.pages.singleProduct', compact( 'product', 'related_product' ) );
     }
 
     public function search(Request $request)

@@ -16,7 +16,7 @@
                     </div>
                     <div class="header-logo-nav">
                         <div class="header-logo">
-                            <a href="index.html"><img alt="Akasha" src="assets/images/logo.png"
+                            <a href="index.html"><img alt="Akasha" src="{{ asset('assets') }}/images/fabrist.png"
                                                       class="logo"></a></div>
                         <div class="box-header-nav menu-nocenter">
                             <ul id="menu-primary-menu"
@@ -33,7 +33,7 @@
                                                         <figure class="dreaming_wrapper az_figure">
                                                             <a href="index.html" target="_self"
                                                                class="az_single_image-wrapper az_box_border_grey effect normal-effect dark-bg">
-                                                                <img src="assets/images/demo001.jpg"
+                                                                <img src="{{ asset('assets') }}/images/demo001.jpg"
                                                                      class="az_single_image-img attachment-full" alt="img">
                                                             </a>
                                                         </figure>
@@ -47,7 +47,7 @@
                                                         <figure class="dreaming_wrapper az_figure">
                                                             <a href="home-02.html" target="_self"
                                                                class="az_single_image-wrapper az_box_border_grey effect normal-effect dark-bg ">
-                                                                <img src="assets/images/demo002.jpg"
+                                                                <img src="{{ asset('assets') }}/images/demo002.jpg"
                                                                      class="az_single_image-img attachment-full" alt="img"></a>
                                                         </figure>
                                                     </div>
@@ -60,7 +60,7 @@
                                                         <figure class="dreaming_wrapper az_figure">
                                                             <a href="home-03.html" target="_self"
                                                                class="az_single_image-wrapper az_box_border_grey effect normal-effect dark-bg">
-                                                                <img src="assets/images/demo003.jpg"
+                                                                <img src="{{ asset('assets') }}/images/demo003.jpg"
                                                                      class="az_single_image-img attachment-full" alt="img">
                                                             </a>
                                                         </figure>
@@ -74,7 +74,7 @@
                                                         <figure class="dreaming_wrapper az_figure">
                                                             <a href="home-04.html" target="_self"
                                                                class="az_single_image-wrapper az_box_border_grey effect normal-effect dark-bg ">
-                                                                <img src="assets/images/demo004.jpg"
+                                                                <img src="{{ asset('assets') }}/images/demo004.jpg"
                                                                      class="az_single_image-img attachment-full" alt="img">
                                                             </a>
                                                         </figure>
@@ -87,7 +87,7 @@
                                                         <figure class="dreaming_wrapper az_figure">
                                                             <a href="home-05.html" target="_self"
                                                                class="az_single_image-wrapper az_box_border_grey effect normal-effect dark-bg">
-                                                                <img src="assets/images/demo005.jpg"
+                                                                <img src="{{ asset('assets') }}/images/demo005.jpg"
                                                                      class="az_single_image-img attachment-full" alt="img">
                                                             </a>
                                                         </figure>
@@ -101,7 +101,7 @@
                                                         <figure class="dreaming_wrapper az_figure">
                                                             <a href="home-06.html" target="_self"
                                                                class="az_single_image-wrapper az_box_border_grey effect normal-effect dark-bg ">
-                                                                <img src="assets/images/demo006.jpg"
+                                                                <img src="{{ asset('assets') }}/images/demo006.jpg"
                                                                      class="az_single_image-img attachment-full" alt="img">
                                                             </a>
                                                         </figure>
@@ -132,7 +132,7 @@
                                                             <li>
                                                                 <a href="shop-list.html" target="_self">
                                                                     <span class="image">
-                                                                        <img src="assets/images/label-new.jpg"
+                                                                        <img src="{{ asset('assets') }}/images/label-new.jpg"
                                                                              class="attachment-full size-full" alt="img">
                                                                     </span>
                                                                     Shop List
@@ -164,7 +164,7 @@
                                                                 <a href="single-product-policy.html"
                                                                    target="_self">
                                                                     <span class="image">
-                                                                        <img src="assets/images/label-new.jpg"
+                                                                        <img src="{{ asset('assets') }}/images/label-new.jpg"
                                                                              class="attachment-full size-full" alt="img">
                                                                     </span>
                                                                     Extra Sidebar
@@ -194,7 +194,7 @@
                                                                 <a href="single-product-bundle.html"
                                                                    target="_self">
                                                                             <span class="image">
-                                                                                <img src="assets/images/label-new.jpg"
+                                                                                <img src="{{ asset('assets') }}/images/label-new.jpg"
                                                                                      class="attachment-full size-full"
                                                                                      alt="img">
                                                                             </span>
@@ -205,7 +205,7 @@
                                                                 <a href="single-product-360deg.html"
                                                                    target="_self">
                                                                     <span class="image">
-                                                                        <img src="assets/images/label-hot.jpg"
+                                                                        <img src="{{ asset('assets') }}/images/label-hot.jpg"
                                                                              class="attachment-full size-full" alt="img">
                                                                     </span>
                                                                     Product 360 Deg </a>
@@ -258,7 +258,7 @@
                                                                 <a href="single-product.html"
                                                                    target="_self">
                                                                             <span class="image"><img
-                                                                                    src="assets/images/label-hot.jpg"
+                                                                                    src="{{ asset('assets') }}/images/label-hot.jpg"
                                                                                     class="attachment-full size-full"
                                                                                     alt="img"></span>
                                                                     Variable </a>
@@ -441,7 +441,7 @@
                                                             <li>
                                                                 <a href="single-post-instagram.html" target="_self">
                                                                     <span class="image">
-                                                                        <img src="assets/images/label-hot.jpg"
+                                                                        <img src="{{ asset('assets') }}/images/label-hot.jpg"
                                                                              class="attachment-full size-full" alt="img">
                                                                     </span>
                                                                     Instagram In Post
@@ -451,7 +451,7 @@
                                                                 <a href="single-post-product.html"
                                                                    target="_self">
                                                                     <span class="image">
-                                                                        <img src="assets/images/label-new.jpg"
+                                                                        <img src="{{ asset('assets') }}/images/label-new.jpg"
                                                                              class="attachment-full size-full" alt="img">
                                                                     </span>
                                                                     Product In Post
@@ -475,7 +475,7 @@
                                                                 <a href="single-post-video.html"
                                                                    target="_self">
                                                                     <span class="image">
-                                                                        <img src="assets/images/label-hot.jpg"
+                                                                        <img src="{{ asset('assets') }}/images/label-hot.jpg"
                                                                              class="attachment-full size-full" alt="img">
                                                                     </span>
                                                                     Video
@@ -516,7 +516,7 @@
                                 <ul class="wpml-menu">
                                     <li class="menu-item akasha-dropdown block-language">
                                         <a href="#" data-akasha="akasha-dropdown">
-                                            <img src="assets/images/en.png"
+                                            <img src="{{ asset('assets') }}/images/en.png"
                                                  alt="en" width="18" height="12">
                                             English
                                         </a>
@@ -524,7 +524,7 @@
                                         <ul class="sub-menu">
                                             <li class="menu-item">
                                                 <a href="#">
-                                                    <img src="assets/images/it.png"
+                                                    <img src="{{ asset('assets') }}/images/it.png"
                                                          alt="it" width="18" height="12">
                                                     Italiano
                                                 </a>
@@ -593,7 +593,7 @@
                                     @auth
                                         <ul class="sub-menu">
                                             <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--dashboard is-active">
-                                                <a href="#">Dashboard</a>
+                                                <a href="{{ route('customer.profile') }}">Profile</a>
                                             </li>
                                             <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--orders">
                                                 <a href="#">Orders</a>
@@ -608,7 +608,7 @@
                                                 <a href="#">Account details</a>
                                             </li>
                                             <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--customer-logout">
-                                                <a href="#">Logout</a>
+                                                <a href="{{ route('customer.logout') }}">Logout</a>
                                             </li>
                                         </ul>
                                     @else
@@ -637,7 +637,7 @@
                                                 <li class="akasha-mini-cart-item mini_cart_item">
                                                     <a href="#" class="remove remove_from_cart_button">×</a>
                                                     <a href="#">
-                                                        <img src="assets/images/apro134-1-600x778.jpg"
+                                                        <img src="{{ asset('assets') }}/images/apro134-1-600x778.jpg"
                                                              class="attachment-akasha_thumbnail size-akasha_thumbnail"
                                                              alt="img" width="600" height="778">T-shirt with skirt – Pink&nbsp;
                                                     </a>
@@ -648,7 +648,7 @@
                                                 <li class="akasha-mini-cart-item mini_cart_item">
                                                     <a href="#" class="remove remove_from_cart_button">×</a>
                                                     <a href="#">
-                                                        <img src="assets/images/apro1113-600x778.jpg"
+                                                        <img src="{{ asset('assets') }}/images/apro1113-600x778.jpg"
                                                              class="attachment-akasha_thumbnail size-akasha_thumbnail"
                                                              alt="img" width="600" height="778">Abstract Sweatshirt&nbsp;
                                                     </a>
@@ -659,7 +659,7 @@
                                                 <li class="akasha-mini-cart-item mini_cart_item">
                                                     <a href="#" class="remove remove_from_cart_button">×</a>
                                                     <a href="#">
-                                                        <img src="assets/images/apro201-1-600x778.jpg"
+                                                        <img src="{{ asset('assets') }}/images/apro201-1-600x778.jpg"
                                                              class="attachment-akasha_thumbnail size-akasha_thumbnail"
                                                              alt="img" width="600" height="778">Mini Dress&nbsp;
                                                     </a>
@@ -736,7 +736,7 @@
             <ul class="wpml-menu">
                 <li class="menu-item akasha-dropdown block-language">
                     <a href="#" data-akasha="akasha-dropdown">
-                        <img src="assets/images/en.png"
+                        <img src="{{ asset('assets') }}/images/en.png"
                              alt="en" width="18" height="12">
                         English
                     </a>
@@ -744,7 +744,7 @@
                     <ul class="sub-menu">
                         <li class="menu-item">
                             <a href="#">
-                                <img src="assets/images/it.png"
+                                <img src="{{ asset('assets') }}/images/it.png"
                                      alt="it" width="18" height="12">
                                 Italiano
                             </a>
@@ -769,7 +769,7 @@
         </div>
         <div class="header-mobile-mid">
             <div class="header-logo">
-                <a href="index.html"><img alt="Akasha" src="assets/images/logo.png" class="logo"></a>
+                <a href="index.html"><img alt="Akasha" src="{{ asset('assets') }}/images/logo.png" class="logo"></a>
             </div>
         </div>
         <div class="header-mobile-right">
@@ -814,7 +814,7 @@
                                     <li class="akasha-mini-cart-item mini_cart_item">
                                         <a href="#" class="remove remove_from_cart_button">×</a>
                                         <a href="#">
-                                            <img src="assets/images/apro134-1-600x778.jpg"
+                                            <img src="{{ asset('assets') }}/images/apro134-1-600x778.jpg"
                                                  class="attachment-akasha_thumbnail size-akasha_thumbnail"
                                                  alt="img" width="600" height="778">T-shirt with skirt – Pink&nbsp;
                                         </a>
@@ -825,7 +825,7 @@
                                     <li class="akasha-mini-cart-item mini_cart_item">
                                         <a href="#" class="remove remove_from_cart_button">×</a>
                                         <a href="#">
-                                            <img src="assets/images/apro1113-600x778.jpg"
+                                            <img src="{{ asset('assets') }}/images/apro1113-600x778.jpg"
                                                  class="attachment-akasha_thumbnail size-akasha_thumbnail"
                                                  alt="img" width="600" height="778">Abstract Sweatshirt&nbsp;
                                         </a>
@@ -836,7 +836,7 @@
                                     <li class="akasha-mini-cart-item mini_cart_item">
                                         <a href="#" class="remove remove_from_cart_button">×</a>
                                         <a href="#">
-                                            <img src="assets/images/apro201-1-600x778.jpg"
+                                            <img src="{{ asset('assets') }}/images/apro201-1-600x778.jpg"
                                                  class="attachment-akasha_thumbnail size-akasha_thumbnail"
                                                  alt="img" width="600" height="778">Mini Dress&nbsp;
                                         </a>

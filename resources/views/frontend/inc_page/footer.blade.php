@@ -28,19 +28,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p>© Copyright 2020 <a href="#">Akasha</a>. All Rights Reserved.</p>
+                    <p>© Copyright 2024 <a href="#">Fabrist Fashion</a>. All Rights Reserved.</p>
                 </div>
                 <div class="col-md-6">
                     <div class="akasha-socials style-01">
                         <div class="content-socials">
                             <ul class="socials-list">
                                 <li>
-                                    <a href="https://facebook.com" target="_blank">
+                                    <a href="https://www.facebook.com/fabristlifestyle" target="_blank">
                                         <i class="fa fa-facebook"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.instagram.com" target="_blank">
+                                    <a href="https://www.instagram.com/fabristlifestylebd" target="_blank">
                                         <i class="fa fa-instagram"></i>
                                     </a>
                                 </li>

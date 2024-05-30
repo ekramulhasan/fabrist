@@ -21,6 +21,8 @@ class CustomerController extends Controller {
 
     public function customer_register( UserRegisterRequest $request ) {
 
+       
+
         DB::table( 'users' )->insert( [
 
             'name'     => $request->register_name,
@@ -52,13 +54,15 @@ class CustomerController extends Controller {
         $order     = Order::where( 'user_id', $user_data->id )->with( 'billing', 'orderDetails' )->latest( 'id' )->paginate( 5 );
 
         $invoice = view('frontend.pages.invoice',compact('user_data', 'order'));
-        
-        return view( 'frontend.pages.customer_profile', compact( 'user_data', 'order' ) );
+
+        return view( 'frontend.pages.profile', compact( 'user_data', 'order' ) );
 
     }
 
     // for login
     public function customer_login( Request $request ) {
+
+        // dd($request->all());
 
         $request->validate( [
 

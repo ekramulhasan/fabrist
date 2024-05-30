@@ -15,4 +15,8 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('assets') }}/css/dreaming-attribute.css"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('assets') }}/css/style.css"/>
 
+ {{-- toaster css--}}
+ <link rel="stylesheet" href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+
+
 @stack('frontend_style')

@@ -1,25 +1,26 @@
 <?php
 
-use App\Http\Controllers\backend\CategoryController;
-use App\Http\Controllers\backend\ColorController;
-use App\Http\Controllers\backend\CouponController;
-use App\Http\Controllers\backend\CustomerController as CustomerData;
-use App\Http\Controllers\backend\OrderController;
-use App\Http\Controllers\backend\SizeController;
-use App\Http\Controllers\backend\SubcategoryController;
-use App\Http\Controllers\backend\SubsubcategoryController;
-use App\Http\Controllers\backend\TestimonialController;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\DashbordController;
+use App\Http\Controllers\backend\SizeController;
+use App\Http\Controllers\backend\ColorController;
+use App\Http\Controllers\backend\OrderController;
 use App\Http\Controllers\frontend\CartController;
+use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\backend\CouponController;
+use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\frontend\CheckOutController;
 use App\Http\Controllers\frontend\CustomerController;
 use App\Http\Controllers\frontend\MenupageController;
-use App\Http\Controllers\InvoiceController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SslCommerzPaymentController;
-use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\backend\SubcategoryController;
+use App\Http\Controllers\backend\TestimonialController;
+use App\Http\Controllers\backend\SubsubcategoryController;
+use App\Http\Controllers\backend\CustomerController as CustomerData;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,9 +79,8 @@ Route::get( '/view-clear', function () {
 
 
 
-Route::get( '/', function () {
-    return view( 'frontend.pages.home' );
-} )->name( 'home' );
+Route::get( '/', [HomeController::class, 'home'] )->name( 'home' );
+Route::get( '/single-product/{product_slug}', [HomeController::class, 'productDetails'] )->name( 'productDetails.page' );
 
 Route::view('/about','frontend.pages.about')->name('about.page');
 Route::view('/contact','frontend.pages.contact')->name('contact.page');

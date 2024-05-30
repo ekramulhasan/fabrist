@@ -23,7 +23,7 @@ class UserRegisterRequest extends FormRequest {
             'register_name'     => 'bail|string|required|max:255',
             'register_number'   => 'bail|string|required|max:15',
             'register_email'    => 'bail|email|required|unique:users,email',
-            'register_password' => 'bail|required|confirmed|string|min:4',
+            'register_password' => 'bail|required|string|min:4',
 
         ];
     }
