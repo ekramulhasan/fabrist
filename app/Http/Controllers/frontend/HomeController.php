@@ -21,6 +21,7 @@ class HomeController extends Controller {
         $product = Product::where( 'is_active', 1 )->latest( 'id' )->with( 'category', 'sizes', 'subcategory' )->paginate( 8 );
         // dd($categoryWithSub);
         // return $product;
+        $master = view('frontend.master',compact( 'testimonial', 'product', 'categories', 'categoryWithSub' ));
         return view('frontend.pages.home', compact( 'testimonial', 'product', 'categories', 'categoryWithSub' ) );
 
     }

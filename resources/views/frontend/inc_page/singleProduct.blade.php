@@ -67,7 +67,10 @@
                                         <li>Subtle branding and diagonal panel detail</li>
                                     </ul>
                                 </div>
-                                <form class="variations_form cart">
+
+                                <form class="variations_form cart" action="{{ route('addTo.cart',['product_slug'=>$product->slug]) }}" method="post">
+                                    @csrf
+
                                     <div class="single_variation_wrap">
                                         <div class="akasha-variation single_variation"></div>
                                         <div
@@ -76,24 +79,34 @@
                                                 <span class="qty-label">Quantiy:</span>
                                                 <div class="control">
                                                     <a class="btn-number qtyminus quantity-minus" href="#">-</a>
-                                                    <input type="text" data-step="1" min="0" max=""
-                                                        name="quantity[25]" value="0" title="Qty"
+                                                    <input type="text" data-step="1" min="1" max=""
+                                                        name="quantity" value="1" title="Qty"
                                                         class="input-qty input-text qty text" size="4"
-                                                        pattern="[0-9]*" inputmode="numeric">
+                                                        pattern="[0-9]*" inputmode="numeric" required>
                                                     <a class="btn-number qtyplus quantity-plus" href="#">+</a>
                                                 </div>
+                                                <input type="hidden" name="product_slug" value="{{ $product->slug }}">
                                             </div>
-                                            <button type="submit"
-                                                class="single_add_to_cart_button   akasha-variation-selection-needed">
-                                                Add to cart
-                                            </button>
-                                            <input name="add-to-cart" value="27" type="hidden">
+
+                                            <div class="add-to-cart">
+
+                                                <button type="submit"
+                                                    class="button product_type_simple add_to_cart_button ajax_add_to_cart">
+                                                        Add to cart
+                                                </button>
+
+                                            </div>
+
+
+
+                                            {{-- <input name="add-to-cart" value="27" type="hidden">
                                             <input name="product_id" value="27" type="hidden">
                                             <input name="variation_id" class="variation_id" value="0"
-                                                type="hidden">
+                                                type="hidden"> --}}
                                         </div>
                                     </div>
                                 </form>
+
                                 <div class="yith-wcwl-add-to-wishlist">
                                     <div class="yith-wcwl-add-button show">
                                         <a href="#" rel="nofollow" data-product-id="27"

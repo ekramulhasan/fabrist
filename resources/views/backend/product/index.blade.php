@@ -67,7 +67,7 @@ Product Index
 
                     <tr>
                         <td scope="row">{{ $product_data->firstItem()+$loop->index }}</td>
-                        <td><img class="img-fluid rounded-circle h-50 w-50" src=" {{ asset('assets/uploads/products') }}/{{ $value->product_img }}" alt=""></td>
+                        <td><img class="img-fluid rounded-circle h-30 w-30" src=" {{ asset('assets/uploads/products') }}/{{ $value->product_img }}" alt=""></td>
                         <td>{{ $value->updated_at->format('d M Y') }}</td>
                         <td>{{ $value->category->title ?? ''}}</td>
                         <td>{{ $value->title }}</td>

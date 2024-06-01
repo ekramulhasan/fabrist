@@ -2,26 +2,27 @@
 
 namespace App\Http\Controllers\frontend;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\UserRegisterRequest;
-use App\Models\Order;
 use App\Models\User;
-use Brian2694\Toastr\Facades\Toastr;
+use App\Models\Order;
+use App\Models\category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\UserRegisterRequest;
 
 class CustomerController extends Controller {
 
     public function login_page() {
 
-        return view( 'frontend.pages.login' );
+        return view( 'frontend.pages.login');
     }
 
     public function customer_register( UserRegisterRequest $request ) {
 
-       
+
 
         DB::table( 'users' )->insert( [
 

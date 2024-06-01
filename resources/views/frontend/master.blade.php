@@ -1,3 +1,7 @@
+@php
+    $categories      = App\Models\category::where( 'isActive', 1 )->with( 'product' )->latest( 'id' )->select( ['id', 'title', 'slug'] )->get();
+    $categoryWithSub = App\Models\category::where('isActive',1)->with(['subCategoryes.subsubcategories'])->latest( 'id' )->select(['id', 'title', 'slug'] )->get();
+@endphp
 
 <!DOCTYPE html>
 <html lang="en">

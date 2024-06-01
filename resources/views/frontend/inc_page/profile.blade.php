@@ -1,7 +1,8 @@
 <section style="background-color: #eee;">
+
     <div class="container py-5">
         <div class="row">
-            <div class="col">
+            <div class="col mt-5">
                 <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
                     <ol class="breadcrumb mb-0">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
@@ -276,11 +277,11 @@
                                         </tbody>
                                     </table>
 
-                                    {{ $order->links() }}
 
                                 </div>
 
 
+                                {{-- {{ $order->links() }} --}}
 
                             </div>
                         </div>
@@ -290,4 +291,5 @@
             </div>
         </div>
     </div>
+
 </section>

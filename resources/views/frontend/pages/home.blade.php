@@ -3,7 +3,7 @@
 fabrist fashion
 @endsection
 
-@push('fronend_style')
+@push('frontend_style')
 
 @endpush
 
@@ -20,6 +20,6 @@ fabrist fashion
 
 @endsection
 
-@push('fronend_js')
+@push('frontend_js')
 
 @endpush

@@ -1,8 +1,27 @@
 
 <div class="slide-home-01">
     <div class="response-product product-list-owl owl-slick equal-container better-height"
-         data-slick="{&quot;arrows&quot;:false,&quot;slidesMargin&quot;:0,&quot;dots&quot;:true,&quot;infinite&quot;:false,&quot;speed&quot;:300,&quot;slidesToShow&quot;:1,&quot;rows&quot;:1}"
-         data-responsive="[{&quot;breakpoint&quot;:480,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}},{&quot;breakpoint&quot;:768,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}},{&quot;breakpoint&quot;:992,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}},{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}},{&quot;breakpoint&quot;:1500,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}}]">
+
+    data-slick='{
+        "arrows": false,
+        "slidesMargin": 0,
+        "dots": true,
+        "infinite": true,
+        "speed": 300,
+        "autoplay": true,
+        "autoplaySpeed": 3000,
+        "slidesToShow": 1,
+        "rows": 1
+    }'
+    data-responsive='[
+        {"breakpoint": 480, "settings": {"slidesToShow": 1, "slidesMargin": 0}},
+        {"breakpoint": 768, "settings": {"slidesToShow": 1, "slidesMargin": 0}},
+        {"breakpoint": 992, "settings": {"slidesToShow": 1, "slidesMargin": 0}},
+        {"breakpoint": 1200, "settings": {"slidesToShow": 1, "slidesMargin": 0}},
+        {"breakpoint": 1500, "settings": {"slidesToShow": 1, "slidesMargin": 0}}
+    ]'
+
+    >
         <div class="slide-wrap">
             <img src="assets/images/banner1.png" alt="image">
             <div class="slide-info">

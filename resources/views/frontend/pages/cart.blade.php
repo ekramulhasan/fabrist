@@ -1,6 +1,6 @@
 @extends('frontend.master')
 @section('title')
-Login | Page
+fabrist fashion
 @endsection
 
 @push('frontend_style')
@@ -9,7 +9,7 @@ Login | Page
 
 @section('main_body')
 
-@include('frontend.inc_page.login')
+@include('frontend.inc_page.cart')
 
 @endsection
 

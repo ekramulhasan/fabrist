@@ -30,7 +30,7 @@ class CartController extends Controller
         // dd($request->all());
         $product_slug = $request->product_slug;
         $product_qty = $request->quantity;
-        $product_size = $request->size;
+        // $product_size = $request->size;
 
         $product = Product::whereSlug($product_slug)->first();
 
@@ -45,7 +45,7 @@ class CartController extends Controller
                 'product_img' => $product->product_img,
                 'weight' => 0,
                 'product_stock' => $product->product_stock,
-                'size' => $product_size,
+                // 'size' => $product_size,
 
             ],
 

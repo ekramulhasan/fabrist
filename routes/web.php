@@ -82,6 +82,15 @@ Route::get( '/view-clear', function () {
 Route::get( '/', [HomeController::class, 'home'] )->name( 'home' );
 Route::get( '/single-product/{product_slug}', [HomeController::class, 'productDetails'] )->name( 'productDetails.page' );
 
+Route::get( '/cart-page', [CartController::class, 'cartPage'] )->name( 'cart.page' );
+Route::post( 'addTocart/{product_slug}', [CartController::class, 'addTocart'] )->name( 'addTo.cart' );
+Route::get( 'remove-item/{cart_id}', [CartController::class, 'removeFromcart'] )->name( 'remove_item' );
+Route::get( 'wishlist/{product_slug}', [CartController::class, 'addWish'] )->name( 'addWish.list' );
+
+// coupon apply and remove
+Route::post( 'cart/coupon-apply', [CartController::class, 'couponApply'] )->name( 'coupon.apply' );
+Route::get( 'cart/coupon-remove/{coupon_name}', [CartController::class, 'couponRemove'] )->name( 'coupon.remove' );
+
 Route::view('/about','frontend.pages.about')->name('about.page');
 Route::view('/contact','frontend.pages.contact')->name('contact.page');
 Route::view('/login','frontend.pages.login')->name('login.page');

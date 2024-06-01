@@ -24,95 +24,6 @@
                                 <li id="menu-item-230"
                                     class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-230 parent parent-megamenu item-megamenu menu-item-has-children">
                                     <a class="akasha-menu-item-title" title="Home" href="/">Home</a>
-                                    {{-- <span class="toggle-submenu"></span>
-                                    <div class="submenu megamenu megamenu-home">
-                                        <div class="demo-item">
-                                            <div class="row">
-                                                <div class="col-md-6 col-lg-4 col-sm-6">
-                                                    <div class="dreaming_single_image dreaming_content_element az_align_left shadow-img">
-                                                        <figure class="dreaming_wrapper az_figure">
-                                                            <a href="index.html" target="_self"
-                                                               class="az_single_image-wrapper az_box_border_grey effect normal-effect dark-bg">
-                                                                <img src="{{ asset('assets') }}/images/demo001.jpg"
-                                                                     class="az_single_image-img attachment-full" alt="img">
-                                                            </a>
-                                                        </figure>
-                                                    </div>
-                                                    <h5 class="az_custom_heading">
-                                                        <a href="index.html">Home 01</a>
-                                                    </h5>
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 col-sm-6">
-                                                    <div class="dreaming_single_image dreaming_content_element az_align_left shadow-img">
-                                                        <figure class="dreaming_wrapper az_figure">
-                                                            <a href="home-02.html" target="_self"
-                                                               class="az_single_image-wrapper az_box_border_grey effect normal-effect dark-bg ">
-                                                                <img src="{{ asset('assets') }}/images/demo002.jpg"
-                                                                     class="az_single_image-img attachment-full" alt="img"></a>
-                                                        </figure>
-                                                    </div>
-                                                    <h5 class="az_custom_heading">
-                                                        <a href="home-02.html">Home 02</a>
-                                                    </h5>
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 col-sm-6">
-                                                    <div class="dreaming_single_image dreaming_content_element az_align_left shadow-img">
-                                                        <figure class="dreaming_wrapper az_figure">
-                                                            <a href="home-03.html" target="_self"
-                                                               class="az_single_image-wrapper az_box_border_grey effect normal-effect dark-bg">
-                                                                <img src="{{ asset('assets') }}/images/demo003.jpg"
-                                                                     class="az_single_image-img attachment-full" alt="img">
-                                                            </a>
-                                                        </figure>
-                                                    </div>
-                                                    <h5 class="az_custom_heading">
-                                                        <a href="home-03.html">Home 03</a>
-                                                    </h5>
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 col-sm-6">
-                                                    <div class="dreaming_single_image dreaming_content_element az_align_left shadow-img">
-                                                        <figure class="dreaming_wrapper az_figure">
-                                                            <a href="home-04.html" target="_self"
-                                                               class="az_single_image-wrapper az_box_border_grey effect normal-effect dark-bg ">
-                                                                <img src="{{ asset('assets') }}/images/demo004.jpg"
-                                                                     class="az_single_image-img attachment-full" alt="img">
-                                                            </a>
-                                                        </figure>
-                                                    </div>
-                                                    <h5 class="az_custom_heading">
-                                                        <a href="home-04.html">Home 04</a></h5>
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 col-sm-6">
-                                                    <div class="dreaming_single_image dreaming_content_element az_align_left shadow-img">
-                                                        <figure class="dreaming_wrapper az_figure">
-                                                            <a href="home-05.html" target="_self"
-                                                               class="az_single_image-wrapper az_box_border_grey effect normal-effect dark-bg">
-                                                                <img src="{{ asset('assets') }}/images/demo005.jpg"
-                                                                     class="az_single_image-img attachment-full" alt="img">
-                                                            </a>
-                                                        </figure>
-                                                    </div>
-                                                    <h5 class="az_custom_heading">
-                                                        <a href="home-05.html">Home 05</a>
-                                                    </h5>
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 col-sm-6">
-                                                    <div class="dreaming_single_image dreaming_content_element az_align_left shadow-img">
-                                                        <figure class="dreaming_wrapper az_figure">
-                                                            <a href="home-06.html" target="_self"
-                                                               class="az_single_image-wrapper az_box_border_grey effect normal-effect dark-bg ">
-                                                                <img src="{{ asset('assets') }}/images/demo006.jpg"
-                                                                     class="az_single_image-img attachment-full" alt="img">
-                                                            </a>
-                                                        </figure>
-                                                    </div>
-                                                    <h5 class="az_custom_heading">
-                                                        <a href="home-06.html">Home 06</a>
-                                                    </h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> --}}
                                 </li>
                                 <li id="menu-item-228"
                                     class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-228 parent parent-megamenu item-megamenu menu-item-has-children">
@@ -121,179 +32,33 @@
                                     <span class="toggle-submenu"></span>
                                     <div class="submenu megamenu megamenu-shop">
                                         <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="akasha-listitem style-01">
-                                                    <div class="listitem-inner">
-                                                        <h4 class="title">Shop Layouts </h4>
-                                                        <ul class="listitem-list">
-                                                            <li>
-                                                                <a href="shop.html" target="_self">Shop Grid </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="shop-list.html" target="_self">
-                                                                    <span class="image">
-                                                                        <img src="{{ asset('assets') }}/images/label-new.jpg"
-                                                                             class="attachment-full size-full" alt="img">
-                                                                    </span>
-                                                                    Shop List
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="shop.html" target="_self">No Sidebar </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="shop-leftsidebar.html" target="_self">Left
-                                                                    Sidebar </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="shop-rightsidebar.html" target="_self">Right
-                                                                    Sidebar </a>
-                                                            </li>
-                                                        </ul>
+
+                                            @foreach ($categoryWithSub as $value)
+
+                                                <div class="col-md-4 mt-3">
+
+                                                    <div class="akasha-listitem style-01">
+                                                        <div class="listitem-inner">
+                                                            <h4 class="title">{{ $value->title }}</h4>
+                                                            <ul class="listitem-list">
+
+                                                                @foreach ($value->subCategoryes as $subCategory)
+                                                                <li>
+                                                                    <a href="{{ route('mensproduct.page',['slug' => $subCategory->slug]) }}" target="_self">{{ $subCategory->title }}</a>
+                                                                </li>
+                                                                @endforeach
+                                                            </ul>
+                                                        </div>
                                                     </div>
+
                                                 </div>
-                                                <div class="akasha-listitem style-01">
-                                                    <div class="listitem-inner">
-                                                        <h4 class="title">Product Layouts </h4>
-                                                        <ul class="listitem-list">
-                                                            <li>
-                                                                <a href="single-product.html" target="_self">Vertical
-                                                                    Thumbnails </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="single-product-policy.html"
-                                                                   target="_self">
-                                                                    <span class="image">
-                                                                        <img src="{{ asset('assets') }}/images/label-new.jpg"
-                                                                             class="attachment-full size-full" alt="img">
-                                                                    </span>
-                                                                    Extra Sidebar
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="single-product-rightsidebar.html"
-                                                                   target="_self">
-                                                                    Right Sidebar </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="single-product-leftsidebar.html"
-                                                                   target="_self">
-                                                                    Left Sidebar </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="akasha-listitem style-01">
-                                                    <div class="listitem-inner">
-                                                        <h4 class="title">
-                                                            Product Extends </h4>
-                                                        <ul class="listitem-list">
-                                                            <li>
-                                                                <a href="single-product-bundle.html"
-                                                                   target="_self">
-                                                                            <span class="image">
-                                                                                <img src="{{ asset('assets') }}/images/label-new.jpg"
-                                                                                     class="attachment-full size-full"
-                                                                                     alt="img">
-                                                                            </span>
-                                                                    Product Bundle
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="single-product-360deg.html"
-                                                                   target="_self">
-                                                                    <span class="image">
-                                                                        <img src="{{ asset('assets') }}/images/label-hot.jpg"
-                                                                             class="attachment-full size-full" alt="img">
-                                                                    </span>
-                                                                    Product 360 Deg </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="single-product-video.html"
-                                                                   target="_self">
-                                                                    Video </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="akasha-listitem style-01">
-                                                    <div class="listitem-inner">
-                                                        <h4 class="title">
-                                                            Other Pages </h4>
-                                                        <ul class="listitem-list">
-                                                            <li>
-                                                                <a href="cart.html">Cart </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="wishlist.html" target="_self">Wishlist </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="checkout.html" target="_self">Checkout </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="order-tracking.html" target="_self">Order
-                                                                    Tracking </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="my-account.html" target="_self">My Account </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="akasha-listitem style-01">
-                                                    <div class="listitem-inner">
-                                                        <h4 class="title">
-                                                            Product Types </h4>
-                                                        <ul class="listitem-list">
-                                                            <li>
-                                                                <a href="single-product-simple.html"
-                                                                   target="_self">
-                                                                    Simple </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="single-product.html"
-                                                                   target="_self">
-                                                                            <span class="image"><img
-                                                                                    src="{{ asset('assets') }}/images/label-hot.jpg"
-                                                                                    class="attachment-full size-full"
-                                                                                    alt="img"></span>
-                                                                    Variable </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="single-product-external.html"
-                                                                   target="_self">
-                                                                    External / Affiliate </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="single-product-group.html"
-                                                                   target="_self">
-                                                                    Grouped </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="single-product-outofstock.html"
-                                                                   target="_self">
-                                                                    Out Of Stock </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="single-product-onsale.html"
-                                                                   target="_self">
-                                                                    On Sale </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                            @endforeach
                                     </div>
                                 </li>
                                 <li id="menu-item-229"
                                     class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-229 parent parent-megamenu item-megamenu menu-item-has-children">
-                                    <a class="akasha-menu-item-title" title="Elements" href="#">Elements</a>
-                                    <span class="toggle-submenu"></span>
+                                    <a class="akasha-menu-item-title" title="Elements" href="{{ route('allproduct.page') }}">Products</a>
+                                    {{-- <span class="toggle-submenu"></span>
                                     <div class="submenu megamenu megamenu-elements">
                                         <div class="row">
                                             <div class="col-md-4">
@@ -384,13 +149,13 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </li>
                                 <li id="menu-item-996"
                                     class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-996 parent parent-megamenu item-megamenu menu-item-has-children">
                                     <a class="akasha-menu-item-title" title="Blog"
-                                       href="blog.html">Blog</a>
-                                    <span class="toggle-submenu"></span>
+                                       href="/about">About</a>
+                                    {{-- <span class="toggle-submenu"></span>
                                     <div class="submenu megamenu megamenu-blog">
                                         <div class="row">
                                             <div class="col-md-4">
@@ -486,12 +251,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </li>
                                 <li id="menu-item-237"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-237 parent">
-                                    <a class="akasha-menu-item-title" title="Pages" href="#">Pages</a>
-                                    <span class="toggle-submenu"></span>
+                                    <a class="akasha-menu-item-title" title="Pages" href="/contact">Contact</a>
+                                    {{-- <span class="toggle-submenu"></span>
                                     <ul role="menu" class="submenu">
                                         <li id="menu-item-987"
                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-987">
@@ -505,7 +270,7 @@
                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990">
                                             <a class="akasha-menu-item-title" title="Page 404"
                                                href="404.html">Page 404</a></li>
-                                    </ul>
+                                    </ul> --}}
                                 </li>
                             </ul>
                         </div>
@@ -627,54 +392,50 @@
                                     <div class="shopcart-dropdown block-cart-link" data-akasha="akasha-dropdown">
                                         <a class="block-link link-dropdown" href="cart.html">
                                             <span class="flaticon-bag"></span>
-                                            <span class="count">3</span>
+                                            <span class="count">
+                                                @php
+                                                $item = \Cart::getContent();
+                                                echo $item->count();
+                                                @endphp</span>
                                         </a>
                                     </div>
                                     <div class="widget akasha widget_shopping_cart">
                                         <div class="widget_shopping_cart_content">
-                                            <h3 class="minicart-title">Your Cart<span class="minicart-number-items">3</span></h3>
+                                            <h3 class="minicart-title">Your Cart<span class="minicart-number-items">
+                                                @php
+                                                $item = \Cart::getContent();
+                                                echo $item->count();
+                                                @endphp</span></h3>
                                             <ul class="akasha-mini-cart cart_list product_list_widget">
-                                                <li class="akasha-mini-cart-item mini_cart_item">
-                                                    <a href="#" class="remove remove_from_cart_button">×</a>
-                                                    <a href="#">
-                                                        <img src="{{ asset('assets') }}/images/apro134-1-600x778.jpg"
-                                                             class="attachment-akasha_thumbnail size-akasha_thumbnail"
-                                                             alt="img" width="600" height="778">T-shirt with skirt – Pink&nbsp;
-                                                    </a>
-                                                    <span class="quantity">1 × <span
-                                                            class="akasha-Price-amount amount"><span
-                                                            class="akasha-Price-currencySymbol">$</span>150.00</span></span>
-                                                </li>
-                                                <li class="akasha-mini-cart-item mini_cart_item">
-                                                    <a href="#" class="remove remove_from_cart_button">×</a>
-                                                    <a href="#">
-                                                        <img src="{{ asset('assets') }}/images/apro1113-600x778.jpg"
-                                                             class="attachment-akasha_thumbnail size-akasha_thumbnail"
-                                                             alt="img" width="600" height="778">Abstract Sweatshirt&nbsp;
-                                                    </a>
-                                                    <span class="quantity">1 × <span
-                                                            class="akasha-Price-amount amount"><span
-                                                            class="akasha-Price-currencySymbol">$</span>129.00</span></span>
-                                                </li>
-                                                <li class="akasha-mini-cart-item mini_cart_item">
-                                                    <a href="#" class="remove remove_from_cart_button">×</a>
-                                                    <a href="#">
-                                                        <img src="{{ asset('assets') }}/images/apro201-1-600x778.jpg"
-                                                             class="attachment-akasha_thumbnail size-akasha_thumbnail"
-                                                             alt="img" width="600" height="778">Mini Dress&nbsp;
-                                                    </a>
-                                                    <span class="quantity">1 × <span
-                                                            class="akasha-Price-amount amount"><span
-                                                            class="akasha-Price-currencySymbol">$</span>139.00</span></span>
-                                                </li>
+
+                                                @php
+                                                    $items = \Cart::getContent();
+                                                    $subTotal = \Cart::getSubTotal();
+                                                @endphp
+
+                                                @foreach ( $items as $value )
+                                                    <li class="akasha-mini-cart-item mini_cart_item">
+                                                        <a href="{{ route('remove_item',[$value->id]) }}" class="remove remove_from_cart_button">×</a>
+                                                        <a href="#">
+                                                            <img src="{{ asset('assets/uploads/products') }}/{{ $value->attributes->product_img }}"
+                                                                    class="attachment-akasha_thumbnail size-akasha_thumbnail"
+                                                                    alt="img" width="600" height="778">{{ $value->name }}&nbsp;
+                                                        </a>
+                                                        <span class="quantity">{{ $value->quantity }} × <span
+                                                                class="akasha-Price-amount amount"><span
+                                                                class="akasha-Price-currencySymbol">$</span>{{ $value->price*$value->quantity }}</span></span>
+                                                    </li>
+                                                @endforeach
+
+
                                             </ul>
                                             <p class="akasha-mini-cart__total total"><strong>Subtotal:</strong>
                                                 <span class="akasha-Price-amount amount"><span
-                                                        class="akasha-Price-currencySymbol">$</span>418.00</span>
+                                                        class="akasha-Price-currencySymbol">$</span>{{ $subTotal }}</span>
                                             </p>
                                             <p class="akasha-mini-cart__buttons buttons">
-                                                <a href="cart.html" class="button akasha-forward">Viewcart</a>
-                                                <a href="checkout.html" class="button checkout akasha-forward">Checkout</a>
+                                                <a href="{{ route('cart.page') }}" class="button akasha-forward">Viewcart</a>
+                                                <a href="{{ route('cutomer.checkout') }}" class="button checkout akasha-forward">Checkout</a>
                                             </p>
                                         </div>
                                     </div>
