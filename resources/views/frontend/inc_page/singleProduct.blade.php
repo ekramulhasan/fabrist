@@ -301,484 +301,73 @@
                         <span>Related Products</span>
                     </h2>
                 </div>
-                <div class="owl-slick owl-products equal-container better-height"
-                    data-slick="{&quot;arrows&quot;:false,&quot;slidesMargin&quot;:30,&quot;dots&quot;:true,&quot;infinite&quot;:false,&quot;slidesToShow&quot;:4}"
-                    data-responsive="[{&quot;breakpoint&quot;:480,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:768,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:992,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:1500,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesMargin&quot;:&quot;30&quot;}}]">
-                    <div
-                        class="product-item style-01 post-27 product type-product status-publish has-post-thumbnail product_cat-table product_cat-new-arrivals product_cat-lamp product_tag-table product_tag-sock  instock shipping-taxable purchasable product-type-variable has-default-attributes ">
-                        <div class="product-inner tooltip-left">
-                            <div class="product-thumb">
-                                <a class="thumb-link" href="#" tabindex="0">
-                                    <img class="img-responsive" src="assets/images/apro101-1-600x778.jpg"
-                                        alt="Long Oversized" width="600" height="778">
-                                </a>
-                                <div class="flash"><span class="onnew"><span class="text">New</span></span></div>
-                                <div class="group-button">
-                                    <div class="yith-wcwl-add-to-wishlist">
-                                        <div class="yith-wcwl-add-button show">
-                                            <a href="#" class="add_to_wishlist">Add to Wishlist</a>
+                <div class="akasha-products style-01">
+                    <div class="response-product product-list-owl owl-slick equal-container better-height"
+                    data-slick='{
+                        "arrows": true,
+                        "slidesMargin": 0,
+                        "dots": true,
+                        "infinite": true,
+                        "speed": 300,
+                        "autoplay": true,
+                        "autoplaySpeed": 3000,
+                        "slidesToShow": 4,
+                        "rows": 1
+                    }'
+                    data-responsive='[
+                        {"breakpoint": 480, "settings": {"slidesToShow": 4, "slidesMargin": 0}},
+                        {"breakpoint": 768, "settings": {"slidesToShow": 4, "slidesMargin": 0}},
+                        {"breakpoint": 992, "settings": {"slidesToShow": 4, "slidesMargin": 0}},
+                        {"breakpoint": 1200, "settings": {"slidesToShow": 4, "slidesMargin": 0}},
+                        {"breakpoint": 1500, "settings": {"slidesToShow": 4, "slidesMargin": 0}}
+                    ]'
+                    >
+
+                         @foreach ($related_product as $value)
+                            <div class="product-item recent-product style-01 rows-space-0 post-93 product type-product status-publish has-post-thumbnail product_cat-light product_cat-table product_cat-new-arrivals product_tag-table product_tag-sock first instock shipping-taxable purchasable product-type-simple  ">
+                                <div class="product-inner tooltip-left">
+                                    <div class="product-thumb">
+                                        <a class="thumb-link"
+                                            href="{{ route('productDetails.page',[$value->slug]) }}" tabindex="0">
+                                            <img class="img-responsive"
+                                                src="{{ asset('assets/uploads/products') }}/{{ $value->product_img }}"
+                                                alt="Black Shirt" width="270" height="350">
+                                        </a>
+                                        <div class="flash">
+                                            <span class="onnew"><span class="text">New</span></span></div>
+                                        <div class="group-button">
+                                            <div class="yith-wcwl-add-to-wishlist">
+                                                <div class="yith-wcwl-add-button show">
+                                                    <a href="#" class="add_to_wishlist">Add to Wishlist</a>
+                                                </div>
+                                            </div>
+                                            <div class="akasha product compare-button">
+                                                <a href="#" class="compare button">Compare</a>
+                                            </div>
+                                            <a href="#" class="button yith-wcqv-button">Quick View</a>
+                                            <div class="add-to-cart">
+                                                <a href="#" class="button product_type_simple add_to_cart_button">Add to cart</a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="akasha product compare-button">
-                                        <a href="#" class="compare button">Compare</a>
-                                    </div>
-                                    <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                    <div class="add-to-cart">
-                                        <a href="#" class="button product_type_variable add_to_cart_button">Add
-                                            to
-                                            cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-info equal-elem">
-                                <h3 class="product-name product_title">
-                                    <a href="#" tabindex="0">Long Oversized</a>
-                                </h3>
-                                <div class="rating-wapper nostar">
-                                    <div class="star-rating"><span style="width:0%">Rated <strong
-                                                class="rating">0</strong> out of 5</span></div>
-                                    <span class="review">(0)</span>
-                                </div>
-                                <span class="price"><span class="akasha-Price-amount amount"><span
-                                            class="akasha-Price-currencySymbol">$</span>60.00</span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="product-item style-01 post-30 product type-product status-publish has-post-thumbnail product_cat-light product_cat-bed product_cat-specials product_tag-light product_tag-table product_tag-sock last instock featured downloadable shipping-taxable purchasable product-type-simple  ">
-                        <div class="product-inner tooltip-left">
-                            <div class="product-thumb">
-                                <a class="thumb-link" href="#" tabindex="0">
-                                    <img class="img-responsive" src="assets/images/apro41-1-600x778.jpg"
-                                        alt="Brown Shirt" width="600" height="778">
-                                </a>
-                                <div class="flash">
-                                    <span class="onnew"><span class="text">New</span></span>
-                                </div>
-                                <div class="group-button">
-                                    <div class="yith-wcwl-add-to-wishlist">
-                                        <div class="yith-wcwl-add-button show">
-                                            <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                        </div>
-                                    </div>
-                                    <div class="akasha product compare-button">
-                                        <a href="#" class="compare button">Compare</a>
-                                    </div>
-                                    <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                    <div class="add-to-cart">
-                                        <a href="#" class="button product_type_variable add_to_cart_button">Add
-                                            to
-                                            cart</a>
+                                    <div class="product-info equal-elem">
+                                        <h3 class="product-name product_title">
+                                            <a href="{{ route('productDetails.page',[$value->slug]) }}"
+                                                tabindex="0">{{ $value->title }}</a>
+                                        </h3>
+                                        <div class="rating-wapper nostar">
+                                            <div class="star-rating"><span style="width:0%">Rated <strong
+                                                    class="rating">0</strong> out of 5</span></div>
+                                            <span class="review">(0)</span></div>
+                                        <span class="price"><span class="akasha-Price-amount amount"><span
+                                                class="akasha-Price-currencySymbol">$</span>{{ $value->price }}</span></span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="product-info equal-elem">
-                                <h3 class="product-name product_title">
-                                    <a href="#" tabindex="0">Brown Shirt</a>
-                                </h3>
-                                <div class="rating-wapper nostar">
-                                    <div class="star-rating"><span style="width:0%">Rated <strong
-                                                class="rating">0</strong> out of 5</span></div>
-                                    <span class="review">(0)</span>
-                                </div>
-                                <span class="price"><span class="akasha-Price-amount amount"><span
-                                            class="akasha-Price-currencySymbol">$</span>134.00</span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="product-item style-01 post-35 product type-product status-publish has-post-thumbnail product_cat-chair product_cat-new-arrivals product_cat-lamp product_tag-light product_tag-hat product_tag-sock first instock shipping-taxable purchasable product-type-simple  ">
-                        <div class="product-inner tooltip-left">
-                            <div class="product-thumb">
-                                <a class="thumb-link" href="#" tabindex="0">
-                                    <img class="img-responsive" src="assets/images/apro151-1-600x778.jpg"
-                                        alt="Utility Pockets" width="600" height="778">
-                                </a>
-                                <div class="flash">
-                                    <span class="onsale"><span class="number">-11%</span></span>
-                                    <span class="onnew"><span class="text">New</span></span>
-                                </div>
-                                <div class="group-button">
-                                    <div class="yith-wcwl-add-to-wishlist">
-                                        <div class="yith-wcwl-add-button show">
-                                            <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                        </div>
-                                    </div>
-                                    <div class="akasha product compare-button">
-                                        <a href="#" class="compare button">Compare</a>
-                                    </div>
-                                    <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                    <div class="add-to-cart">
-                                        <a href="#" class="button product_type_variable add_to_cart_button">Add
-                                            to
-                                            cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-info equal-elem">
-                                <h3 class="product-name product_title">
-                                    <a href="#" tabindex="0">Utility Pockets</a>
-                                </h3>
-                                <div class="rating-wapper nostar">
-                                    <div class="star-rating"><span style="width:0%">Rated <strong
-                                                class="rating">0</strong> out of 5</span></div>
-                                    <span class="review">(0)</span>
-                                </div>
-                                <span class="price"><del><span class="akasha-Price-amount amount"><span
-                                                class="akasha-Price-currencySymbol">$</span>89.00</span></del>
-                                    <ins><span class="akasha-Price-amount amount"><span
-                                                class="akasha-Price-currencySymbol">$</span>79.00</span></ins></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="product-item style-01 post-25 product type-product status-publish has-post-thumbnail product_cat-light product_cat-chair product_cat-specials product_tag-light product_tag-sock  instock sale featured shipping-taxable purchasable product-type-simple ">
-                        <div class="product-inner tooltip-left">
-                            <div class="product-thumb">
-                                <a class="thumb-link" href="#" tabindex="-1">
-                                    <img class="img-responsive" src="assets/images/apro13-1-600x778.jpg"
-                                        alt="Black Shirt" width="600" height="778">
-                                </a>
-                                <div class="flash">
-                                    <span class="onnew"><span class="text">New</span></span>
-                                </div>
-                                <div class="group-button">
-                                    <div class="yith-wcwl-add-to-wishlist">
-                                        <div class="yith-wcwl-add-button show">
-                                            <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                        </div>
-                                    </div>
-                                    <div class="akasha product compare-button">
-                                        <a href="#" class="compare button">Compare</a>
-                                    </div>
-                                    <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                    <div class="add-to-cart">
-                                        <a href="#" class="button product_type_variable add_to_cart_button">Add
-                                            to
-                                            cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-info equal-elem">
-                                <h3 class="product-name product_title">
-                                    <a href="#" tabindex="-1">Black Shirt</a>
-                                </h3>
-                                <div class="rating-wapper nostar">
-                                    <div class="star-rating"><span style="width:0%">Rated <strong
-                                                class="rating">0</strong> out of 5</span></div>
-                                    <span class="review">(0)</span>
-                                </div>
-                                <span class="price"><span class="akasha-Price-amount amount"><span
-                                            class="akasha-Price-currencySymbol">$</span>109.00</span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="product-item style-01 post-93 product type-product status-publish has-post-thumbnail product_cat-light product_cat-table product_cat-new-arrivals product_tag-table product_tag-sock last instock shipping-taxable purchasable product-type-simple ">
-                        <div class="product-inner tooltip-left">
-                            <div class="product-thumb">
-                                <a class="thumb-link" href="#" tabindex="-1">
-                                    <img class="img-responsive" src="assets/images/apro181-2-600x778.jpg"
-                                        alt="Floral Stripe" width="600" height="778">
-                                </a>
-                                <div class="flash">
-                                    <span class="onnew"><span class="text">New</span></span>
-                                </div>
-                                <div class="group-button">
-                                    <div class="yith-wcwl-add-to-wishlist">
-                                        <div class="yith-wcwl-add-button show">
-                                            <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                        </div>
-                                    </div>
-                                    <div class="akasha product compare-button">
-                                        <a href="#" class="compare button">Compare</a>
-                                    </div>
-                                    <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                    <div class="add-to-cart">
-                                        <a href="#" class="button product_type_variable add_to_cart_button">Add
-                                            to
-                                            cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-info equal-elem">
-                                <h3 class="product-name product_title">
-                                    <a href="#" tabindex="-1">City
-                                        life jumpers</a>
-                                </h3>
-                                <div class="rating-wapper nostar">
-                                    <div class="star-rating"><span style="width:0%">Rated <strong
-                                                class="rating">0</strong> out of 5</span></div>
-                                    <span class="review">(0)</span>
-                                </div>
-                                <span class="price"><span class="akasha-Price-amount amount"><span
-                                            class="akasha-Price-currencySymbol">$</span>98.00</span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="product-item style-01 post-22 product type-product status-publish has-post-thumbnail product_cat-table product_cat-bed product_cat-lamp product_tag-table product_tag-hat product_tag-sock first instock featured downloadable shipping-taxable purchasable product-type-simple ">
-                        <div class="product-inner tooltip-left">
-                            <div class="product-thumb">
-                                <a class="thumb-link" href="#" tabindex="-1">
-                                    <img class="img-responsive" src="assets/images/apro171-1-600x778.jpg"
-                                        alt="Knitted Stripe " width="600" height="778">
-                                </a>
-                                <div class="flash">
-                                    <span class="onnew"><span class="text">New</span></span>
-                                </div>
-                                <form class="variations_form cart">
-                                    <table class="variations">
-                                        <tbody>
-                                            <tr>
-                                                <td class="value">
-                                                    <select title="box_style" data-attributetype="box_style"
-                                                        data-id="pa_color" class="attribute-select "
-                                                        name="attribute_pa_color"
-                                                        data-attribute_name="attribute_pa_color"
-                                                        data-show_option_none="yes" tabindex="-1">
-                                                        <option data-type="" data-pa_color="" value="">Choose
-                                                            an
-                                                            option
-                                                        </option>
-                                                        <option data-width="30" data-height="30" data-type="color"
-                                                            data-pa_color="#ff63cb" value="pink"
-                                                            class="attached enabled">Pink
-                                                        </option>
-                                                        <option data-width="30" data-height="30" data-type="color"
-                                                            data-pa_color="#a825ea" value="purple"
-                                                            class="attached enabled">Purple
-                                                        </option>
-                                                        <option data-width="30" data-height="30" data-type="color"
-                                                            data-pa_color="#db2b00" value="red"
-                                                            class="attached enabled">Red
-                                                        </option>
-                                                    </select>
-                                                    <div class="data-val attribute-pa_color"
-                                                        data-attributetype="box_style"><a class="change-value color"
-                                                            href="#" style="background: #ff63cb;"
-                                                            data-value="pink"></a><a class="change-value color"
-                                                            href="#" style="background: #a825ea;"
-                                                            data-value="purple"></a><a class="change-value color"
-                                                            href="#" style="background: #db2b00;"
-                                                            data-value="red"></a></div>
-                                                    <a class="reset_variations" href="#" tabindex="-1"
-                                                        style="visibility: hidden;">Clear</a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </form>
-                                <div class="group-button">
-                                    <div class="yith-wcwl-add-to-wishlist">
-                                        <div class="yith-wcwl-add-button show">
-                                            <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                        </div>
-                                    </div>
-                                    <div class="akasha product compare-button">
-                                        <a href="#" class="compare button">Compare</a>
-                                    </div>
-                                    <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                    <div class="add-to-cart">
-                                        <a href="#"
-                                            class="button product_type_variable add_to_cart_button">Select
-                                            options</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-info equal-elem">
-                                <h3 class="product-name product_title">
-                                    <a href="#" tabindex="-1">Knitted Stripe </a>
-                                </h3>
-                                <div class="rating-wapper nostar">
-                                    <div class="star-rating"><span style="width:0%">Rated <strong
-                                                class="rating">0</strong> out of 5</span></div>
-                                    <span class="review">(0)</span>
-                                </div>
-                                <span class="price"><span class="akasha-Price-amount amount"><span
-                                            class="akasha-Price-currencySymbol">$</span>105.00</span> – <span
-                                        class="akasha-Price-amount amount"><span
-                                            class="akasha-Price-currencySymbol">$</span>110.00</span></span>
-                            </div>
-                        </div>
+                         @endforeach
+
                     </div>
                 </div>
-            </div>
-            <div class="col-md-12 col-sm-12 akasha_dreaming_upsell-product">
-                <div class="block-title">
-                    <h2 class="product-grid-title">
-                        <span>Upsell Products</span>
-                    </h2>
-                </div>
-                <div class="owl-slick owl-products equal-container better-height"
-                    data-slick="{&quot;arrows&quot;:false,&quot;slidesMargin&quot;:30,&quot;dots&quot;:true,&quot;infinite&quot;:false,&quot;slidesToShow&quot;:4}"
-                    data-responsive="[{&quot;breakpoint&quot;:480,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:768,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:992,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:1500,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesMargin&quot;:&quot;30&quot;}}]">
-                    <div
-                        class="product-item style-01 post-27 product type-product status-publish has-post-thumbnail product_cat-table product_cat-new-arrivals product_cat-lamp product_tag-table product_tag-sock  instock shipping-taxable purchasable product-type-variable has-default-attributes ">
-                        <div class="product-inner tooltip-left">
-                            <div class="product-thumb">
-                                <a class="thumb-link" href="#" tabindex="0">
-                                    <img class="img-responsive" src="assets/images/apro141-1-600x778.jpg"
-                                        alt="Mini Dress" width="600" height="778">
-                                </a>
-                                <div class="flash">
-                                    <span class="onnew"><span class="text">New</span></span>
-                                </div>
-                                <div class="group-button">
-                                    <div class="yith-wcwl-add-to-wishlist">
-                                        <div class="yith-wcwl-add-button show">
-                                            <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                        </div>
-                                    </div>
-                                    <div class="akasha product compare-button">
-                                        <a href="#" class="compare button">Compare</a>
-                                    </div>
-                                    <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                    <div class="add-to-cart">
-                                        <a href="#" class="button product_type_external add_to_cart_button">Buy
-                                            it on Amazon</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-info equal-elem">
-                                <h3 class="product-name product_title">
-                                    <a href="#" tabindex="0">Dining Accessories</a>
-                                </h3>
-                                <div class="rating-wapper ">
-                                    <div class="star-rating"><span style="width:100%">Rated <strong
-                                                class="rating">5.00</strong> out of 5</span></div>
-                                    <span class="review">(1)</span>
-                                </div>
-                                <span class="price"><span class="akasha-Price-amount amount"><span
-                                            class="akasha-Price-currencySymbol">$</span>207.00</span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="product-item style-01 post-26 product type-product status-publish has-post-thumbnail product_cat-light product_cat-chair product_cat-sofas product_tag-light product_tag-hat last instock featured shipping-taxable product-type-external  ">
-                        <div class="product-inner tooltip-left">
-                            <div class="product-thumb">
-                                <a class="thumb-link" href="#" tabindex="0">
-                                    <img class="img-responsive" src="assets/images/apro31-1-600x778.jpg"
-                                        alt="Shirred Front" width="600" height="778">
-                                </a>
-                                <div class="flash">
-                                    <span class="onnew"><span class="text">New</span></span>
-                                </div>
-                                <div class="group-button">
-                                    <div class="yith-wcwl-add-to-wishlist">
-                                        <div class="yith-wcwl-add-button show">
-                                            <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                        </div>
-                                    </div>
-                                    <div class="akasha product compare-button">
-                                        <a href="#" class="compare button">Compare</a>
-                                    </div>
-                                    <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                    <div class="add-to-cart">
-                                        <a href="#" class="button product_type_simple add_to_cart_button">Add to
-                                            cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-info equal-elem">
-                                <h3 class="product-name product_title">
-                                    <a href="#" tabindex="0">Shirred Front</a>
-                                </h3>
-                                <div class="rating-wapper nostar">
-                                    <div class="star-rating"><span style="width:0%">Rated <strong
-                                                class="rating">0</strong> out of 5</span></div>
-                                    <span class="review">(0)</span>
-                                </div>
-                                <span class="price"><span class="akasha-Price-amount amount"><span
-                                            class="akasha-Price-currencySymbol">$</span>120.00</span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="product-item style-01 post-37 product type-product status-publish has-post-thumbnail product_cat-chair product_cat-bed product_tag-light product_tag-hat product_tag-sock first instock shipping-taxable purchasable product-type-simple  ">
-                        <div class="product-inner tooltip-left">
-                            <div class="product-thumb">
-                                <a class="thumb-link akasha-product-gallery__image" href="#" tabindex="0">
-                                    <img class="img-responsive wp-post-image" src="assets/images/apro83-1-600x778.jpg"
-                                        alt="Glasses – Red" width="600" height="778">
-                                </a>
-                                <div class="flash">
-                                    <span class="onnew"><span class="text">New</span></span>
-                                </div>
-                                <div class="group-button">
-                                    <div class="yith-wcwl-add-to-wishlist">
-                                        <div class="yith-wcwl-add-button show">
-                                            <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                        </div>
-                                    </div>
-                                    <div class="akasha product compare-button">
-                                        <a href="#" class="compare button">Compare</a>
-                                    </div>
-                                    <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                    <div class="add-to-cart">
-                                        <a href="#" class="button product_type_simple add_to_cart_button">Add to
-                                            cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-info equal-elem">
-                                <h3 class="product-name product_title">
-                                    <a href="#" tabindex="0">Glasses – Red</a>
-                                </h3>
-                                <div class="rating-wapper nostar">
-                                    <div class="star-rating"><span style="width:0%">Rated <strong
-                                                class="rating">0</strong> out of 5</span></div>
-                                    <span class="review">(0)</span>
-                                </div>
-                                <span class="price"><span class="akasha-Price-amount amount"><span
-                                            class="akasha-Price-currencySymbol">$</span>56.00</span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="product-item style-01 post-1194 product_variation type-product_variation status-publish has-post-thumbnail product  instock shipping-taxable purchasable product-type-variation ">
-                        <div class="product-inner tooltip-left">
-                            <div class="product-thumb">
-                                <a class="thumb-link" href="#" tabindex="-1">
-                                    <img class="img-responsive" src="assets/images/apro302-600x778.jpg"
-                                        alt="Smock Dress" width="600" height="778">
-                                </a>
-                                <div class="flash">
-                                    <span class="onnew"><span class="text">New</span></span>
-                                </div>
-                                <div class="group-button">
-                                    <div class="yith-wcwl-add-to-wishlist">
-                                        <div class="yith-wcwl-add-button show">
-                                            <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                        </div>
-                                    </div>
-                                    <div class="akasha product compare-button">
-                                        <a href="#" class="compare button">Compare</a>
-                                    </div>
-                                    <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                    <div class="add-to-cart">
-                                        <a href="#" class="button product_type_simple add_to_cart_button">Add to
-                                            cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-info equal-elem">
-                                <h3 class="product-name product_title">
-                                    <a href="#" tabindex="-1">Smock Dress</a>
-                                </h3>
-                                <div class="rating-wapper nostar">
-                                    <div class="star-rating"><span style="width:0%">Rated <strong
-                                                class="rating">0</strong> out of 5</span></div>
-                                    <span class="review">(0)</span>
-                                </div>
-                                <span class="price"><span class="akasha-Price-amount amount"><span
-                                            class="akasha-Price-currencySymbol">$</span>79.00</span></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

@@ -23,7 +23,7 @@
 <div class="footer-device-mobile">
     <div class="wapper">
         <div class="footer-device-mobile-item device-home">
-            <a href="index.html">
+            <a href="{{ route('home') }}">
 					<span class="icon">
 						<i class="fa fa-home" aria-hidden="true"></i>
 					</span>
@@ -31,7 +31,7 @@
             </a>
         </div>
         <div class="footer-device-mobile-item device-home device-wishlist">
-            <a href="wishlist.html">
+            <a href="{{ route('cart.page') }}">
 					<span class="icon">
 						<i class="fa fa-heart" aria-hidden="true"></i>
 					</span>
@@ -39,7 +39,7 @@
             </a>
         </div>
         <div class="footer-device-mobile-item device-home device-cart">
-            <a href="cart.html">
+            <a href="{{ route('cart.page') }}">
 					<span class="icon">
 						<i class="fa fa-shopping-basket" aria-hidden="true"></i>
 						<span class="count-icon">
@@ -50,12 +50,23 @@
             </a>
         </div>
         <div class="footer-device-mobile-item device-home device-user">
-            <a href="my-account.html">
+
+            @auth
+                <a href="{{ route('customer.profile') }}">
+                    <span class="icon">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </span>
+                Account
+                </a>
+                @else
+                <a href="/login">
 					<span class="icon">
 						<i class="fa fa-user" aria-hidden="true"></i>
 					</span>
-                Account
+                Login
             </a>
+            @endauth
+
         </div>
     </div>
 </div>

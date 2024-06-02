@@ -6,13 +6,13 @@
                 <div class="akasha-banner style-01 left-center">
                     <div class="banner-inner">
                         <figure class="banner-thumb">
-                            <img src="assets/images/banner11.jpg"
+                            <img src="{{ asset('assets/images/570570.png') }}"
                                  class="attachment-full size-full" alt="img"></figure>
                         <div class="banner-info ">
                             <div class="banner-content">
                                 <div class="title-wrap">
                                     <h6 class="title">
-                                        <a target="_self" href="#">Hoodie</a>
+                                        <a target="_self" href="{{ route('allproduct.page') }}">Hoodie</a>
                                     </h6>
                                 </div>
                                 <div class="button-wrap">
@@ -26,13 +26,13 @@
                 <div class="akasha-banner style-01 right-top">
                     <div class="banner-inner">
                         <figure class="banner-thumb">
-                            <img src="assets/images/banner12.jpg"
+                            <img src="{{ asset('assets/images/570 270-1.png') }}"
                                  class="attachment-full size-full" alt="img"></figure>
                         <div class="banner-info ">
                             <div class="banner-content">
                                 <div class="title-wrap">
                                     <h6 class="title">
-                                        <a target="_self" href="#">Glasses</a>
+                                        <a target="_self" href="{{ route('allproduct.page') }}">Glasses</a>
                                     </h6>
                                 </div>
                                 <div class="button-wrap">
@@ -44,13 +44,13 @@
                 <div class="akasha-banner style-01 left-bottom">
                     <div class="banner-inner">
                         <figure class="banner-thumb">
-                            <img src="assets/images/banner13.jpg"
+                            <img src="{{ asset('assets/images/570 270-2.png') }}""
                                  class="attachment-full size-full" alt="img"></figure>
                         <div class="banner-info ">
                             <div class="banner-content">
                                 <div class="title-wrap">
                                     <h6 class="title">
-                                        <a target="_self" href="#">Beanie</a>
+                                        <a target="_self" href="{{ route('allproduct.page') }}">Beanie</a>
                                     </h6>
                                 </div>
                                 <div class="button-wrap">

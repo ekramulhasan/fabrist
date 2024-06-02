@@ -2,7 +2,7 @@
     <div class="akasha-banner style-02 left-center">
         <div class="banner-inner">
             <figure class="banner-thumb">
-                <img src="assets/images/banner101.jpg"
+                <img src="{{ asset('assets/images/1920 x 700.png') }}""
                      class="attachment-full size-full" alt="img"></figure>
             <div class="banner-info container">
                 <div class="banner-content">

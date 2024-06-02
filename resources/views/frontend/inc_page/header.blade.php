@@ -16,7 +16,7 @@
                     </div>
                     <div class="header-logo-nav">
                         <div class="header-logo">
-                            <a href="index.html"><img alt="Akasha" src="{{ asset('assets') }}/images/fabrist.png"
+                            <a href="{{ route('home') }}"><img alt="Akasha" src="{{ asset('assets') }}/images/fabrist.png"
                                                       class="logo"></a></div>
                         <div class="box-header-nav menu-nocenter">
                             <ul id="menu-primary-menu"
@@ -28,7 +28,7 @@
                                 <li id="menu-item-228"
                                     class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-228 parent parent-megamenu item-megamenu menu-item-has-children">
                                     <a class="akasha-menu-item-title" title="Shop"
-                                       href="shop.html">Shop</a>
+                                       href="{{ route('allproduct.page') }}">Shop</a>
                                     <span class="toggle-submenu"></span>
                                     <div class="submenu megamenu megamenu-shop">
                                         <div class="row">
@@ -279,7 +279,7 @@
                         <div class="header-control-inner">
                             <div class="meta-dreaming">
                                 <ul class="wpml-menu">
-                                    <li class="menu-item akasha-dropdown block-language">
+                                    {{-- <li class="menu-item akasha-dropdown block-language">
                                         <a href="#" data-akasha="akasha-dropdown">
                                             <img src="{{ asset('assets') }}/images/en.png"
                                                  alt="en" width="18" height="12">
@@ -309,7 +309,7 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                                 <div class="header-search akasha-dropdown">
                                     <div class="header-search-inner" data-akasha="akasha-dropdown">
@@ -361,14 +361,12 @@
                                                 <a href="{{ route('customer.profile') }}">Profile</a>
                                             </li>
                                             <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--orders">
-                                                <a href="#">Orders</a>
+                                                <a href="{{ route('cart.page') }}">ViewCart</a>
                                             </li>
                                             <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--downloads">
-                                                <a href="#">Downloads</a>
+                                                <a href="{{ route('cutomer.checkout') }}">Checkout</a>
                                             </li>
-                                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--edit-adchair">
-                                                <a href="#">Addresses</a>
-                                            </li>
+
                                             <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--edit-account">
                                                 <a href="#">Account details</a>
                                             </li>
@@ -530,89 +528,91 @@
         </div>
         <div class="header-mobile-mid">
             <div class="header-logo">
-                <a href="index.html"><img alt="Akasha" src="{{ asset('assets') }}/images/logo.png" class="logo"></a>
+                <a href="index.html"><img alt="Akasha" src="{{ asset('assets') }}/images/fabrist.png" class="logo"></a>
             </div>
         </div>
         <div class="header-mobile-right">
             <div class="header-control-inner">
                 <div class="meta-dreaming">
                     <div class="menu-item block-user block-dreaming akasha-dropdown">
-                        <a class="block-link" href="my-account.html">
+                        <a class="block-link" href="/login">
                             <span class="flaticon-profile"></span>
                         </a>
                         <ul class="sub-menu">
-                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--dashboard is-active">
-                                <a href="#">Dashboard</a>
-                            </li>
-                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--orders">
-                                <a href="#">Orders</a>
-                            </li>
-                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--downloads">
-                                <a href="#">Downloads</a>
-                            </li>
-                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--edit-adchair">
-                                <a href="#">Addresses</a>
-                            </li>
-                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--edit-account">
-                                <a href="#">Account details</a>
-                            </li>
-                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--customer-logout">
-                                <a href="#">Logout</a>
-                            </li>
+
+                            @auth
+                                <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--dashboard is-active">
+                                    <a href="{{ route('customer.profile') }}">Profile</a>
+                                </li>
+                                <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--orders">
+                                    <a href="{{ route('cart.page') }}">ViewCart</a>
+                                </li>
+                                <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--downloads">
+                                    <a href="{{ route('cutomer.checkout') }}">Checkout</a>
+                                </li>
+
+                                <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--edit-account">
+                                    <a href="#">Account details</a>
+                                </li>
+                                <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--customer-logout">
+                                    <a href="{{ route('customer.logout') }}">Logout</a>
+                                </li>
+                                @else
+                                <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--customer-logout">
+                                    <a href="/login">Login</a>
+                                </li>
+                            @endauth
+
                         </ul>
                     </div>
                     <div class="block-minicart block-dreaming akasha-mini-cart akasha-dropdown">
                         <div class="shopcart-dropdown block-cart-link" data-akasha="akasha-dropdown">
-                            <a class="block-link link-dropdown" href="cart.html">
+                            <a class="block-link link-dropdown" href="#">
                                 <span class="flaticon-bag"></span>
-                                <span class="count">3</span>
+                                <span class="count">
+                                    @php
+                                        $item = \Cart::getContent();
+                                        echo $item->count();
+                                    @endphp</span>
                             </a>
                         </div>
                         <div class="widget akasha widget_shopping_cart">
                             <div class="widget_shopping_cart_content">
-                                <h3 class="minicart-title">Your Cart<span class="minicart-number-items">3</span></h3>
+                                <h3 class="minicart-title">Your Cart<span class="minicart-number-items">
+                                    @php
+                                        $item = \Cart::getContent();
+                                        echo $item->count();
+                                    @endphp</span></h3>
                                 <ul class="akasha-mini-cart cart_list product_list_widget">
-                                    <li class="akasha-mini-cart-item mini_cart_item">
-                                        <a href="#" class="remove remove_from_cart_button">×</a>
-                                        <a href="#">
-                                            <img src="{{ asset('assets') }}/images/apro134-1-600x778.jpg"
-                                                 class="attachment-akasha_thumbnail size-akasha_thumbnail"
-                                                 alt="img" width="600" height="778">T-shirt with skirt – Pink&nbsp;
-                                        </a>
-                                        <span class="quantity">1 × <span
-                                                class="akasha-Price-amount amount"><span
-                                                class="akasha-Price-currencySymbol">$</span>150.00</span></span>
-                                    </li>
-                                    <li class="akasha-mini-cart-item mini_cart_item">
-                                        <a href="#" class="remove remove_from_cart_button">×</a>
-                                        <a href="#">
-                                            <img src="{{ asset('assets') }}/images/apro1113-600x778.jpg"
-                                                 class="attachment-akasha_thumbnail size-akasha_thumbnail"
-                                                 alt="img" width="600" height="778">Abstract Sweatshirt&nbsp;
-                                        </a>
-                                        <span class="quantity">1 × <span
-                                                class="akasha-Price-amount amount"><span
-                                                class="akasha-Price-currencySymbol">$</span>129.00</span></span>
-                                    </li>
-                                    <li class="akasha-mini-cart-item mini_cart_item">
-                                        <a href="#" class="remove remove_from_cart_button">×</a>
-                                        <a href="#">
-                                            <img src="{{ asset('assets') }}/images/apro201-1-600x778.jpg"
-                                                 class="attachment-akasha_thumbnail size-akasha_thumbnail"
-                                                 alt="img" width="600" height="778">Mini Dress&nbsp;
-                                        </a>
-                                        <span class="quantity">1 × <span
-                                                class="akasha-Price-amount amount"><span
-                                                class="akasha-Price-currencySymbol">$</span>139.00</span></span>
-                                    </li>
+
+                                    @php
+                                        $items = \Cart::getContent();
+                                        $subTotal = \Cart::getSubTotal();
+                                    @endphp
+
+                                    @foreach ( $items as $value )
+
+                                        <li class="akasha-mini-cart-item mini_cart_item">
+                                            <a href="{{ route('remove_item',[$value->id]) }}" class="remove remove_from_cart_button">×</a>
+                                            <a href="#">
+                                                <img src="{{ asset('assets/uploads/products') }}/{{ $value->attributes->product_img }}"
+                                                        class="attachment-akasha_thumbnail size-akasha_thumbnail"
+                                                        alt="img" width="600" height="778">{{ $value->name }}&nbsp;
+                                            </a>
+                                            <span class="quantity">{{ $value->quantity }} × <span
+                                                    class="akasha-Price-amount amount"><span
+                                                    class="akasha-Price-currencySymbol">$</span>{{ $value->price*$value->quantity }}</span></span>
+                                        </li>
+                                    @endforeach
+
                                 </ul>
                                 <p class="akasha-mini-cart__total total"><strong>Subtotal:</strong>
                                     <span class="akasha-Price-amount amount"><span
-                                            class="akasha-Price-currencySymbol">$</span>418.00</span>
+                                            class="akasha-Price-currencySymbol">$</span>{{ $subTotal }}</span>
                                 </p>
                                 <p class="akasha-mini-cart__buttons buttons">
-                                    <a href="cart.html" class="button akasha-forward">Viewcart</a>
-                                    <a href="checkout.html" class="button checkout akasha-forward">Checkout</a>
+                                    <a href="{{ route('cart.page') }}" class="button akasha-forward">Viewcart</a>
+                                    <a href="{{ route('cutomer.checkout') }}" class="button checkout akasha-forward">Checkout</a>
                                 </p>
                             </div>
                         </div>

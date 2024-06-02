@@ -74,12 +74,12 @@ Products | Page
                 </div>
             </div>
             <div class="col-12 text-center d-flex justify-content-center ">
-
+{{--
                 <div class="py-3">
 
                     {{ $product->links() }}
 
-                </div>
+                </div> --}}
 
             </div>
         </div>
