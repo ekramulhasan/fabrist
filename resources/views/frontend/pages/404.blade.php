@@ -3,7 +3,7 @@
 404 | Page
 @endsection
 
-@push('fronend_style')
+@push('frontend_style')
 
 @endpush
 
@@ -15,12 +15,12 @@
         <h1 class="title">Opps! This page Could Not Be Found!</h1>
         <p class="subtitle">Sorry bit the page you are looking for does not exist, have been removed or name changed</p>
         <!-- .page-content -->
-        <a href="index.html" class="button">Back to hompage</a>
+        <a href="{{ route('home') }}" class="button">Back to hompage</a>
     </div>
 </div>
 
 @endsection
 
-@push('fronend_js')
+@push('frontend_js')
 
 @endpush

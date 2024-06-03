@@ -134,7 +134,14 @@
                                     </tr>
                                     </tbody>
                                 </table>
-                                <div class="akasha-proceed-to-checkout">
+
+                                <div class="akasha-proceed-to-checkout my-3">
+                                    <a href="{{ route('directOrder') }}"
+                                       class="checkout-button button alt akasha-forward">
+                                       Order now</a>
+                                </div>
+
+                                <div class="akasha-proceed-to-checkout my-3">
                                     <a href="{{ route('cutomer.checkout') }}"
                                        class="checkout-button button alt akasha-forward">
                                         Proceed to checkout</a>

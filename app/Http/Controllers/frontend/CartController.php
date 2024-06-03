@@ -56,40 +56,6 @@ class CartController extends Controller
 
     }
 
-    public function addTodirect(Request $request){
-
-        // dd($request->all());
-        $product_slug = $request->product_slug;
-        $product_qty = $request->quantity;
-        $product_size = $request->size;
-
-        $product = Product::whereSlug($product_slug)->first();
-
-        \Cart::add([
-
-            'id' => $product->id,
-            'name' => $product->title,
-            'price' => $product->price,
-            'quantity' => $product_qty,
-            'attributes' => [
-
-                'product_img' => $product->product_img,
-                'weight' => 0,
-                'product_stock' => $product->product_stock,
-                'size' => $product_size,
-
-            ],
-
-        ]);
-
-        $carts       = \Cart::getContent();
-        $total_price = \Cart::getSubTotal();
-        $district    = District::select( 'id', 'name', 'bn_name' )->get();
-        $user_data   = Auth::user();
-
-        return view( 'frontend.pages.wholeSale_checkout', compact( 'carts', 'total_price', 'district', 'user_data' ) );
-
-    }
 
     public function addWish(string $slug,){
 

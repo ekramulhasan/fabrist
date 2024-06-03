@@ -91,10 +91,17 @@
                                             <div class="add-to-cart">
 
                                                 <button type="submit"
-                                                    class="button product_type_simple add_to_cart_button ajax_add_to_cart">
+                                                    class="button product_type_simple add_to_cart_button ajax_add_to_cart" onclick="this.form.action='{{ route('addTo.cart', ['product_slug' => $product->slug]) }}'">
                                                         Add to cart
                                                 </button>
+                                            </div>
 
+                                            <div class="add-to-cart">
+
+                                                <button type="submit"
+                                                    class="button product_type_simple add_to_cart_button ajax_add_to_cart" onclick="this.form.action='{{ route('direct.order', ['product_slug' => $product->slug]) }}'">
+                                                        Order now
+                                                </button>
                                             </div>
 
 

@@ -84,7 +84,9 @@ Route::get( '/single-product/{product_slug}', [HomeController::class, 'productDe
 
 Route::get( '/cart-page', [CartController::class, 'cartPage'] )->name( 'cart.page' );
 Route::post( 'addTocart/{product_slug}', [CartController::class, 'addTocart'] )->name( 'addTo.cart' );
+Route::post( 'directorder/{product_slug}', [CheckOutController::class, 'addTodirect'] )->name( 'direct.order' );
 Route::get( 'remove-item/{cart_id}', [CartController::class, 'removeFromcart'] )->name( 'remove_item' );
+Route::post( 'direct-Order', [CheckOutController::class, 'directOrder'] )->name( 'directOrder' );
 Route::get( 'wishlist/{product_slug}', [CartController::class, 'addWish'] )->name( 'addWish.list' );
 
 // coupon apply and remove
@@ -121,7 +123,7 @@ Route::prefix( 'customer/' )->middleware( 'auth', 'is_customer' )->group( functi
 
     //customer checkout
     Route::get( 'checkout', [CheckOutController::class, 'checkoutPage'] )->name( 'cutomer.checkout' );
-    Route::post( 'directorder/{product_slug}', [CartController::class, 'addTodirect'] )->name( 'direct.order' );
+    // Route::post( 'directorder/{product_slug}', [CartController::class, 'addTodirect'] )->name( 'direct.order' );
     Route::post( 'placeOrder', [CheckOutController::class, 'placeOrder'] )->name( 'place.order' );
 
     Route::get( '/invoice-pdf/{id}', [InvoiceController::class, 'generate_pdf'] )->name( 'customer.invoice' );
