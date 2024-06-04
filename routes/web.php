@@ -88,6 +88,8 @@ Route::post( 'directorder/{product_slug}', [CheckOutController::class, 'addTodir
 Route::get( 'remove-item/{cart_id}', [CartController::class, 'removeFromcart'] )->name( 'remove_item' );
 Route::post( 'direct-Order', [CheckOutController::class, 'directOrder'] )->name( 'directOrder' );
 Route::get( 'wishlist/{product_slug}', [CartController::class, 'addWish'] )->name( 'addWish.list' );
+Route::view('order-page','frontend.pages.order')->name('order.page');
+
 
 // coupon apply and remove
 Route::post( 'cart/coupon-apply', [CartController::class, 'couponApply'] )->name( 'coupon.apply' );

@@ -208,4 +208,9 @@ class CheckOutController extends Controller {
         return redirect()->route( 'home' );
     }
 
+    public function orderPage(){
+
+        return view('frontend.pages.order');
+    }
+
 }
