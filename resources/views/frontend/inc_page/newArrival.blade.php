@@ -20,7 +20,7 @@
                 "autoplay": true,
                 "autoplaySpeed": 3000,
                 "slidesToShow": 4,
-                "rows": 1
+                "rows": 2
             }'
             data-responsive='[
                 {"breakpoint": 480, "settings": {"slidesToShow": 4, "slidesMargin": 0}},

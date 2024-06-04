@@ -1,4 +1,4 @@
-<div class="banner-wrapper has_background">
+{{-- <div class="banner-wrapper has_background">
     <img src="assets/images/banner-for-all2.jpg" class="img-responsive attachment-1920x447 size-1920x447" alt="img">
     <div class="banner-wrapper-inner">
         <h1 class="page-title">Login Page</h1>
@@ -10,11 +10,11 @@
             </ul>
         </div>
     </div>
-</div>
+</div> --}}
 <main class="site-main  main-container no-sidebar">
     <div class="container">
         <div class="row">
-            <div class="main-content col-md-12 ">
+            <div class="main-content col-md-12 mt-5">
                 <div class="page-main-content">
                     <div class="akasha">
                         <div class="akasha-notices-wrapper"></div>

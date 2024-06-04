@@ -2,7 +2,7 @@
 <div class="section-014 mb-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-lg-3">
+            {{-- <div class="col-md-6 col-lg-3">
                 <div class="akasha-iconbox style-02">
                     <div class="iconbox-inner">
                         <div class="icon">
@@ -16,8 +16,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
+            </div> --}}
+            <div class="col-md-6 col-lg-4">
                 <div class="akasha-iconbox style-02">
                     <div class="iconbox-inner">
                         <div class="icon">
@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-4">
                 <div class="akasha-iconbox style-02">
                     <div class="iconbox-inner">
                         <div class="icon">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-4">
                 <div class="akasha-iconbox style-02">
                     <div class="iconbox-inner">
                         <div class="icon">

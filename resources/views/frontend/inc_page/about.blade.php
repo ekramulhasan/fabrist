@@ -1,4 +1,4 @@
-<div class="banner-wrapper has_background">
+{{-- <div class="banner-wrapper has_background">
     <img src="assets/images/banner-for-all2.jpg" class="img-responsive attachment-1920x447 size-1920x447" alt="img">
     <div class="banner-wrapper-inner">
         <h1 class="page-title">About</h1>
@@ -10,10 +10,10 @@
             </ul>
         </div>
     </div>
-</div>
+</div> --}}
 <div class="site-main  main-container no-sidebar">
     <div class="section-037">
-        <div class="container">
+        <div class="container mt-5">
             <div class="akasha-popupvideo style-01">
                 <div class="popupvideo-inner">
                     <div class="icon">

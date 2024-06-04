@@ -1,4 +1,4 @@
-<div class="banner-wrapper has_background">
+{{-- <div class="banner-wrapper has_background">
     <img src="assets/images/banner-for-all2.jpg"
          class="img-responsive attachment-1920x447 size-1920x447" alt="img">
     <div class="banner-wrapper-inner">
@@ -11,10 +11,10 @@
             </ul>
         </div>
     </div>
-</div>
+</div> --}}
 <div class="site-main main-container no-sidebar">
     <div class="section-041">
-        <div class="container">
+        <div class="container mt-5">
             <div class="akasha-google-maps" id="akasha-google-maps" data-hue="" data-lightness="1" data-map-style="2"
                  data-saturation="-99" data-longitude="-73.985130" data-latitude="40.758896" data-pin-icon=""
                  data-zoom="14" data-map-type="ROADMAP"></div>

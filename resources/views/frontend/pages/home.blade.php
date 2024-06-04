@@ -13,7 +13,7 @@ fabrist fashion
 
 @include('frontend.inc_page.categoryBanner')
 @include('frontend.inc_page.bestSeller')
-@include('frontend.inc_page.bestSellerBanner')
+{{-- @include('frontend.inc_page.bestSellerBanner') --}}
 @include('frontend.inc_page.newArrival')
 @include('frontend.inc_page.serviceBanner')
 @include('frontend.inc_page.newCollectionBanner')
