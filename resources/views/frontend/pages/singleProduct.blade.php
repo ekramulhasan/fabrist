@@ -12,10 +12,14 @@
             }
 
             .button-container .add-to-cart {
-                margin: 0 15px;
+                margin: 0 8%;
             }
 
         }
+            .button{
+                cursor: pointer;
+            }
+            
     </style>
 
 @endpush
@@ -25,4 +29,31 @@
 @endsection
 
 @push('frontend_js')
+<script>
+    function validateCheckboxes() {
+        const checkboxes = document.querySelectorAll('input[name="size[]"]');
+        let isChecked = false;
+    
+        checkboxes.forEach((checkbox) => {
+            if (checkbox.checked) {
+                isChecked = true;
+            }
+        });
+    
+        if (!isChecked) {
+            alert('Please select at least one size.');
+            return false; // Prevent form submission
+        }
+    
+        return true; // Allow form submission
+    }
+    
+    function validateAndSubmitForm(button, action) {
+        if (validateCheckboxes()) {
+            button.form.action = action;
+            return true; // Allow form submission
+        }
+        return false; // Prevent form submission
+    }
+    </script>
 @endpush

@@ -21,11 +21,11 @@
                 <div class="akasha-iconbox style-02">
                     <div class="iconbox-inner">
                         <div class="icon">
-                            <span class="flaticon-padlock"></span>
+                            <span class="flaticon-return"></span>
                         </div>
                         <div class="content">
-                            <h4 class="title">Safe Shipping</h4>
-                            <div class="desc">Pay with the world’s most popular and secure payment methods.</div>
+                            <h4 class="title">Easy Exchange</h4>
+                            <div class="desc">Check, trial than received or return.</div>
                         </div>
                     </div>
                 </div>
@@ -37,8 +37,8 @@
                             <span class="flaticon-recycle"></span>
                         </div>
                         <div class="content">
-                            <h4 class="title">365 Days Return</h4>
-                            <div class="desc">Round-the-clock assistance for a smooth shopping experience.</div>
+                            <h4 class="title">SECURE PAYMENT</h4>
+                            <div class="desc">COD/Bkash/Cards</div>
                         </div>
                     </div>
                 </div>

@@ -15,9 +15,12 @@
 <div class="site-main main-container no-sidebar">
     <div class="section-041">
         <div class="container mt-5">
-            <div class="akasha-google-maps" id="akasha-google-maps" data-hue="" data-lightness="1" data-map-style="2"
-                 data-saturation="-99" data-longitude="-73.985130" data-latitude="40.758896" data-pin-icon=""
-                 data-zoom="14" data-map-type="ROADMAP"></div>
+          
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14601.77042587717!2d90.3748344!3d23.8028552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c0d33532b3fb%3A0x2b27b0c01cb2bc0d!2sMirpur-10%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1717582884304!5m2!1sen!2sbd"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
         </div>
     </div>
     <div class="section-042">
@@ -26,36 +29,45 @@
                 <div class="col-md-12 offset-xl-1 col-xl-10 col-lg-12">
                     <div class="row">
                         <div class="col-md-6">
-                            <h4 class="az_custom_heading">WP SHOP THEME</h4>
-                            <p>3100 West Cary Street Richmond, Virginia 23221<br>
-                                P: 804.355.4383 F: 804.367.7901</p>
-                            <h4 class="az_custom_heading">Store Hours</h4>
-                            <p>Monday-Saturday 11am-7pm ET<br>
-                                Sunday 11am-6pm ET</p>
-                            <h4 class="az_custom_heading">Specialist Hours</h4>
-                            <p>Monday-Friday 9am-5pm ET</p>
+                            <h4 class="az_custom_heading">Contact Info :</h4>
+
+                            <p>
+
+                                <b>Fabrist Head Office: </b>
+                                Mirpur-10, Dhaka, Bangladesh
+                                <br>
+                                <b>Email:</b>
+                                fabristlifestyle@gmail.com
+                                <br>
+                                <b>Hot Line:</b>
+                                +8801604-000104 (24 hours, 7 days a week)
+                                <br>
+                                +880160-7400020 (24 hours, 7 days a week)
+                                <br>
+                                <b>WhatsApp:</b>
+                                +8801604-000104 (24 hours, 7 days a week)
+                            </p>
                         </div>
                         <div class="col-md-6">
                             <div role="form" class="wpcf7">
                                 <form class="wpcf7-form">
                                     <p><label> Name *<br>
-                                        <span class="wpcf7-form-control-wrap your-name">
-                                            <input name="your-name" value="" size="40"
-                                                   class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                                                   type="text"></span>
-                                    </label></p>
+                                            <span class="wpcf7-form-control-wrap your-name">
+                                                <input name="your-name" value="" size="40"
+                                                    class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                                    type="text"></span>
+                                        </label></p>
                                     <p><label> Email *<br>
-                                        <span class="wpcf7-form-control-wrap your-email">
-                                            <input name="your-email" value="" size="40"
-                                                   class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
-                                                   type="email"></span>
-                                    </label></p>
+                                            <span class="wpcf7-form-control-wrap your-email">
+                                                <input name="your-email" value="" size="40"
+                                                    class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
+                                                    type="email"></span>
+                                        </label></p>
                                     <p><label> Your Message *<br>
-                                        <span class="wpcf7-form-control-wrap your-message">
-                                            <textarea name="your-message"
-                                                      cols="40" rows="10"
-                                                      class="wpcf7-form-control wpcf7-textarea"></textarea></span>
-                                    </label></p>
+                                            <span class="wpcf7-form-control-wrap your-message">
+                                                <textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea"></textarea>
+                                            </span>
+                                        </label></p>
                                     <p><input value="Send" class="wpcf7-form-control wpcf7-submit" type="submit"></p>
                                 </form>
                             </div>

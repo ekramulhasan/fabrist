@@ -55,40 +55,33 @@
                                 </div>
                                 <h1 class="product_title entry-title">{{ $product->title }}</h1>
                                 <p class="price"><span class="akasha-Price-amount amount"><span
-                                            class="akasha-Price-currencySymbol">$</span>{{ $product->price }}</span>
+                                            class="akasha-Price-currencySymbol">৳ </span>{{ $product->price }}</span>
                                 <p class="stock in-stock">
                                     Availability: <span> In stock</span>
                                 </p>
                                 <div class="akasha-product-details__short-description">
-                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                                        turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor
-                                        sit amet, ante.</p>
-                                    <ul>
-                                        <li>Water-resistant fabric with soft lycra detailing inside</li>
-                                        <li>CLean zip-front, and three piece hood</li>
-                                        <li>Subtle branding and diagonal panel detail</li>
-                                    </ul>
+                                    <p>{{ $product->short_description }}</p>
                                 </div>
 
                                 <form class="variations_form cart"
                                     action="{{ route('addTo.cart', ['product_slug' => $product->slug]) }}" method="post">
                                     @csrf
 
+                                    <div class="ml-3">
+                                        <label for="">Size :</label>
+                                        <div class="form-check">
+                                            @foreach ($product->sizes as $size)
+                                                    
+                                                <input class="form-check-input" type="checkbox" value="{{ $size->id }}" id="size" name="size[]">
+                                                <label class="form-check-label mr-4" for="size{{ $size->id }}">
+                                                    {{ $size->size_name }}
+                                                </label>
+                                            @endforeach
+                                        
+                                        </div>
+                                    </div>
+
                                     <div class="col-3">
-                                        <div class="">
-                                            <label for="size">Size :</label>
-                                            <div class="">
-                                                <select name="size" id="size" class="form-control" required>
-                                                    <option value="" selected disabled>Select</option>
-                                                    @foreach ($product->sizes as $size)
-                                                        <option value="{{ $size->id }}">{{ $size->size_name }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </div><!-- End .select-custom -->
-
-                                        </div><!-- End .details-filter-row -->
-
 
                                         <div class="details-filter-row details-row-size mt-2">
                                             <label for="qty">Qty :</label>
@@ -108,6 +101,7 @@
 
                                         <div
                                             class="mb-3">
+
                                             {{-- <div class="quantity">
                                                 <span class="qty-label">Quantiy:</span>
                                                 <div class="control">
@@ -122,25 +116,23 @@
                                             </div> --}}
 
                                             <br>
-
                                             <div class="button-container">
                                                 <div class="add-to-cart ml-3 mr-2">
                                                     <button type="submit"
                                                         class="button product_type_simple add_to_cart_button ajax_add_to_cart"
-                                                        onclick="this.form.action='{{ route('addTo.cart', ['product_slug' => $product->slug]) }}'">
+                                                        onclick="return validateAndSubmitForm(this, '{{ route('addTo.cart', ['product_slug' => $product->slug]) }}')">
                                                         Add to cart
                                                     </button>
                                                 </div>
-
+                                            
                                                 <div class="add-to-cart">
                                                     <button type="submit"
                                                         class="button product_type_simple add_to_cart_button ajax_add_to_cart"
-                                                        onclick="this.form.action='{{ route('direct.order', ['product_slug' => $product->slug]) }}'">
+                                                        onclick="return validateAndSubmitForm(this, '{{ route('direct.order', ['product_slug' => $product->slug]) }}')">
                                                         Order now
                                                     </button>
                                                 </div>
                                             </div>
-
 
 
                                             {{-- <input name="add-to-cart" value="27" type="hidden">
@@ -180,58 +172,18 @@
                             <h2>Description</h2>
                             <div class="container-table">
                                 <div class="container-cell">
-                                    <h2 class="az_custom_heading">Platea viverra aenean<br>dictumst</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit
-                                        scelerisque integer, quam dapibus per risus donec semper
-                                        vulputate interdum, imperdiet mus rhoncus commodo ultricies
-                                        class urna tincidunt. Imperdiet vitae lacus etiam metus ut nisl
-                                        curae, conubia enim scelerisque quis facilisis torquent,
-                                        ultricies orci faucibus dictumst mauris curabitur. Massa risus
-                                        nec sociosqu fames montes accumsan iaculis justo turpis
-                                        luctus</p>
+                                    <h2 class="az_custom_heading">{{ $product->title }}</h2>
+                                    <p>{{ $product->long_description }}</p>
                                 </div>
-                                <div class="container-cell">
-                                    <div class="az_single_image-wrapper az_box_border_grey">
-                                        <img src="{{ asset('assets/uploads/products') }}/{{ $product->product_img }}"
-                                            class="az_single_image-img attachment-full" alt="img">
-                                    </div>
-                                </div>
+                                
                             </div>
-                            <div class="container-table">
-                                <div class="container-cell">
-                                    <div class="az_single_image-wrapper az_box_border_grey">
-                                        <img src="{{ asset('assets/uploads/products') }}/{{ $product->product_img }}"
-                                            class="az_single_image-img attachment-full" alt="img">
-                                    </div>
-                                </div>
-                                <div class="container-cell">
-                                    <h2 class="az_custom_heading">
-                                        Potenti praesent molestie<br>
-                                        at viverra</h2>
-                                    <p>This generator uses a dictionary of Latin words to construct
-                                        passages of Lorem Ipsum text that meet your desired length. The
-                                        sentence and paragraph durations and punctuation dispersal are
-                                        calculated using Gaussian distribution, based on statistical
-                                        analysis of real world texts. This ensures that the generated
-                                        Lorem Ipsum text is unique, free of repetition and also
-                                        resembles readable text as much as possible.</p>
-                                </div>
-                            </div>
+                           
                         </div>
                         <div class="akasha-Tabs-panel akasha-Tabs-panel--additional_information panel entry-content akasha-tab"
                             id="tab-additional_information" role="tabpanel"
                             aria-labelledby="tab-title-additional_information">
                             <h2>Additional information</h2>
-                            <table class="shop_attributes">
-                                <tbody>
-                                    <tr>
-                                        <th>Color</th>
-                                        <td>
-                                            <p>Blue, Pink, Red, Yellow</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <p>{{ $product->additional_info }}</p>
                         </div>
                         <div class="akasha-Tabs-panel akasha-Tabs-panel--reviews panel entry-content akasha-tab"
                             id="tab-reviews" role="tabpanel" aria-labelledby="tab-title-reviews">
@@ -244,7 +196,7 @@
                                     <div id="review_form">
                                         <div id="respond" class="comment-respond">
                                             <span id="reply-title" class="comment-reply-title">Be the first to review
-                                                “T-shirt with skirt”</span>
+                                                "{{ $product->title }}"</span>
                                             <form id="commentform" class="comment-form">
                                                 <p class="comment-notes"><span id="email-notes">Your email adchair
                                                         will not be published.</span>

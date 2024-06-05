@@ -98,6 +98,7 @@ Route::get( 'cart/coupon-remove/{coupon_name}', [CartController::class, 'couponR
 Route::view('/about','frontend.pages.about')->name('about.page');
 Route::view('/contact','frontend.pages.contact')->name('contact.page');
 Route::view('/login','frontend.pages.login')->name('login.page');
+Route::view('/privacy','frontend.pages.privacyPolicy')->name('privacy.page');
 
 Route::fallback( function () {
     return view( 'frontend.pages.404' );
