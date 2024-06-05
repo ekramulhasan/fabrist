@@ -28,19 +28,21 @@
                                             </div>
 
 
-                                        @foreach ( $product->productImage as $moreImage )
-                                            <div class="akasha-product-gallery__image">
-                                                <img src="{{ asset('assets/uploads/products') }}/{{ $moreImage->product_multiple_img_name }}" alt="img">
-                                            </div>
-                                        @endforeach
+                                            @foreach ($product->productImage as $moreImage)
+                                                <div class="akasha-product-gallery__image">
+                                                    <img src="{{ asset('assets/uploads/products') }}/{{ $moreImage->product_multiple_img_name }}"
+                                                        alt="img">
+                                                </div>
+                                            @endforeach
 
 
                                         </figure>
                                     </div>
                                     <ol class="flex-control-nav flex-control-thumbs">
 
-                                        @foreach ( $product->productImage as $moreImage )
-                                            <li><img src="{{ asset('assets/uploads/products') }}/{{ $moreImage->product_multiple_img_name }}" alt="img">
+                                        @foreach ($product->productImage as $moreImage)
+                                            <li><img src="{{ asset('assets/uploads/products') }}/{{ $moreImage->product_multiple_img_name }}"
+                                                    alt="img">
                                             </li>
                                         @endforeach
 
@@ -68,14 +70,45 @@
                                     </ul>
                                 </div>
 
-                                <form class="variations_form cart" action="{{ route('addTo.cart',['product_slug'=>$product->slug]) }}" method="post">
+                                <form class="variations_form cart"
+                                    action="{{ route('addTo.cart', ['product_slug' => $product->slug]) }}" method="post">
                                     @csrf
+
+                                    <div class="col-3">
+                                        <div class="">
+                                            <label for="size">Size :</label>
+                                            <div class="">
+                                                <select name="size" id="size" class="form-control" required>
+                                                    <option value="" selected disabled>Select</option>
+                                                    @foreach ($product->sizes as $size)
+                                                        <option value="{{ $size->id }}">{{ $size->size_name }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div><!-- End .select-custom -->
+
+                                        </div><!-- End .details-filter-row -->
+
+
+                                        <div class="details-filter-row details-row-size mt-2">
+                                            <label for="qty">Qty :</label>
+                                            <div class="product-details-quantity">
+                                                <input type="number" id="qty" name="quantity"
+                                                    class="form-control" value="1" min="1" max="10"
+                                                    step="1" data-decimals="0" required>
+                                            </div><!-- End .product-details-quantity -->
+                                        </div><!-- End .details-filter-row -->
+
+                                    </div>
+
+                                    <input type="hidden" name="product_slug" value="{{ $product->slug }}">
 
                                     <div class="single_variation_wrap">
                                         <div class="akasha-variation single_variation"></div>
+
                                         <div
-                                            class="akasha-variation-add-to-cart variations_button akasha-variation-add-to-cart-disabled">
-                                            <div class="quantity">
+                                            class="mb-3">
+                                            {{-- <div class="quantity">
                                                 <span class="qty-label">Quantiy:</span>
                                                 <div class="control">
                                                     <a class="btn-number qtyminus quantity-minus" href="#">-</a>
@@ -85,23 +118,27 @@
                                                         pattern="[0-9]*" inputmode="numeric" required>
                                                     <a class="btn-number qtyplus quantity-plus" href="#">+</a>
                                                 </div>
-                                                <input type="hidden" name="product_slug" value="{{ $product->slug }}">
-                                            </div>
 
-                                            <div class="add-to-cart">
+                                            </div> --}}
 
-                                                <button type="submit"
-                                                    class="button product_type_simple add_to_cart_button ajax_add_to_cart" onclick="this.form.action='{{ route('addTo.cart', ['product_slug' => $product->slug]) }}'">
+                                            <br>
+
+                                            <div class="button-container">
+                                                <div class="add-to-cart ml-3 mr-2">
+                                                    <button type="submit"
+                                                        class="button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                        onclick="this.form.action='{{ route('addTo.cart', ['product_slug' => $product->slug]) }}'">
                                                         Add to cart
-                                                </button>
-                                            </div>
+                                                    </button>
+                                                </div>
 
-                                            <div class="add-to-cart">
-
-                                                <button type="submit"
-                                                    class="button product_type_simple add_to_cart_button ajax_add_to_cart" onclick="this.form.action='{{ route('direct.order', ['product_slug' => $product->slug]) }}'">
+                                                <div class="add-to-cart">
+                                                    <button type="submit"
+                                                        class="button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                        onclick="this.form.action='{{ route('direct.order', ['product_slug' => $product->slug]) }}'">
                                                         Order now
-                                                </button>
+                                                    </button>
+                                                </div>
                                             </div>
 
 
@@ -114,49 +151,12 @@
                                     </div>
                                 </form>
 
-                                <div class="yith-wcwl-add-to-wishlist">
-                                    <div class="yith-wcwl-add-button show">
-                                        <a href="#" rel="nofollow" data-product-id="27"
-                                            data-product-type="variable" class="add_to_wishlist">
-                                            Add to Wishlist</a>
-                                    </div>
-                                </div>
-                                <div class="clear"></div>
-                                <a href="#" class="compare button" data-product_id="27" rel="nofollow">Compare</a>
                                 <div class="product_meta">
-                                    <div class="wcml-dropdown product wcml_currency_switcher">
-                                        <ul>
-                                            <li class="wcml-cs-active-currency">
-                                                <a class="wcml-cs-item-toggle">USD</a>
-                                                <ul class="wcml-cs-submenu">
-                                                    <li>
-                                                        <a>EUR</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <span class="sku_wrapper">SKU: <span class="sku">885B712</span></span>
-                                    <span class="posted_in">Categories: <a href="#" rel="tag">Bags</a>, <a
-                                            href="#" rel="tag">New arrivals</a>, <a href="#"
-                                            rel="tag">Summer Sale</a></span>
-                                    <span class="tagged_as">Tags: <a href="#" rel="tag">Bags</a>, <a
-                                            href="#" rel="tag">Sock</a></span>
+
+                                    <span class="posted_in">Categories: <a href="#" rel="tag">{{ $product->category->title }}</a>
+
                                 </div>
-                                <div class="akasha-share-socials">
-                                    <h5 class="social-heading">Share: </h5>
-                                    <a target="_blank" class="facebook" href="#">
-                                        <i class="fa fa-facebook-f"></i>
-                                    </a>
-                                    <a target="_blank" class="twitter" href="#"><i class="fa fa-twitter"></i>
-                                    </a>
-                                    <a target="_blank" class="pinterest" href="#"> <i
-                                            class="fa fa-pinterest"></i>
-                                    </a>
-                                    <a target="_blank" class="googleplus" href="#"><i
-                                            class="fa fa-google-plus"></i>
-                                    </a>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -310,7 +310,7 @@
                 </div>
                 <div class="akasha-products style-01">
                     <div class="response-product product-list-owl owl-slick equal-container better-height"
-                    data-slick='{
+                        data-slick='{
                         "arrows": true,
                         "slidesMargin": 0,
                         "dots": true,
@@ -321,27 +321,28 @@
                         "slidesToShow": 4,
                         "rows": 1
                     }'
-                    data-responsive='[
+                        data-responsive='[
                         {"breakpoint": 480, "settings": {"slidesToShow": 4, "slidesMargin": 0}},
                         {"breakpoint": 768, "settings": {"slidesToShow": 4, "slidesMargin": 0}},
                         {"breakpoint": 992, "settings": {"slidesToShow": 4, "slidesMargin": 0}},
                         {"breakpoint": 1200, "settings": {"slidesToShow": 4, "slidesMargin": 0}},
                         {"breakpoint": 1500, "settings": {"slidesToShow": 4, "slidesMargin": 0}}
-                    ]'
-                    >
+                    ]'>
 
-                         @foreach ($related_product as $value)
-                            <div class="product-item recent-product style-01 rows-space-0 post-93 product type-product status-publish has-post-thumbnail product_cat-light product_cat-table product_cat-new-arrivals product_tag-table product_tag-sock first instock shipping-taxable purchasable product-type-simple  ">
+                        @foreach ($related_product as $value)
+                            <div
+                                class="product-item recent-product style-01 rows-space-0 post-93 product type-product status-publish has-post-thumbnail product_cat-light product_cat-table product_cat-new-arrivals product_tag-table product_tag-sock first instock shipping-taxable purchasable product-type-simple  ">
                                 <div class="product-inner tooltip-left">
                                     <div class="product-thumb">
                                         <a class="thumb-link"
-                                            href="{{ route('productDetails.page',[$value->slug]) }}" tabindex="0">
+                                            href="{{ route('productDetails.page', [$value->slug]) }}" tabindex="0">
                                             <img class="img-responsive"
                                                 src="{{ asset('assets/uploads/products') }}/{{ $value->product_img }}"
                                                 alt="Black Shirt" width="270" height="350">
                                         </a>
                                         <div class="flash">
-                                            <span class="onnew"><span class="text">New</span></span></div>
+                                            <span class="onnew"><span class="text">New</span></span>
+                                        </div>
                                         <div class="group-button">
                                             <div class="yith-wcwl-add-to-wishlist">
                                                 <div class="yith-wcwl-add-button show">
@@ -353,28 +354,31 @@
                                             </div>
                                             <a href="#" class="button yith-wcqv-button">Quick View</a>
                                             <div class="add-to-cart">
-                                                <a href="#" class="button product_type_simple add_to_cart_button">Add to cart</a>
+                                                <a href="#"
+                                                    class="button product_type_simple add_to_cart_button">Add to
+                                                    cart</a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="product-info equal-elem">
                                         <h3 class="product-name product_title">
-                                            <a href="{{ route('productDetails.page',[$value->slug]) }}"
+                                            <a href="{{ route('productDetails.page', [$value->slug]) }}"
                                                 tabindex="0">{{ $value->title }}</a>
                                         </h3>
                                         <div class="rating-wapper nostar">
                                             <div class="star-rating"><span style="width:0%">Rated <strong
-                                                    class="rating">0</strong> out of 5</span></div>
-                                            <span class="review">(0)</span></div>
+                                                        class="rating">0</strong> out of 5</span></div>
+                                            <span class="review">(0)</span>
+                                        </div>
                                         <span class="price"><span class="akasha-Price-amount amount"><span
-                                                class="akasha-Price-currencySymbol">$</span>{{ $value->price }}</span></span>
+                                                    class="akasha-Price-currencySymbol">$</span>{{ $value->price }}</span></span>
                                     </div>
                                 </div>
                             </div>
-                         @endforeach
+                        @endforeach
 
                     </div>
                 </div>
+            </div>
         </div>
     </div>
-</div>

@@ -1,18 +1,28 @@
 @extends('frontend.master')
 @section('title')
-Order | Page
+    Order | Page
 @endsection
 
-@push('fronend_style')
+@push('frontend_style')
+
+    <style>
+        @media (max-width: 600px) {
+            .button-container {
+                flex-direction: column;
+            }
+
+            .button-container .add-to-cart {
+                margin: 0 15px;
+            }
+
+        }
+    </style>
 
 @endpush
 
 @section('main_body')
-
-@include('frontend.inc_page.singleProduct')
-
+    @include('frontend.inc_page.singleProduct')
 @endsection
 
-@push('fronend_js')
-
+@push('frontend_js')
 @endpush
