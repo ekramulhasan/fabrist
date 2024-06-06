@@ -12,6 +12,7 @@ use App\Models\OrderDetails;
 use Illuminate\Http\Request;
 use App\Http\Requests\orderRequest;
 use App\Http\Controllers\Controller;
+use App\Models\Size;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -41,6 +42,7 @@ class CheckOutController extends Controller {
         $product_size = $request->size;
 
         $product = Product::whereSlug($product_slug)->first();
+        $size = Size::where('id',$product_size)->select('size_name')->first();
 
         \Cart::add([
 
@@ -53,7 +55,7 @@ class CheckOutController extends Controller {
                 'product_img' => $product->product_img,
                 'weight' => 0,
                 'product_stock' => $product->product_stock,
-                'size' => $product_size,
+                'size' => $size['size_name'],
 
             ],
 
@@ -63,6 +65,8 @@ class CheckOutController extends Controller {
         $total_price = \Cart::getSubTotal();
         $district    = District::select( 'id', 'name', 'bn_name' )->get();
         $user_data   = Auth::user();
+
+        // dd($carts);
 
         return view( 'frontend.pages.order', compact( 'carts', 'total_price', 'district', 'user_data' ) );
 
@@ -122,6 +126,7 @@ class CheckOutController extends Controller {
                 'product_id'    => $value->id,
                 'product_qty'   => $value->quantity,
                 'product_price' => $value->price,
+                'product_size'  => $value->attributes->size,
 
             ] );
 
@@ -185,6 +190,7 @@ class CheckOutController extends Controller {
                 'product_id'    => $value->id,
                 'product_qty'   => $value->quantity,
                 'product_price' => $value->price,
+                'product_size'  => $value->attributes->size,
 
             ] );
 
@@ -204,7 +210,7 @@ class CheckOutController extends Controller {
         // Mail::to( $request->email )->send( new OrderConfirm( $order_confirm, $user_data ) );
         // Notification::route('mail','ekramulshawon1@gmail.con')->notify();
 
-        Toastr::success( 'your order placed successfully', 'success' );
+        Toastr::success( 'order successfully done', 'success' );
         return redirect()->route( 'home' );
     }
 

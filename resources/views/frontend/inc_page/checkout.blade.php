@@ -162,7 +162,12 @@
                                             <tr class="cart_item">
                                                 <td class="product-name">
                                                     {{ $value->name }} <strong class="product-quantity">×
-                                                        {{ $value->quantity }}</strong></td>
+                                                        {{ $value->quantity }}</strong>
+
+                                                        <br>
+                                                        <span>Size: <strong>{{ $value->attributes->size }}</strong></span>
+
+                                                    </td>
                                                 <td class="product-total">
                                                     <span class="akasha-Price-amount amount"><span
                                                             class="akasha-Price-currencySymbol">$</span>{{ $value->price * $value->quantity }}</span>
@@ -194,6 +199,30 @@
                                                 @endif
                                             </td>
                                         </tr>
+
+                                        <tr class="cart-subtotal">
+                                            <th>
+                                                <span>Delivery options :</span>
+
+                                                <div class="form-check mt-2">
+                                                    <input class="form-check-input" type="radio" id="insideDhaka" name="deliveryOption" value="80" onclick="updateDeliveryCharge()" checked>
+                                                    <label class="form-check-label" for="insideDhaka">Inside Dhaka: 80</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="outsideDhaka" name="deliveryOption" value="110" onclick="updateDeliveryCharge()">
+                                                    <label class="form-check-label" for="outsideDhaka">Outside Dhaka: 110</label>
+                                                </div>
+
+                                            </th>
+                                            <td>
+                                                <span class="akasha-Price-amount amount">
+                                                <span class="akasha-Price-currencySymbol">$</span>
+                                                <span id="deliveryCharge">80</span>
+                                            </span>
+
+                                    </td>
+                                        </tr>
                                         <tr class="order-total">
                                             <th>Total</th>
                                             <td><strong><span class="akasha-Price-amount amount"><span
@@ -223,7 +252,7 @@
                                                 <p>Pay with cash upon delivery.</p>
                                             </div>
                                         </li>
-                                       
+
                                     </ul>
                                     <div class="form-row place-order">
                                         <noscript>

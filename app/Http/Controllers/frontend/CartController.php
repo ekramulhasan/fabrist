@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontend;
 
 use Carbon\Carbon;
+use App\Models\Size;
 use App\Models\Coupon;
 use App\Models\Product;
 use App\Models\District;
@@ -30,7 +31,7 @@ class CartController extends Controller
         // dd($request->all());
         $product_slug = $request->product_slug;
         $product_qty = $request->quantity;
-        // $product_size = $request->size;
+        $size = Size::where('id',$request->size)->select('size_name')->first();
 
         $product = Product::whereSlug($product_slug)->first();
 
@@ -45,7 +46,7 @@ class CartController extends Controller
                 'product_img' => $product->product_img,
                 'weight' => 0,
                 'product_stock' => $product->product_stock,
-                // 'size' => $product_size,
+                'size' => $size['size_name'],
 
             ],
 

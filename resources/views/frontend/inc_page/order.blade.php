@@ -161,7 +161,10 @@
                                             <tr class="cart_item">
                                                 <td class="product-name">
                                                     {{ $value->name }} <strong class="product-quantity">×
-                                                        {{ $value->quantity }}</strong></td>
+                                                        {{ $value->quantity }}</strong>
+                                                        <br>
+                                                        <span>Size: <strong>{{ $value->attributes->size }}</strong></span>
+                                                    </td>
                                                 <td class="product-total">
                                                     <span class="akasha-Price-amount amount"><span
                                                             class="akasha-Price-currencySymbol">$</span>{{ $value->price * $value->quantity }}</span>

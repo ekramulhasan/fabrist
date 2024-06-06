@@ -71,13 +71,13 @@
                                         <label for="">Size :</label>
                                         <div class="form-check">
                                             @foreach ($product->sizes as $size)
-                                                    
-                                                <input class="form-check-input" type="checkbox" value="{{ $size->id }}" id="size" name="size[]">
+
+                                                <input class="form-check-input" type="checkbox" value="{{ $size->id }}" id="size" name="size">
                                                 <label class="form-check-label mr-4" for="size{{ $size->id }}">
                                                     {{ $size->size_name }}
                                                 </label>
                                             @endforeach
-                                        
+
                                         </div>
                                     </div>
 
@@ -124,7 +124,7 @@
                                                         Add to cart
                                                     </button>
                                                 </div>
-                                            
+
                                                 <div class="add-to-cart">
                                                     <button type="submit"
                                                         class="button product_type_simple add_to_cart_button ajax_add_to_cart"
@@ -175,9 +175,9 @@
                                     <h2 class="az_custom_heading">{{ $product->title }}</h2>
                                     <p>{{ $product->long_description }}</p>
                                 </div>
-                                
+
                             </div>
-                           
+
                         </div>
                         <div class="akasha-Tabs-panel akasha-Tabs-panel--additional_information panel entry-content akasha-tab"
                             id="tab-additional_information" role="tabpanel"

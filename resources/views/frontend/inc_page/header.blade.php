@@ -58,7 +58,7 @@
                                 <li id="menu-item-229"
                                     class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-229 parent parent-megamenu item-megamenu menu-item-has-children">
                                     <a class="akasha-menu-item-title" title="Elements" href="{{ route('allproduct.page') }}">Shop</a>
-                                
+
                                 </li>
 
                             </ul>
@@ -211,6 +211,8 @@
                                                         <span class="quantity">{{ $value->quantity }} × <span
                                                                 class="akasha-Price-amount amount"><span
                                                                 class="akasha-Price-currencySymbol">$</span>{{ $value->price*$value->quantity }}</span></span>
+                                                                <br>
+                                                        <span>Size:  {{ $value->attributes->size }}</span>
                                                     </li>
                                                 @endforeach
 

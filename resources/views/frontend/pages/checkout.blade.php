@@ -87,4 +87,12 @@ Checkout | Page
     });
 
 </script>
+
+<script>
+    function updateDeliveryCharge() {
+        const selectedOption = document.querySelector('input[name="deliveryOption"]:checked');
+        const deliveryChargeElement = document.getElementById('deliveryCharge');
+        deliveryChargeElement.textContent = selectedOption.value;
+    }
+</script>
 @endpush

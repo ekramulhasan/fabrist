@@ -19,7 +19,7 @@
             .button{
                 cursor: pointer;
             }
-            
+
     </style>
 
 @endpush
@@ -31,23 +31,23 @@
 @push('frontend_js')
 <script>
     function validateCheckboxes() {
-        const checkboxes = document.querySelectorAll('input[name="size[]"]');
+        const checkboxes = document.querySelectorAll('input[name="size"]');
         let isChecked = false;
-    
+
         checkboxes.forEach((checkbox) => {
             if (checkbox.checked) {
                 isChecked = true;
             }
         });
-    
+
         if (!isChecked) {
             alert('Please select at least one size.');
             return false; // Prevent form submission
         }
-    
+
         return true; // Allow form submission
     }
-    
+
     function validateAndSubmitForm(button, action) {
         if (validateCheckboxes()) {
             button.form.action = action;
