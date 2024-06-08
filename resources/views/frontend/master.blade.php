@@ -23,6 +23,7 @@
 
 </div>
 @include('frontend.inc_page.footer')
+
 <div class="footer-device-mobile">
     <div class="wapper">
         <div class="footer-device-mobile-item device-home">

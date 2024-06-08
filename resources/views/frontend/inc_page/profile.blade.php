@@ -31,32 +31,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card mb-4 mb-lg-0">
-                    <div class="card-body p-0">
-                        <ul class="list-group list-group-flush rounded-3">
-                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                                <i class="fa fa-globe fa-lg text-warning"></i>
-                                <p class="mb-0">https://example.com</p>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                                <i class="fa fa-github fa-lg" style="color: #333333;"></i>
-                                <p class="mb-0">example_github</p>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                                <i class="fa fa-twitter-square fa-lg" style="color: #55acee;"></i>
-                                <p class="mb-0">@example_twitter</p>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                                <i class="fa fa-instagram fa-lg" style="color: #ac2bac;"></i>
-                                <p class="mb-0">example_instagram</p>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                                <i class="fa fa-facebook-square fa-lg" style="color: #3b5998;"></i>
-                                <p class="mb-0">example_facebook</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+              
             </div>
             <div class="col-lg-8">
                 <div class="card mb-4">
@@ -125,7 +100,6 @@
                                             <tr>
 
                                                 <th scope="col">ID</th>
-                                                <th scope="col">View Details</th>
                                                 <th scope="col">Invoice</th>
                                                 <th scope="col">Order Date</th>
                                                 {{-- <th scope="col">Sub-Total</th>
@@ -144,117 +118,7 @@
 
                                                     <td scope="row">{{ $order->firstItem() + $loop->index }}</td>
 
-                                                    <td>
 
-                                                        <!-- Button trigger modal -->
-                                                        <button type="button" class="btn btn-primary"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#Modal{{ $value->id }}">
-                                                            Order details
-                                                        </button>
-
-
-                                                        <!-- Modal -->
-                                                        <div class="modal fade " id="Modal{{ $value->id }}"
-                                                            tabindex="-1" aria-labelledby="exampleModalLabel"
-                                                            aria-hidden="true">
-                                                            <div class="modal-dialog">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <h5 class="modal-title"
-                                                                            id="Modal{{ $value->id }}">#Order ID:
-                                                                            {{ $value->id }}</h5>
-                                                                        {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> --}}
-                                                                    </div>
-                                                                    <div class="modal-body">
-
-                                                                        <div class="container-fluid">
-                                                                            <div class="row m-auto">
-                                                                                <div class="col-12 m-5">
-                                                                                    <table
-                                                                                        class="table table-striped table-inverse table-responsive">
-                                                                                        <thead class="thead-inverse">
-                                                                                            <tr>
-                                                                                                <th>#</th>
-                                                                                                <th>Product Name</th>
-                                                                                                <th>Quantity</th>
-                                                                                                <th>Unit Price</th>
-                                                                                                <th>Sub total</th>
-                                                                                            </tr>
-                                                                                        </thead>
-                                                                                        <tbody>
-                                                                                            @foreach ($value->orderDetails as $item)
-                                                                                                <tr>
-                                                                                                    <td>{{ $loop->index + 1 }}
-                                                                                                    </td>
-                                                                                                    <td>{{ $item->product->title ?? 'none' }}
-                                                                                                    </td>
-                                                                                                    <td>{{ $item->product_qty }}
-                                                                                                    </td>
-                                                                                                    <td>{{ $item->product_price }}
-                                                                                                    </td>
-                                                                                                    <td>{{ $item->product_price * $item->product_qty }}
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                            @endforeach
-                                                                                            <tr class="mb-5">
-                                                                                                <td colspan="4">
-                                                                                                    Total Payable
-                                                                                                    Amount:
-                                                                                                </td>
-                                                                                                <td><strong
-                                                                                                        class="fw-bold text-danger">
-                                                                                                        ${{ $value->total }}</strong>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                            <tr class="mt-5">
-                                                                                                <td colspan="50">
-                                                                                                    <p
-                                                                                                        class="text-primary">
-                                                                                                        Billing Address:
-                                                                                                    </p>
-                                                                                                    <p>Recipent Name:
-                                                                                                        {{ $value->billing->name }}
-                                                                                                    </p>
-                                                                                                    <p>Mobile Number:
-                                                                                                        {{ $value->billing->mobile }}
-                                                                                                    </p>
-                                                                                                    <p>Email:
-                                                                                                        {{ $value->billing->email }}
-                                                                                                    </p>
-                                                                                                    <p>Address:
-                                                                                                        {{ $value->billing->address }}
-                                                                                                    </p>
-                                                                                                    <p>Upazila:
-                                                                                                        {{ $value->billing->upazila->name ?? '' }}
-                                                                                                        ,
-                                                                                                        Distrcit:
-                                                                                                        {{ $value->billing->district->name ?? '' }}
-                                                                                                    </p>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                        </tbody>
-                                                                                    </table>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-
-
-
-                                                                    </div>
-
-                                                                    <div class="modal-footer">
-                                                                        <button type="button"
-                                                                            class="btn btn-secondary"
-                                                                            data-bs-dismiss="modal">Close</button>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
-                                                    </td>
                                                     <td><a href="{{ route('customer.invoice', [$value->id]) }}"
                                                             class="btn btn-primary">view</a></td>
 

@@ -3,21 +3,21 @@
         <h1 class="text-center">Privacy Policy</h1>
 
         <p><strong>Last updated:</strong> May 29, 2024</p>
-    
+
         <p>This Privacy Policy describes Our policies and procedures on the collection, use, and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
-    
+
         <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.</p>
-    
+
         <h2>Interpretation and Definitions</h2>
-    
+
         <h3>Interpretation</h3>
-    
+
         <p>The words with initial letters capitalized have meanings defined under the following conditions. These definitions shall have the same meaning regardless of whether they appear in singular or plural.</p>
-    
+
         <h3>Definitions</h3>
-    
+
         <p>For the purposes of this Privacy Policy:</p>
-    
+
         <ul>
             <li><strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.</li>
             <li><strong>Affiliate</strong> means an entity that controls, is controlled by, or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest, or other securities entitled to vote for election of directors or other managing authority.</li>
@@ -33,14 +33,14 @@
             <li><strong>Website</strong> refers to Fabrist, accessible from <a href="#">fabrist</a></li>
             <li><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</li>
         </ul>
-    
+
         <h2>Collecting and Using Your Personal Data</h2>
-    
+
         <h3>Types of Data Collected</h3>
-    
+
         <h4>Personal Data</h4>
         <p>While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:</p>
-    
+
         <ul>
             <li>Email address</li>
             <li>First name and last name</li>
@@ -48,37 +48,37 @@
             <li>Address, State, Province, ZIP/Postal code, City</li>
             <li>Usage Data</li>
         </ul>
-    
+
         <h4>Usage Data</h4>
         <p>Usage Data is collected automatically when using the Service.</p>
         <p>Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers, and other diagnostic data.</p>
         <p>When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers, and other diagnostic data.</p>
         <p>We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.</p>
-    
+
         <h4>Information from Third-Party Social Media Services</h4>
         <p>The Company allows You to create an account and log in to use the Service through the following Third-party Social Media Services:</p>
-    
+
         <ul>
             <li>Google</li>
             <li>Facebook</li>
             <li>Twitter</li>
             <li>LinkedIn</li>
         </ul>
-    
+
         <p>If You decide to register through or otherwise grant us access to a Third-Party Social Media Service, We may collect Personal data that is already associated with Your Third-Party Social Media Service's account, such as Your name, Your email address, Your activities, or Your contact list associated with that account.</p>
         <p>You may also have the option of sharing additional information with the Company through Your Third-Party Social Media Service's account. If You choose to provide such information and Personal Data, during registration or otherwise, You are giving the Company permission to use, share, and store it in a manner consistent with this Privacy Policy.</p>
-    
+
         <h4>Tracking Technologies and Cookies</h4>
         <p>We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:</p>
-    
+
         <ul>
             <li><strong>Cookies or Browser Cookies.</strong> A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.</li>
             <li><strong>Web Beacons.</strong> Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity).</li>
         </ul>
-    
+
         <p>Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser.</p>
         <p>We use both Session and Persistent Cookies for the purposes set out below:</p>
-    
+
         <ul>
             <li><strong>Necessary / Essential Cookies</strong>
                 <ul>
@@ -102,7 +102,7 @@
                 </ul>
             </li>
         </ul>
-    
+
         <h2>Use of Your Personal Data</h2>
         <p>The Company may use Personal Data for the following purposes:</p>
         <ul>
@@ -113,13 +113,13 @@
             <li><strong>To provide You</strong> with news, special offers, and general information about other goods, services, and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.</li>
             <li><strong>To manage Your requests:</strong> To attend and manage Your requests to Us.</li>
         </ul>
-    
+
         <h2>Contact Us</h2>
         <p>If you have any questions about this Privacy Policy, You can contact us:</p>
         <ul>
-            <li>By email: support@fabrist.com</li>
-            <li>By visiting this page on our website: <a href="#">fabrist</a></li>
-            <li>By phone number: 123-456-7890</li>
+            <li>By email: fabristlifestyle@gmail.com</li>
+            <li>By visiting this page on our website: <a href="#">Fabrist Fashion</a></li>
+            <li>By phone number: +8801604-000104 (24 hours, 7 days a week)</li>
         </ul>
     </div>
 </div>

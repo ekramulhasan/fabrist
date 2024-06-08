@@ -1,4 +1,4 @@
-<div class="banner-wrapper has_background">
+{{-- <div class="banner-wrapper has_background">
     <img src="{{ asset('assets') }}/images/banner-for-all2.jpg" class="img-responsive attachment-1920x447 size-1920x447"
         alt="img">
     <div class="banner-wrapper-inner">
@@ -11,10 +11,10 @@
             </ul>
         </div>
     </div>
-</div>
+</div> --}}
 <main class="site-main  main-container no-sidebar">
     <div class="container">
-        <div class="row">
+        <div class="row mt-5">
             <div class="main-content col-md-12">
                 <div class="page-main-content">
                     <div class="akasha">
@@ -48,7 +48,7 @@
                         </div>
 
                         <form name="checkout" method="post" class="checkout akasha-checkout"
-                            action="{{ route('place.order') }}" enctype="multipart/form-data" novalidate="novalidate">
+                            action="{{ route('place.order') }}" enctype="multipart/form-data" novalidate="novalidate" id="orderForm">
                             @csrf
                             <div class="col2-set" id="customer_details">
                                 <div class="col-1">
@@ -84,7 +84,7 @@
                                                         class="form-control js-example-basic-single @error('district_id')
                                                             is-invalid
                                                         @enderror"
-                                                        name="district_id">
+                                                        name="district_id" required>
                                                         <option selected disabled>Select a district</option>
 
                                                         @foreach ($district as $value)
@@ -101,7 +101,7 @@
                                                     <select id="upazila_id" name="upazila_id"
                                                         class="form-control js-example-basic-single @error('upazila_id')
                                                         is-invalid
-                                                    @enderror">
+                                                    @enderror" required>
                                                         <option value="">Select a upazila</option>
                                                     </select>
                                                 </div>
@@ -109,16 +109,17 @@
                                             </div>
 
                                             <p class="form-row form-row-wide validate-required validate-phone mt-5"
-                                                id="billing_phone_field" data-priority="100"><label
-                                                    for="billing_phone" class="">Phone&nbsp;<abbr
-                                                        class="required" title="required">*</abbr></label><span
+                                                id="billing_phone_field" data-priority="100"><label for="billing_phone"
+                                                    class="">Phone&nbsp;<abbr class="required"
+                                                        title="required">*</abbr></label><span
                                                     class="akasha-input-wrapper"><input type="tel"
                                                         class="input-text " name="phone" id="billing_phone"
-                                                        placeholder="" value="{{ $user_data->phone }}" autocomplete="tel" required></span>
+                                                        placeholder="" value="{{ $user_data->phone }}"
+                                                        autocomplete="tel" required></span>
                                             </p>
                                             <p class="form-row form-row-wide validate-required validate-email"
-                                                id="billing_email_field" data-priority="110"><label
-                                                    for="billing_email" class="">Email &nbsp;<abbr class="required"
+                                                id="billing_email_field" data-priority="110"><label for="billing_email"
+                                                    class="">Email &nbsp;<abbr class="required"
                                                         title="required">*</abbr></label><span
                                                     class="akasha-input-wrapper"><input type="email"
                                                         class="input-text " name="email" id="billing_email"
@@ -164,13 +165,13 @@
                                                     {{ $value->name }} <strong class="product-quantity">×
                                                         {{ $value->quantity }}</strong>
 
-                                                        <br>
-                                                        <span>Size: <strong>{{ $value->attributes->size }}</strong></span>
+                                                    <br>
+                                                    <span>Size: <strong>{{ $value->attributes->size }}</strong></span>
 
-                                                    </td>
+                                                </td>
                                                 <td class="product-total">
                                                     <span class="akasha-Price-amount amount"><span
-                                                            class="akasha-Price-currencySymbol">$</span>{{ $value->price * $value->quantity }}</span>
+                                                            class="akasha-Price-currencySymbol">৳ </span>{{ $value->price * $value->quantity }}</span>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -180,11 +181,11 @@
                                         <tr class="cart-subtotal">
                                             <th>Subtotal</th>
                                             <td><span class="akasha-Price-amount amount"><span
-                                                        class="akasha-Price-currencySymbol">$
+                                                        class="akasha-Price-currencySymbol">৳
                                                     </span>
                                                     @if (Session::has('coupon'))
                                                         {{ Session::get('coupon')['balance'] }} <del
-                                                            class="text-danger">${{ Session::get('coupon')['cart_total'] }}</del>
+                                                            class="text-danger">৳ {{ Session::get('coupon')['cart_total'] }}</del>
                                                     @else
                                                         {{ $total_price }}
                                                     @endif
@@ -202,46 +203,72 @@
 
                                         <tr class="cart-subtotal">
                                             <th>
-                                                <span>Delivery options :</span>
+                                                <span>Delivery Charge :</span>
 
                                                 <div class="form-check mt-2">
-                                                    <input class="form-check-input" type="radio" id="insideDhaka" name="deliveryOption" value="80" onclick="updateDeliveryCharge()" checked>
-                                                    <label class="form-check-label" for="insideDhaka">Inside Dhaka: 80</label>
+                                                    <input class="form-check-input" type="radio" id="insideDhaka"
+                                                        name="deliveryCharge" value="80"
+                                                        onclick="updateDeliveryCharge()" required>
+                                                    <label class="form-check-label" for="insideDhaka">Inside Dhaka</label>
                                                 </div>
 
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="outsideDhaka" name="deliveryOption" value="110" onclick="updateDeliveryCharge()">
-                                                    <label class="form-check-label" for="outsideDhaka">Outside Dhaka: 110</label>
+                                                    <input class="form-check-input" type="radio" id="outsideDhaka"
+                                                        name="deliveryCharge" value="110"
+                                                        onclick="updateDeliveryCharge()" required>
+                                                    <label class="form-check-label" for="outsideDhaka">Outside Dhaka</label>
                                                 </div>
 
                                             </th>
                                             <td>
                                                 <span class="akasha-Price-amount amount">
-                                                <span class="akasha-Price-currencySymbol">$</span>
-                                                <span id="deliveryCharge">80</span>
-                                            </span>
-
-                                    </td>
+                                                    <span class="akasha-Price-currencySymbol">৳</span>
+                                                    <span id="deliveryCharge">0</span>
+                                                </span>
+                                            </td>
                                         </tr>
                                         <tr class="order-total">
                                             <th>Total</th>
-                                            <td><strong><span class="akasha-Price-amount amount"><span
-                                                            class="akasha-Price-currencySymbol">$
-                                                        </span>
+
+                                                @if (Session::has('coupon'))
+                                                    <input type="number" hidden
+                                                        value="{{ Session::get('coupon')['balance'] }}" id="total">
+                                                @else
+                                                    <input type="number" hidden value="{{ $total_price }}"
+                                                        id="total">
+                                                @endif
+
+                                            <td>
+
+                                                <strong>
+
+                                                    <span class="akasha-Price-amount amount">
+                                                        <input type="number" id="totalValue" value="0" hidden name="totalValue">
+                                                    </span>
+                                                    <span class="akasha-Price-amount amount" id="totalPrice">
+
                                                         @if (Session::has('coupon'))
-                                                            {{ Session::get('coupon')['balance'] }}
+                                                            ৳ {{ Session::get('coupon')['balance'] }}
                                                         @else
-                                                            {{ $total_price }}
+                                                            ৳ {{ $total_price }}
                                                         @endif
-                                                    </span></strong>
+                                                    </span>
+                                                </strong>
 
                                             </td>
                                         </tr>
                                     </tfoot>
                                 </table>
-                                <input type="hidden" name="lang" value="en">
+                                
                                 <div id="payment" class="akasha-checkout-payment">
                                     <ul class="wc_payment_methods payment_methods methods">
+
+                                        <li class="mb-3">
+                                            <b>
+                                                Inside Dhaka City: Home Delivery with in 1-2 Days.
+                                                Outside Dhaka City: Home Delivery With in 2-3 Days.
+                                            </b>
+                                        </li>
 
                                         <li class="wc_payment_method payment_method_cod">
                                             <input id="payment_method_cod" type="radio" class="input-radio"
@@ -269,7 +296,7 @@
                                             <div class="akasha-privacy-policy-text">
                                                 <p>Your personal data will be
                                                     used to process your order, support your experience throughout this
-                                                    website, and for other purposes described in our <a href="#"
+                                                    website, and for other purposes described in our <a href="{{ route('privacy.page') }}"
                                                         class="akasha-privacy-policy-link" target="_blank">privacy
                                                         policy</a>.</p>
                                             </div>

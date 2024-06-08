@@ -47,7 +47,8 @@
 
                         </div>
 
-                        <form  method="post" action="{{ route('directOrder') }}" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('directOrder') }}" enctype="multipart/form-data"
+                            id="orderForm">
                             @csrf
                             <div class="col2-set" id="customer_details">
                                 <div class="col-1">
@@ -62,8 +63,8 @@
                                                         class="required" title="required">*</abbr></label><span
                                                     class="akasha-input-wrapper"><input type="text"
                                                         class="input-text " name="name" id="billing_city"
-                                                        placeholder="your name"
-                                                        autocomplete="adchair-level2" required></span>
+                                                        placeholder="your name" autocomplete="adchair-level2"
+                                                        required></span>
                                             </p>
 
                                             <div class="row mb-2">
@@ -91,7 +92,7 @@
                                                         class="form-control js-example-basic-single @error('upazila_id')
                                                         is-invalid
                                                     @enderror">
-                                                        <option >Select a upazila</option>
+                                                        <option>Select a upazila</option>
                                                     </select>
                                                 </div>
 
@@ -99,30 +100,30 @@
 
                                             <p class="form-row form-row-wide mt-5" id="billing_company_field"
                                                 data-priority="30"><label for="billing_company"
-                                                class="">Address&nbsp;<span
-                                                    class="optional"></span></label><span
-                                                class="akasha-input-wrapper"><input type="text"
-                                                    class="input-text " name="address" id="billing_company"
-                                                    placeholder="your address"
-                                                    autocomplete="organization" required></span>
+                                                    class="">Address&nbsp;<span
+                                                        class="optional"></span></label><span
+                                                    class="akasha-input-wrapper"><input type="text"
+                                                        class="input-text " name="address" id="billing_company"
+                                                        placeholder="your address" autocomplete="organization"
+                                                        required></span>
                                             </p>
 
                                             <p class="form-row form-row-wide validate-required validate-phone mt-5"
-                                                id="billing_phone_field" data-priority="100"><label
-                                                    for="billing_phone" class="">Phone&nbsp;<abbr
-                                                        class="required" title="required">*</abbr></label><span
+                                                id="billing_phone_field" data-priority="100"><label for="billing_phone"
+                                                    class="">Phone&nbsp;<abbr class="required"
+                                                        title="required">*</abbr></label><span
                                                     class="akasha-input-wrapper"><input type="tel"
                                                         class="input-text " name="phone" id="billing_phone"
-                                                        placeholder="your phone number" autocomplete="tel" required></span>
+                                                        placeholder="your phone number" autocomplete="tel"
+                                                        required></span>
                                             </p>
                                             <p class="form-row form-row-wide validate-required validate-email"
-                                                id="billing_email_field" data-priority="110"><label
-                                                    for="billing_email" class="">Email &nbsp;<abbr class="required"
+                                                id="billing_email_field" data-priority="110"><label for="billing_email"
+                                                    class="">Email &nbsp;<abbr class="required"
                                                         title="required"></abbr></label><span
                                                     class="akasha-input-wrapper"><input type="email"
                                                         class="input-text " name="email" id="billing_email"
-                                                        placeholder="your email"
-                                                        autocomplete="email username"></span>
+                                                        placeholder="your email" autocomplete="email username"></span>
                                             </p>
                                         </div>
                                     </div>
@@ -162,12 +163,12 @@
                                                 <td class="product-name">
                                                     {{ $value->name }} <strong class="product-quantity">×
                                                         {{ $value->quantity }}</strong>
-                                                        <br>
-                                                        <span>Size: <strong>{{ $value->attributes->size }}</strong></span>
-                                                    </td>
+                                                    <br>
+                                                    <span>Size: <strong>{{ $value->attributes->size }}</strong></span>
+                                                </td>
                                                 <td class="product-total">
                                                     <span class="akasha-Price-amount amount"><span
-                                                            class="akasha-Price-currencySymbol">$</span>{{ $value->price * $value->quantity }}</span>
+                                                            class="akasha-Price-currencySymbol">৳ </span>{{ $value->price * $value->quantity }}</span>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -176,12 +177,13 @@
                                     <tfoot>
                                         <tr class="cart-subtotal">
                                             <th>Subtotal</th>
-                                            <td><span class="akasha-Price-amount amount"><span
-                                                        class="akasha-Price-currencySymbol">$
+                                            <td><span class="akasha-Price-amount amount">
+                                                <span
+                                                        class="akasha-Price-currencySymbol">৳
                                                     </span>
                                                     @if (Session::has('coupon'))
                                                         {{ Session::get('coupon')['balance'] }} <del
-                                                            class="text-danger">${{ Session::get('coupon')['cart_total'] }}</del>
+                                                            class="text-danger">৳ {{ Session::get('coupon')['cart_total'] }}</del>
                                                     @else
                                                         {{ $total_price }}
                                                     @endif
@@ -196,25 +198,74 @@
                                                 @endif
                                             </td>
                                         </tr>
+
+                                        <tr class="cart-subtotal">
+                                            <th>
+                                                <span>Delivery Charge :</span>
+
+                                                <div class="form-check mt-2">
+                                                    <input class="form-check-input" type="radio" id="insideDhaka"
+                                                        name="deliveryCharge" value="80"
+                                                        onclick="updateDeliveryCharge()" required>
+                                                    <label class="form-check-label" for="insideDhaka">Inside Dhaka</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="outsideDhaka"
+                                                        name="deliveryCharge" value="110"
+                                                        onclick="updateDeliveryCharge()" required>
+                                                    <label class="form-check-label" for="outsideDhaka">Outside Dhaka</label>
+                                                </div>
+
+                                            </th>
+                                            <td>
+                                                <span class="akasha-Price-amount amount">
+                                                    <span class="akasha-Price-currencySymbol">৳</span>
+                                                    <span id="deliveryCharge">0</span>
+                                                </span>
+                                            </td>
+                                        </tr>
+
                                         <tr class="order-total">
                                             <th>Total</th>
-                                            <td><strong><span class="akasha-Price-amount amount"><span
-                                                            class="akasha-Price-currencySymbol">$
-                                                        </span>
+                                            @if (Session::has('coupon'))
+                                                <input type="number" hidden
+                                                    value="{{ Session::get('coupon')['balance'] }}" id="total">
+                                            @else
+                                                <input type="number" hidden value="{{ $total_price }}"
+                                                    id="total">
+                                            @endif
+                                            <td>
+                                                <span class="akasha-Price-amount amount">
+                                                    <input type="number" id="totalValue" value="0" hidden name="totalValue">
+                                                </span>
+
+                                                <strong>
+                                                     <span class="akasha-Price-amount amount" id="totalPrice">
+
                                                         @if (Session::has('coupon'))
-                                                            {{ Session::get('coupon')['balance'] }}
+                                                            ৳ {{ Session::get('coupon')['balance'] }}
                                                         @else
-                                                            {{ $total_price }}
+                                                            ৳ {{ $total_price }}
                                                         @endif
-                                                    </span></strong>
+                                                    </span>
+                                                </strong>
 
                                             </td>
                                         </tr>
                                     </tfoot>
                                 </table>
-                                <input type="hidden" name="lang" value="en">
+
                                 <div id="payment" class="akasha-checkout-payment">
                                     <ul class="wc_payment_methods payment_methods methods">
+
+                                        <li class="mb-3">
+                                            <b>
+                                                Inside Dhaka City: Home Delivery with in 1-2 Days.
+                                                Outside Dhaka City: Home Delivery With in 2-3 Days.
+                                            </b>
+                                        </li>
+
 
                                         <li class="wc_payment_method payment_method_cod">
                                             <input id="payment_method_cod" type="radio" class="input-radio"
@@ -242,7 +293,7 @@
                                             <div class="akasha-privacy-policy-text">
                                                 <p>Your personal data will be
                                                     used to process your order, support your experience throughout this
-                                                    website, and for other purposes described in our <a href="#"
+                                                    website, and for other purposes described in our <a href="{{ route('privacy.page') }}"
                                                         class="akasha-privacy-policy-link" target="_blank">privacy
                                                         policy</a>.</p>
                                             </div>

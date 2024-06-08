@@ -99,6 +99,7 @@ Route::view('/about','frontend.pages.about')->name('about.page');
 Route::view('/contact','frontend.pages.contact')->name('contact.page');
 Route::view('/login','frontend.pages.login')->name('login.page');
 Route::view('/privacy','frontend.pages.privacyPolicy')->name('privacy.page');
+Route::view('/return','frontend.pages.return')->name('return.page');
 
 Route::fallback( function () {
     return view( 'frontend.pages.404' );

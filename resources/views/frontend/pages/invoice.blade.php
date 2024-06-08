@@ -47,7 +47,7 @@
                                             <div class="logo">
 
                                                 {{-- <img src="{{ asset('assets/frontend/logo/in_logo.png') }}" alt="logo"> --}}
-                                                <h2>SIMPLE IS SMART</h2>
+                                                <h2>Fabrist Fashion</h2>
 
                                             </div>
                                             <!-- logo ended -->
@@ -83,11 +83,11 @@
                                         <div class="invoice-number mb-30">
                                             <div class="invoice-number-inner">
                                                 <h4 class="inv-title-1">Invoice From</h4>
-                                                <h2 class="name mb-10">Zainul Huda</h2>
+                                                <h2 class="name mb-10">Rashed Khan</h2>
                                                 <p class="invo-addr-1">
-                                                    Simple is Smart <br />
-                                                    zainul@apparel-export.com<br />
-                                                    2/C Darussalam Road, Mirpur, Dhaka-1216,Bangladesh
+                                                    Fabrist Fashion <br />
+                                                    fabristlifestyle@gmail.com<br />
+                                                    Mirpur-10, Dhaka, Bangladesh
                                                 </p>
                                             </div>
                                         </div>
@@ -116,9 +116,9 @@
                                                         </div>
                                                     </td>
                                                     <td class="pl0">{{ $item->product->title }}</td>
-                                                    <td class="text-center">${{ $item->product_price }}</td>
+                                                    <td class="text-center">৳ {{ $item->product_price }}</td>
                                                     <td class="text-center">{{ $item->product_qty }}</td>
-                                                    <td class="text-end">${{ $item->product_price * $item->product_qty }}
+                                                    <td class="text-end">৳ {{ $item->product_price * $item->product_qty }}
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -131,57 +131,36 @@
                                                 <td></td>
                                                 <td></td>
                                                 <td class="text-center">SubTotal</td>
-                                                <td class="text-end">${{ $order->sub_total }}</td>
+                                                <td class="text-end">৳ {{ $order->sub_total }}</td>
                                             </tr>
                                             <tr class="tr2">
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
-                                                <td class="text-center">Tax</td>
-                                                <td class="text-end">$00.00</td>
+                                                <td class="text-center">Delivery Charge</td>
+                                                <td class="text-end">৳ {{ $order->delivery_charge }}</td>
                                             </tr>
                                             <tr class="tr2">
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td class="text-center f-w-600 active-color">Grand Total</td>
-                                                <td class="f-w-600 text-end active-color">${{ $order->total }}</td>
+                                                <td class="f-w-600 text-end active-color">৳ {{ $order->total }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            <div class="invoice-bottom">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-8 col-sm-7">
-                                        <div class="mb-30 dear-client">
-                                            <h3 class="inv-title-1">Terms & Conditions</h3>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                industry. Lorem Ipsum has been typesetting industry. Lorem Ipsum</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-4 col-sm-5">
-                                        <div class="mb-30 payment-method">
-                                            <h3 class="inv-title-1">Payment Method</h3>
-                                            <ul class="payment-method-list-1 text-14">
-                                                <li><strong>Account No:</strong> 00 123 647 840</li>
-                                                <li><strong>Account Name:</strong> Jhon Doe</li>
-                                                <li><strong>Branch Name:</strong> xyz</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="invoice-contact clearfix">
                                 <div class="row g-0">
                                     <div class="col-lg-9 col-md-11 col-sm-12">
                                         <div class="contact-info">
-                                            <a href="tel:+55-4XX-634-7071"><i class="fa fa-phone"></i> +00 123 647
-                                                840</a>
+                                            <a href="tel:+55-4XX-634-7071"><i class="fa fa-phone"></i> +88 01604-000104</a>
                                             <a href="tel:info@themevessel.com"><i class="fa fa-envelope"></i>
-                                                info@themevessel.com</a>
+                                                fabristlifestyle@gmail.com</a>
                                             <a href="tel:info@themevessel.com" class="mr-0 d-none-580"><i
-                                                    class="fa fa-map-marker"></i> 169 Teroghoria, Bangladesh</a>
+                                                    class="fa fa-map-marker"></i> Mirpur-10, Dhaka, Bangladesh</a>
                                         </div>
                                     </div>
                                 </div>

@@ -90,9 +90,9 @@
                                                     </div>
                                                 </td>
                                                 <td class="pl0" style="padding: 10px; text-align: left;">{{ $item->product->title }}</td>
-                                                <td class="text-center" style="padding: 10px; text-align: center;">${{ $item->product_price }}</td>
+                                                <td class="text-center" style="padding: 10px; text-align: center;">৳ {{ $item->product_price }}</td>
                                                 <td class="text-center" style="padding: 10px; text-align: center;">{{ $item->product_qty }}</td>
-                                                <td class="text-end" style="padding: 10px; text-align: right;">${{ $item->product_price * $item->product_qty }}</td>
+                                                <td class="text-end" style="padding: 10px; text-align: right;">৳ {{ $item->product_price * $item->product_qty }}</td>
                                             </tr>
                                             @endforeach
 
@@ -101,73 +101,40 @@
                                                 <td style="padding: 10px; text-align: left;"></td>
                                                 <td style="padding: 10px; text-align: left;"></td>
                                                 <td class="text-center" style="padding: 10px; text-align: center;">SubTotal</td>
-                                                <td class="text-end" style="padding: 10px; text-align: right;">${{ $order->sub_total }}</td>
+                                                <td class="text-end" style="padding: 10px; text-align: right;">৳ {{ $order->sub_total }}</td>
                                             </tr>
                                             <tr class="tr2" style="border-bottom: 1px solid #e6e6e6;">
                                                 <td style="padding: 10px; text-align: left;"></td>
                                                 <td style="padding: 10px; text-align: left;"></td>
                                                 <td style="padding: 10px; text-align: left;"></td>
-                                                <td class="text-center" style="padding: 10px; text-align: center;">Tax</td>
-                                                <td class="text-end" style="padding: 10px; text-align: right;">$00.00</td>
+                                                <td class="text-center" style="padding: 10px; text-align: center;">Delivery Charge</td>
+                                                <td class="text-end" style="padding: 10px; text-align: right;">৳ {{ $order->delivery_charge }}</td>
                                             </tr>
                                             <tr class="tr2" style="border-top: 2px solid #e6e6e6; font-weight: bold;">
                                                 <td style="padding: 10px; text-align: left;"></td>
                                                 <td style="padding: 10px; text-align: left;"></td>
                                                 <td style="padding: 10px; text-align: left;"></td>
                                                 <td class="text-center f-w-600 active-color" style="padding: 10px; text-align: center;">Grand Total</td>
-                                                <td class="f-w-600 text-end active-color" style="padding: 10px; text-align: right;">${{ $order->total }}</td>
+                                                <td class="f-w-600 text-end active-color" style="padding: 10px; text-align: right;">৳ {{ $order->total }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            <div class="invoice-bottom" style="margin-bottom: 20px;">
-                                <div class="row" style="display: flex; flex-wrap: wrap;">
-                                    <div class="col-lg-6 col-md-8 col-sm-7" style="width: 50%;">
-                                        <div class="mb-30 dear-client" style="margin-bottom: 30px;">
-                                            <h3 style="font-size: 24px; margin-bottom: 10px;">Terms & Conditions</h3>
-                                            <p style="margin: 0;">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                industry. Lorem Ipsum has been typesetting industry. Lorem Ipsum</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-4 col-sm-5" style="width: 50%; text-align: right;">
-                                        <div class="mb-30 payment-method" style="margin-bottom: 30px;">
-                                            <h3 style="font-size: 24px; margin-bottom: 10px;">Payment Method</h3>
-                                            <ul class="payment-method-list-1 text-14" style="list-style: none; padding: 0; margin: 0;">
-                                                <li style="margin-bottom: 5px;"><strong>Account No:</strong> 00 123 647 840</li>
-                                                <li style="margin-bottom: 5px;"><strong>Account Name:</strong> Jhon Doe</li>
-                                                <li style="margin-bottom: 5px;"><strong>Branch Name:</strong> xyz</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="invoice-contact clearfix" style="border-top: 2px solid #e6e6e6; padding-top: 20px;">
                                 <div class="row g-0" style="display: flex; flex-wrap: wrap;">
                                     <div class="col-lg-9 col-md-11 col-sm-12" style="width: 100%;">
                                         <div class="contact-info" style="display: flex; justify-content: space-between;">
-                                            <a href="tel:+55-4XX-634-7071" style="color: #333; text-decoration: none;"><i class="fa fa-phone"></i> +4407 407 464 849</a>
-                                            <a href="tel:info@themevessel.com" style="color: #333; text-decoration: none;"><i class="fa fa-envelope"></i> info@simpleissmart.com</a>
-                                            <a href="tel:info@themevessel.com" class="mr-0 d-none-580" style="color: #333; text-decoration: none;"><i class="fa fa-map-marker"></i> 2/C Darussalam Road, Mirpur, Dhaka-1216,Bangladesh</a>
+                                            <a href="tel:+55-4XX-634-7071" style="color: #333; text-decoration: none;"><i class="fa fa-phone"></i> +88 01604-000104</a>
+                                            <a href="tel:info@themevessel.com" style="color: #333; text-decoration: none;"><i class="fa fa-envelope"></i> fabristlifestyle@gmail.com</a>
+                                            <a href="tel:info@themevessel.com" class="mr-0 d-none-580" style="color: #333; text-decoration: none;"><i class="fa fa-map-marker"></i> Mirpur-10, Dhaka, Bangladesh</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="invoice-btn-section clearfix d-print-none" style="margin-top: 20px; text-align: center;">
-
-                            @if ($user_data->role_id == 1)
-                            <a href="javascript:window.print()" class="btn btn-lg btn-print" style="background-color: #333; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
-                                <i class="fa fa-print"></i> Print Invoice
-                            </a>
-                            @else
-                            <a href="javascript:window.print()" class="btn btn-lg btn-print" style="background-color: #333; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
-                                <i class="fa fa-download"></i> Download Invoice
-                            </a>
-                            @endif
-
-                        </div>
                     </div>
                 </div>
             </div>

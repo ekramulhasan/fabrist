@@ -2,23 +2,21 @@
 
 namespace App\Http\Controllers\frontend;
 
-use App\Models\Order;
-use App\Models\Billing;
-use App\Models\Product;
-use App\Models\Upazila;
-use App\Models\District;
-use App\Mail\OrderConfirm;
-use App\Models\OrderDetails;
-use Illuminate\Http\Request;
-use App\Http\Requests\orderRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\orderRequest;
+use App\Models\Billing;
+use App\Models\District;
+use App\Models\Order;
+use App\Models\OrderDetails;
+use App\Models\Product;
 use App\Models\Size;
-use Brian2694\Toastr\Facades\Toastr;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Session;
+use App\Models\Upazila;
 use App\Notifications\InvoiceNotification;
+use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Session;
 
 class CheckOutController extends Controller {
 
@@ -33,33 +31,32 @@ class CheckOutController extends Controller {
 
     }
 
-
-    public function addTodirect(Request $request){
+    public function addTodirect( Request $request ) {
 
         // dd($request->all());
         $product_slug = $request->product_slug;
-        $product_qty = $request->quantity;
+        $product_qty  = $request->quantity;
         $product_size = $request->size;
 
-        $product = Product::whereSlug($product_slug)->first();
-        $size = Size::where('id',$product_size)->select('size_name')->first();
+        $product = Product::whereSlug( $product_slug )->first();
+        $size    = Size::where( 'id', $product_size )->select( 'size_name' )->first();
 
-        \Cart::add([
+        \Cart::add( [
 
-            'id' => $product->id,
-            'name' => $product->title,
-            'price' => $product->price,
-            'quantity' => $product_qty,
+            'id'         => $product->id,
+            'name'       => $product->title,
+            'price'      => $product->price,
+            'quantity'   => $product_qty,
             'attributes' => [
 
-                'product_img' => $product->product_img,
-                'weight' => 0,
+                'product_img'   => $product->product_img,
+                'weight'        => 0,
                 'product_stock' => $product->product_stock,
-                'size' => $size['size_name'],
+                'size'          => $size['size_name'],
 
             ],
 
-        ]);
+        ] );
 
         $carts       = \Cart::getContent();
         $total_price = \Cart::getSubTotal();
@@ -111,9 +108,10 @@ class CheckOutController extends Controller {
             'user_id'         => auth()->id(),
             'billing_id'      => $billing->id,
             'sub_total'       => Session::get( 'coupon' )['cart_total'] ?? \Cart::getSubTotal(),
+            'delivery_charge' => $request->deliveryCharge,
             'discount_amount' => Session::get( 'coupon' )['discount_amount'] ?? 0,
             'coupon_name'     => Session::get( 'coupon' )['coupon_name'] ?? 0,
-            'total'           => Session::get( 'coupon' )['balance'] ?? \Cart::getSubTotal(),
+            'total'           => $request->totalValue,
 
         ] );
 
@@ -139,7 +137,7 @@ class CheckOutController extends Controller {
         }
 
         $order_data = Order::whereId( $order->id )->with( 'billing', 'orderDetails' )->first();
-        $user_data     = Auth::user();
+        $user_data  = Auth::user();
 
         // dd($order_confirm);
 
@@ -147,12 +145,11 @@ class CheckOutController extends Controller {
         // Notification::route('mail','ekramulshawon1@gmail.con')->notify();
         $user = Auth::user();
         // $user->notify(new InvoiceNotification());
-        Notification::send($user, new InvoiceNotification($order_data,$user_data));
+        Notification::send( $user, new InvoiceNotification( $order_data, $user_data ) );
 
         Toastr::success( 'your order placed successfully', 'success' );
-        return redirect()->route( 'customer.profile' );
+        return redirect()->route('home');
     }
-
 
     public function directOrder( orderRequest $request ) {
 
@@ -176,8 +173,9 @@ class CheckOutController extends Controller {
             'billing_id'      => $billing->id,
             'sub_total'       => Session::get( 'coupon' )['cart_total'] ?? \Cart::getSubTotal(),
             'discount_amount' => Session::get( 'coupon' )['discount_amount'] ?? 0,
+            'delivery_charge' => $request->deliveryCharge,
             'coupon_name'     => Session::get( 'coupon' )['coupon_name'] ?? 0,
-            'total'           => Session::get( 'coupon' )['balance'] ?? \Cart::getSubTotal(),
+            'total'           => $request->totalValue,
 
         ] );
 
@@ -203,7 +201,7 @@ class CheckOutController extends Controller {
         }
 
         $order_data = Order::whereId( $order->id )->with( 'billing', 'orderDetails' )->first();
-        $user_data     = Auth::user();
+        $user_data  = Auth::user();
 
         // dd($order_confirm);
 
@@ -214,9 +212,9 @@ class CheckOutController extends Controller {
         return redirect()->route( 'home' );
     }
 
-    public function orderPage(){
+    public function orderPage() {
 
-        return view('frontend.pages.order');
+        return view( 'frontend.pages.order' );
     }
 
 }

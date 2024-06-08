@@ -87,4 +87,48 @@ Order | Page
     });
 
 </script>
+
+<script>
+    function updateDeliveryCharge() {
+
+        const selectedOption = document.querySelector('input[name="deliveryCharge"]:checked');
+        const deliveryChargeElement = document.getElementById('deliveryCharge');
+        const totalPriceElement = document.getElementById('totalPrice');
+        const totalPrice =  parseInt(document.getElementById('total').value);
+        const totalPriceValue = document.getElementById('totalValue');
+
+
+
+        deliveryChargeElement.textContent =  parseInt(selectedOption.value,10);
+        totalPriceElement.textContent = "৳ "+(parseInt(selectedOption.value,10) + totalPrice);
+        totalPriceValue.value = (parseInt(selectedOption.value,10) + totalPrice);
+
+        // alert(totalPriceValue);
+    }
+
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+
+            if (!document.querySelector('input[name="deliveryCharge"]:checked')) {
+                alert('Please select a delivery charge.');
+                event.preventDefault();
+            }
+
+            var isValid = true;
+
+                if ($('#district_id').val() === null) {
+                    alert('Please select a district.');
+                    isValid = false;
+                }
+
+                if ($('#upazila_id').val() === '') {
+                    alert('Please select a town/upazila.');
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    event.preventDefault();
+                }
+        });
+        
+</script>
 @endpush

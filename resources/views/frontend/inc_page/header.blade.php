@@ -27,8 +27,8 @@
                                 </li>
                                 <li id="menu-item-228"
                                     class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-228 parent parent-megamenu item-megamenu menu-item-has-children">
-                                    <a class="akasha-menu-item-title" title="Shop"
-                                       href="{{ route('allproduct.page') }}">Products</a>
+                                    <a class="akasha-menu-item-title" title="products"
+                                       href="#">Products</a>
                                     <span class="toggle-submenu"></span>
                                     <div class="submenu megamenu megamenu-shop">
                                         <div class="row">
@@ -57,7 +57,7 @@
                                 </li>
                                 <li id="menu-item-229"
                                     class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-229 parent parent-megamenu item-megamenu menu-item-has-children">
-                                    <a class="akasha-menu-item-title" title="Elements" href="{{ route('allproduct.page') }}">Shop</a>
+                                    <a class="akasha-menu-item-title" title="shop" href="{{ route('allproduct.page') }}">Shop</a>
 
                                 </li>
 

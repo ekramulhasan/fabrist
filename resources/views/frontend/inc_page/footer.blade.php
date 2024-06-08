@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-4">
-                   
+
                     <div class="akasha-listitem style-01">
                         <div class="listitem-inner">
                             <h4 class="title">About Fabrist</h4>
@@ -48,8 +48,8 @@
                                 Customer </h4>
                             <ul class="listitem-list">
                                 <li>
-                                    <a href="#" target=" _blank">
-                                        Shipping &amp; Returns </a>
+                                    <a href="/return" target=" _blank">
+                                        Returns Policy</a>
                                 </li>
                                 <li>
                                     <a href="#" target="_self">
@@ -57,7 +57,7 @@
                                 </li>
                                 <li>
                                     <a href="#" target="_self">
-                                        Order Status </a>
+                                        Order Tracking </a>
                                 </li>
                                 <li>
                                     <a href="#" target="_self">
@@ -86,7 +86,7 @@
                                         Customer Service </a>
                                 </li>
                                 <li>
-                                    <a href="#" target="_self">
+                                    <a href="/return" target="_self">
                                         Orders and Returns </a>
                                 </li>
                                 <li>
@@ -132,7 +132,7 @@
                 <div class="col-md-12 text-center">
                     <p>© Copyright 2024 <a href="#">Fabrist Fashion</a>. All Rights Reserved.</p>
                 </div>
-              
+
             </div>
         </div>
     </div>
