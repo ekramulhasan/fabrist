@@ -21,7 +21,7 @@ Products | Page
         </div>
         <div class="akasha-products style-02">
             <div class="response-product product-list-owl owl-slick equal-container better-height"
-                data-slick="{&quot;arrows&quot;:false,&quot;slidesMargin&quot;:30,&quot;dots&quot;:true,&quot;infinite&quot;:false,&quot;speed&quot;:300,&quot;slidesToShow&quot;:4,&quot;rows&quot;:2}"
+                data-slick="{&quot;arrows&quot;:false,&quot;slidesMargin&quot;:30,&quot;dots&quot;:false,&quot;infinite&quot;:false,&quot;speed&quot;:300,&quot;slidesToShow&quot;:4,&quot;rows&quot;:2}"
                 data-responsive="[{&quot;breakpoint&quot;:480,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:768,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:992,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:1500,&quot;settings&quot;:{&quot;slidesToShow&quot;:4,&quot;slidesMargin&quot;:&quot;30&quot;}}]">
 
                 @foreach ($product as $value)
@@ -49,7 +49,7 @@ Products | Page
                                 <a href="{{ route('productDetails.page',[$value->slug]) }}" tabindex="0">{{ $value->title }}</a>
                             </h3>
                             <span class="price"><span class="akasha-Price-amount amount"><span
-                                        class="akasha-Price-currencySymbol">$</span>{{ $value->price }}</span>
+                                        class="akasha-Price-currencySymbol">৳ </span>{{ $value->price }}</span>
                         </div>
                         <div class="group-button clearfix">
                             <div class="yith-wcwl-add-to-wishlist">
@@ -73,15 +73,10 @@ Products | Page
 
                 </div>
             </div>
-            <div class="col-12 text-center d-flex justify-content-center ">
-{{--
-                <div class="py-3">
+            <nav class="akasha-pagination text-center mt-5">
+                {{ $product->links() }}
+            </nav>
 
-                    {{ $product->links() }}
-
-                </div> --}}
-
-            </div>
         </div>
     </div>
 </div>

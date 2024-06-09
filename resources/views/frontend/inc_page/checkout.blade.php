@@ -1,17 +1,3 @@
-{{-- <div class="banner-wrapper has_background">
-    <img src="{{ asset('assets') }}/images/banner-for-all2.jpg" class="img-responsive attachment-1920x447 size-1920x447"
-        alt="img">
-    <div class="banner-wrapper-inner">
-        <h1 class="page-title">Checkout</h1>
-        <div role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs">
-            <ul class="trail-items breadcrumb">
-                <li class="trail-item trail-begin"><a href="index.html"><span>Home</span></a></li>
-                <li class="trail-item trail-end active"><span>Checkout</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div> --}}
 <main class="site-main  main-container no-sidebar">
     <div class="container">
         <div class="row mt-5">
@@ -48,7 +34,8 @@
                         </div>
 
                         <form name="checkout" method="post" class="checkout akasha-checkout"
-                            action="{{ route('place.order') }}" enctype="multipart/form-data" novalidate="novalidate" id="orderForm">
+                            action="{{ route('place.order') }}" enctype="multipart/form-data" novalidate="novalidate"
+                            id="orderForm">
                             @csrf
                             <div class="col2-set" id="customer_details">
                                 <div class="col-1">
@@ -101,7 +88,8 @@
                                                     <select id="upazila_id" name="upazila_id"
                                                         class="form-control js-example-basic-single @error('upazila_id')
                                                         is-invalid
-                                                    @enderror" required>
+                                                    @enderror"
+                                                        required>
                                                         <option value="">Select a upazila</option>
                                                     </select>
                                                 </div>
@@ -158,40 +146,36 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
                                         @foreach ($carts as $value)
                                             <tr class="cart_item">
-                                                <td class="product-name">
+                                                <td class="product-name" data-title="Product">
                                                     {{ $value->name }} <strong class="product-quantity">×
                                                         {{ $value->quantity }}</strong>
-
                                                     <br>
                                                     <span>Size: <strong>{{ $value->attributes->size }}</strong></span>
-
                                                 </td>
-                                                <td class="product-total">
+                                                <td class="product-total" data-title="Total">
                                                     <span class="akasha-Price-amount amount"><span
-                                                            class="akasha-Price-currencySymbol">৳ </span>{{ $value->price * $value->quantity }}</span>
+                                                            class="akasha-Price-currencySymbol">৳</span>{{ $value->price * $value->quantity }}</span>
                                                 </td>
                                             </tr>
                                         @endforeach
-
                                     </tbody>
                                     <tfoot>
                                         <tr class="cart-subtotal">
                                             <th>Subtotal</th>
-                                            <td><span class="akasha-Price-amount amount"><span
-                                                        class="akasha-Price-currencySymbol">৳
-                                                    </span>
+                                            <td data-title="Subtotal">
+                                                <span class="akasha-Price-amount amount">
+                                                    <span class="akasha-Price-currencySymbol">৳</span>
                                                     @if (Session::has('coupon'))
                                                         {{ Session::get('coupon')['balance'] }} <del
-                                                            class="text-danger">৳ {{ Session::get('coupon')['cart_total'] }}</del>
+                                                            class="text-danger">৳
+                                                            {{ Session::get('coupon')['cart_total'] }}</del>
                                                     @else
                                                         {{ $total_price }}
                                                     @endif
                                                 </span>
                                                 <br>
-
                                                 @if (Session::has('coupon'))
                                                     <a href="{{ route('coupon.remove', ['coupon_name']) }}"
                                                         class="remove h6" aria-label="Remove this item">× <b
@@ -200,27 +184,25 @@
                                                 @endif
                                             </td>
                                         </tr>
-
                                         <tr class="cart-subtotal">
                                             <th>
                                                 <span>Delivery Charge :</span>
-
                                                 <div class="form-check mt-2">
                                                     <input class="form-check-input" type="radio" id="insideDhaka"
                                                         name="deliveryCharge" value="80"
                                                         onclick="updateDeliveryCharge()" required>
-                                                    <label class="form-check-label" for="insideDhaka">Inside Dhaka</label>
+                                                    <label class="form-check-label" for="insideDhaka">Inside
+                                                        Dhaka</label>
                                                 </div>
-
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" id="outsideDhaka"
                                                         name="deliveryCharge" value="110"
                                                         onclick="updateDeliveryCharge()" required>
-                                                    <label class="form-check-label" for="outsideDhaka">Outside Dhaka</label>
+                                                    <label class="form-check-label" for="outsideDhaka">Outside
+                                                        Dhaka</label>
                                                 </div>
-
                                             </th>
-                                            <td>
+                                            <td data-title="Delivery Charge">
                                                 <span class="akasha-Price-amount amount">
                                                     <span class="akasha-Price-currencySymbol">৳</span>
                                                     <span id="deliveryCharge">0</span>
@@ -229,24 +211,20 @@
                                         </tr>
                                         <tr class="order-total">
                                             <th>Total</th>
-
-                                                @if (Session::has('coupon'))
-                                                    <input type="number" hidden
-                                                        value="{{ Session::get('coupon')['balance'] }}" id="total">
-                                                @else
-                                                    <input type="number" hidden value="{{ $total_price }}"
-                                                        id="total">
-                                                @endif
-
-                                            <td>
-
+                                            @if (Session::has('coupon'))
+                                                <input type="number" hidden
+                                                    value="{{ Session::get('coupon')['balance'] }}" id="total">
+                                            @else
+                                                <input type="number" hidden value="{{ $total_price }}"
+                                                    id="total">
+                                            @endif
+                                            <td data-title="Total">
+                                                <span class="akasha-Price-amount amount">
+                                                    <input type="number" id="totalValue" value="0" hidden
+                                                        name="totalValue">
+                                                </span>
                                                 <strong>
-
-                                                    <span class="akasha-Price-amount amount">
-                                                        <input type="number" id="totalValue" value="0" hidden name="totalValue">
-                                                    </span>
                                                     <span class="akasha-Price-amount amount" id="totalPrice">
-
                                                         @if (Session::has('coupon'))
                                                             ৳ {{ Session::get('coupon')['balance'] }}
                                                         @else
@@ -254,32 +232,26 @@
                                                         @endif
                                                     </span>
                                                 </strong>
-
                                             </td>
                                         </tr>
                                     </tfoot>
                                 </table>
-                                
                                 <div id="payment" class="akasha-checkout-payment">
                                     <ul class="wc_payment_methods payment_methods methods">
-
                                         <li class="mb-3">
                                             <b>
-                                                Inside Dhaka City: Home Delivery with in 1-2 Days.
-                                                Outside Dhaka City: Home Delivery With in 2-3 Days.
+                                                Inside Dhaka City: Home Delivery within 1-2 Days.
+                                                Outside Dhaka City: Home Delivery within 2-3 Days.
                                             </b>
                                         </li>
-
                                         <li class="wc_payment_method payment_method_cod">
                                             <input id="payment_method_cod" type="radio" class="input-radio"
                                                 name="payment_method" value="cod" data-order_button_text="">
-                                            <label for="payment_method_cod">
-                                                Cash on delivery </label>
+                                            <label for="payment_method_cod">Cash on delivery</label>
                                             <div class="payment_box payment_method_cod" style="display:none;">
                                                 <p>Pay with cash upon delivery.</p>
                                             </div>
                                         </li>
-
                                     </ul>
                                     <div class="form-row place-order">
                                         <noscript>
@@ -294,24 +266,25 @@
                                         </noscript>
                                         <div class="akasha-terms-and-conditions-wrapper">
                                             <div class="akasha-privacy-policy-text">
-                                                <p>Your personal data will be
-                                                    used to process your order, support your experience throughout this
-                                                    website, and for other purposes described in our <a href="{{ route('privacy.page') }}"
+                                                <p>Your personal data will be used to process your order, support your
+                                                    experience throughout this website, and for other purposes described
+                                                    in our <a href="{{ route('privacy.page') }}"
                                                         class="akasha-privacy-policy-link" target="_blank">privacy
                                                         policy</a>.</p>
                                             </div>
                                         </div>
                                         <button type="submit" class="button alt" name="akasha_checkout_place_order"
                                             id="place_order" value="Place order" data-value="Place order">Place
-                                            order
-                                        </button>
+                                            order</button>
                                         <input type="hidden" id="akasha-process-checkout-nonce"
-                                            name="akasha-process-checkout-nonce" value="634590c981"><input
-                                            type="hidden" name="_wp_http_referer"
+                                            name="akasha-process-checkout-nonce" value="634590c981">
+                                        <input type="hidden" name="_wp_http_referer"
                                             value="/akasha/?akasha-ajax=update_order_review">
                                     </div>
                                 </div>
                             </div>
+
+
                         </form>
 
                     </div>

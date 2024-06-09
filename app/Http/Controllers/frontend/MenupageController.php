@@ -37,7 +37,7 @@ class MenupageController extends Controller {
 
     public function categoryProduct( $slug ) {
 
-        $category_product = category::where( [['isActive', 1], ['slug', $slug]] )->with( ['product.productImage'] )->latest( 'id' )->get();
+        $category_product = category::where( [['isActive', 1], ['slug', $slug]] )->with( ['product.productImage'] )->latest( 'id' )->paginate( 8 );
 
         // dd( $category_product );
 

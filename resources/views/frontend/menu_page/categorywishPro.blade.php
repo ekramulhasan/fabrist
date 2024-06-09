@@ -73,15 +73,11 @@ Products | Page
 
                 </div>
             </div>
-            <div class="col-12 text-center d-flex justify-content-center ">
 
-                <div class="py-3">
+            <nav class="akasha-pagination text-center mt-5">
+                {{ $product->links() }}
+            </nav>
 
-                    {{ $product->links() }}
-
-                </div>
-
-            </div>
         </div>
     </div>
 </div>

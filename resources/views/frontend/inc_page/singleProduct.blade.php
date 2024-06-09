@@ -57,7 +57,13 @@
                                 <p class="price"><span class="akasha-Price-amount amount"><span
                                             class="akasha-Price-currencySymbol">৳ </span>{{ $product->price }}</span>
                                 <p class="stock in-stock">
+
+                                    @if ($product->product_stock == 0)
+                                    Availability: <span class="text-danger font-weight-bold"> Stock out </span>
+                                    @else
                                     Availability: <span> In stock</span>
+                                    @endif
+
                                 </p>
                                 <div class="akasha-product-details__short-description">
                                     <p>{{ $product->short_description }}</p>
@@ -101,19 +107,6 @@
 
                                         <div
                                             class="mb-3">
-
-                                            {{-- <div class="quantity">
-                                                <span class="qty-label">Quantiy:</span>
-                                                <div class="control">
-                                                    <a class="btn-number qtyminus quantity-minus" href="#">-</a>
-                                                    <input type="text" data-step="1" min="1" max=""
-                                                        name="quantity" value="1" title="Qty"
-                                                        class="input-qty input-text qty text" size="4"
-                                                        pattern="[0-9]*" inputmode="numeric" required>
-                                                    <a class="btn-number qtyplus quantity-plus" href="#">+</a>
-                                                </div>
-
-                                            </div> --}}
 
                                             <br>
                                             <div class="button-container">
@@ -175,9 +168,7 @@
                                     <h2 class="az_custom_heading">{{ $product->title }}</h2>
                                     <p>{{ $product->long_description }}</p>
                                 </div>
-
                             </div>
-
                         </div>
                         <div class="akasha-Tabs-panel akasha-Tabs-panel--additional_information panel entry-content akasha-tab"
                             id="tab-additional_information" role="tabpanel"
@@ -252,6 +243,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
             <div class="col-md-12 col-sm-12 dreaming_related-product">
@@ -274,11 +266,11 @@
                         "rows": 1
                     }'
                         data-responsive='[
-                        {"breakpoint": 480, "settings": {"slidesToShow": 4, "slidesMargin": 0}},
-                        {"breakpoint": 768, "settings": {"slidesToShow": 4, "slidesMargin": 0}},
-                        {"breakpoint": 992, "settings": {"slidesToShow": 4, "slidesMargin": 0}},
-                        {"breakpoint": 1200, "settings": {"slidesToShow": 4, "slidesMargin": 0}},
-                        {"breakpoint": 1500, "settings": {"slidesToShow": 4, "slidesMargin": 0}}
+                        {"breakpoint": 480, "settings": {"slidesToShow": 4, "slidesMargin": 10}},
+                        {"breakpoint": 768, "settings": {"slidesToShow": 4, "slidesMargin": 10}},
+                        {"breakpoint": 992, "settings": {"slidesToShow": 4, "slidesMargin": 10}},
+                        {"breakpoint": 1200, "settings": {"slidesToShow": 4, "slidesMargin": 10}},
+                        {"breakpoint": 1500, "settings": {"slidesToShow": 4, "slidesMargin": 10}}
                     ]'>
 
                         @foreach ($related_product as $value)
@@ -323,7 +315,7 @@
                                             <span class="review">(0)</span>
                                         </div>
                                         <span class="price"><span class="akasha-Price-amount amount"><span
-                                                    class="akasha-Price-currencySymbol">$</span>{{ $value->price }}</span></span>
+                                                    class="akasha-Price-currencySymbol">৳ </span>{{ $value->price }}</span></span>
                                     </div>
                                 </div>
                             </div>

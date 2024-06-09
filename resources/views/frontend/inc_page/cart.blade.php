@@ -1,20 +1,7 @@
-<div class="banner-wrapper has_background">
-    <img src="assets/images/banner-for-all2.jpg"
-         class="img-responsive attachment-1920x447 size-1920x447" alt="img">
-    <div class="banner-wrapper-inner">
-        <h1 class="page-title">Cart</h1>
-        <div role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs">
-            <ul class="trail-items breadcrumb">
-                <li class="trail-item trail-begin"><a href="index.html"><span>Home</span></a></li>
-                <li class="trail-item trail-end active"><span>Cart</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+
 <main class="site-main main-container no-sidebar">
     <div class="container">
-        <div class="row">
+        <div class="row mt-5">
             <div class="main-content col-md-12">
                 <div class="page-main-content">
                     <div class="akasha">
@@ -53,7 +40,7 @@
                                                 <a href="#">{{ $value->name }}</a></td>
                                             <td class="product-price" data-title="Price">
                                                 <span class="akasha-Price-amount amount"><span
-                                                        class="akasha-Price-currencySymbol">$</span>{{ $value->price }}</span></td>
+                                                        class="akasha-Price-currencySymbol">৳ </span>{{ $value->price }}</span></td>
                                             <td class="product-quantity" data-title="Quantity">
                                                 <div class="quantity">
                                                     <span class="qty-label">Quantiy:</span>
@@ -67,7 +54,7 @@
                                             </td>
                                             <td class="product-subtotal" data-title="Total">
                                                 <span class="akasha-Price-amount amount"><span
-                                                        class="akasha-Price-currencySymbol">$</span>{{ $value->price*$value->quantity }}</span></td>
+                                                        class="akasha-Price-currencySymbol">৳ </span>{{ $value->price*$value->quantity }}</span></td>
                                         </tr>
                                     @endforeach
                                     <tr>
@@ -107,7 +94,7 @@
                                     <tr class="cart-subtotal">
                                         <th>Subtotal</th>
                                         <td data-title="Subtotal"><span class="akasha-Price-amount amount"><span
-                                                class="akasha-Price-currencySymbol">$</span>
+                                                class="akasha-Price-currencySymbol">৳</span>
                                                 @if (Session::has('coupon'))
                                                     {{ Session::get('coupon')['balance']}}
                                                 @else
@@ -123,7 +110,7 @@
                                         <th>Total</th>
                                         <td data-title="Total"><strong><span
                                                 class="akasha-Price-amount amount"><span
-                                                class="akasha-Price-currencySymbol">$</span>
+                                                class="akasha-Price-currencySymbol">৳</span>
                                                 @if (Session::has('coupon'))
                                                     {{ Session::get('coupon')['balance']}}
                                                 @else
@@ -136,7 +123,7 @@
                                 </table>
 
                                 <div class="akasha-proceed-to-checkout my-3">
-                                    <a href="/order-page"
+                                    <a href="{{ route('cutomer.checkout') }}"
                                        class="checkout-button button alt akasha-forward">
                                        Order now</a>
                                 </div>
@@ -148,7 +135,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12 col-sm-12 dreaming_crosssell-product">
+                        {{-- <div class="col-md-12 col-sm-12 dreaming_crosssell-product">
                             <div class="block-title">
                                 <h2 class="product-grid-title">
                                     <span>Cross Sell Products</span>
@@ -304,7 +291,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

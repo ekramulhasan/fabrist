@@ -29,7 +29,7 @@
                                     @csrf
 
                                     <p class="akasha-form-row akasha-form-row--wide form-row form-row-wide">
-                                        <label for="username">email&nbsp;<span class="required">*</span></label>
+                                        <label for="username">Email&nbsp;<span class="required">*</span></label>
                                         <input type="email" class="akasha-Input akasha-Input--text input-text"
                                             name="email" id="email" autocomplete="email">
                                     </p>
@@ -52,7 +52,7 @@
                                         </label>
                                     </p>
                                     <p class="akasha-LostPassword lost_password">
-                                        <a href="my-account.htmllost-password/">Lost your
+                                        <a href="#">Lost your
                                             password?</a>
                                     </p>
                                 </form>
@@ -93,7 +93,7 @@
                                     <div class="akasha-privacy-policy-text">
                                         <p>Your personal data will be used to
                                             support your experience throughout this website, to manage access to your
-                                            account, and for other purposes described in our <a href="#"
+                                            account, and for other purposes described in our <a href="{{ route('privacy.page') }}"
                                                 class="akasha-privacy-policy-link" target="_blank">privacy policy</a>.
                                         </p>
                                     </div>

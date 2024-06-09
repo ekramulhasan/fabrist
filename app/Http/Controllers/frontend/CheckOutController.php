@@ -91,6 +91,21 @@ class CheckOutController extends Controller {
 
         // dd( $request->all() );
 
+        foreach (\Cart::getContent() as $value ) {
+
+            $product_stock = Product::find( $value->id );
+
+            if ($product_stock->product_stock < $value->quantity) {
+               //cart destroy
+              \Cart::remove( $value->id );
+              //session destroy
+              Session::forget( 'coupon' );
+            Toastr::error( 'this product stock out', 'sorry' );
+            return redirect()->route( 'home' );
+            }
+
+        }
+
         $billing = Billing::create( [
 
             'name'        => $request->name,
@@ -152,6 +167,22 @@ class CheckOutController extends Controller {
     }
 
     public function directOrder( orderRequest $request ) {
+
+        foreach (\Cart::getContent() as $value ) {
+
+            $product_stock = Product::find( $value->id );
+
+            if ($product_stock->product_stock < $value->quantity) {
+               //cart destroy
+              \Cart::remove( $value->id );
+              //session destroy
+              Session::forget( 'coupon' );
+            Toastr::error( 'this product stock out', 'sorry' );
+            return redirect()->route( 'home' );
+            }
+
+
+        }
 
         // dd( $request->all() );
 

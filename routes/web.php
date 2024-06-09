@@ -81,6 +81,7 @@ Route::get( '/view-clear', function () {
 
 Route::get( '/', [HomeController::class, 'home'] )->name( 'home' );
 Route::get( '/single-product/{product_slug}', [HomeController::class, 'productDetails'] )->name( 'productDetails.page' );
+Route::get('/search',[HomeController::class,'search'])->name('search');
 
 Route::get( '/cart-page', [CartController::class, 'cartPage'] )->name( 'cart.page' );
 Route::post( 'addTocart/{product_slug}', [CartController::class, 'addTocart'] )->name( 'addTo.cart' );
@@ -88,7 +89,11 @@ Route::post( 'directorder/{product_slug}', [CheckOutController::class, 'addTodir
 Route::get( 'remove-item/{cart_id}', [CartController::class, 'removeFromcart'] )->name( 'remove_item' );
 Route::post( 'direct-Order', [CheckOutController::class, 'directOrder'] )->name( 'directOrder' );
 Route::get( 'wishlist/{product_slug}', [CartController::class, 'addWish'] )->name( 'addWish.list' );
-Route::view('order-page','frontend.pages.order')->name('order.page');
+// Route::get('/order-page',function(){
+
+//     return view('frontend.pages.order');
+// });
+// Route::view('order-page','frontend.pages.order')->name('order.page');
 
 
 // coupon apply and remove

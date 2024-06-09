@@ -14,15 +14,15 @@ class HomeController extends Controller {
 
         $testimonial     = Testimonial::where( 'is_active', 1 )->latest( 'id' )->limit( 3 )->select( ['id', 'client_name', 'client_designation', 'client_msg', 'client_img'] )->get();
         $categories      = category::where( 'isActive', 1 )->with( 'product' )->latest( 'id' )->select( ['id', 'title', 'slug'] )->get();
-        $categoryWithSub = category::where('isActive',1)->with(['subCategoryes.subsubcategories'])->latest( 'id' )->select(['id', 'title', 'slug'] )->get();
+        $categoryWithSub = category::where( 'isActive', 1 )->with( ['subCategoryes.subsubcategories'] )->latest( 'id' )->select( ['id', 'title', 'slug'] )->get();
         // return $testimonial;
         // return view('frontend.pages.home', compact('testimonial'));
 
-        $product = Product::where( 'is_active', 1 )->latest( 'id' )->with( 'category', 'sizes', 'subcategory' )->paginate( 8 );
+        $product = Product::where( 'is_active', 1 )->latest( 'id' )->with( 'category', 'sizes', 'subcategory' )->paginate( 12 );
         // dd($categoryWithSub);
         // return $product;
-        $master = view('frontend.master',compact( 'testimonial', 'product', 'categories', 'categoryWithSub' ));
-        return view('frontend.pages.home', compact( 'testimonial', 'product', 'categories', 'categoryWithSub' ) );
+        $master = view( 'frontend.master', compact( 'testimonial', 'product', 'categories', 'categoryWithSub' ) );
+        return view( 'frontend.pages.home', compact( 'testimonial', 'product', 'categories', 'categoryWithSub' ) );
 
     }
 
@@ -46,17 +46,15 @@ class HomeController extends Controller {
         return view( 'frontend.pages.singleProduct', compact( 'product', 'related_product' ) );
     }
 
-    public function search(Request $request)
-    {
-        $query = $request->input('search');
+    public function search( Request $request ) {
 
+        $query = $request->input( 'search' );
         // dd($query);
+        $product         = Product::where( 'title', 'LIKE', "%$query%" )->latest( 'id' )->with( 'category', 'sizes', 'subcategory' )->paginate( 8 );
+        $categories      = category::where( 'isActive', 1 )->latest( 'id' )->with( 'product' )->select( ['id', 'title', 'slug'] )->get();
+        $categoryWithSub = category::where( 'isActive', 1 )->with( ['subCategoryes.subsubcategories'] )->latest( 'id' )->select( ['id', 'title', 'slug'] )->get();
 
-        $product = Product::where('title', 'LIKE', "%$query%")->with( 'category', 'sizes', 'subcategory' )->get();
-        $categories      = category::where( 'isActive', 1 )->with( 'product' )->latest( 'id' )->select( ['id', 'title', 'slug'] )->get();
-        $categoryWithSub = category::where('isActive',1)->with(['subCategoryes.subsubcategories'])->latest( 'id' )->select(['id', 'title', 'slug'] )->get();
-
-        return view('frontend.pages.searchProduct', compact('product','categories','categoryWithSub'));
+        return view( 'frontend.pages.searchProduct', compact( 'product', 'categories', 'categoryWithSub' ) );
 
     }
 

@@ -16,25 +16,24 @@
                     </div>
                     <div class="header-logo-nav">
                         <div class="header-logo">
-                            <a href="{{ route('home') }}"><img alt="Akasha" src="{{ asset('assets') }}/images/fabrist.png"
-                                                      class="logo"></a></div>
+                            <a href="{{ route('home') }}"><img alt="Akasha"
+                                    src="{{ asset('assets') }}/images/fabrist.png" class="logo"></a>
+                        </div>
                         <div class="box-header-nav menu-nocenter">
                             <ul id="menu-primary-menu"
                                 class="clone-main-menu akasha-clone-mobile-menu akasha-nav main-menu">
                                 <li id="menu-item-230"
-                                    class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-230 parent parent-megamenu item-megamenu menu-item-has-children">
+                                    class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-230 parent parent-megamenu item-megamenu">
                                     <a class="akasha-menu-item-title" title="Home" href="/">Home</a>
                                 </li>
                                 <li id="menu-item-228"
                                     class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-228 parent parent-megamenu item-megamenu menu-item-has-children">
-                                    <a class="akasha-menu-item-title" title="products"
-                                       href="#">Products</a>
+                                    <a class="akasha-menu-item-title" title="categories" href="#">Categories</a>
                                     <span class="toggle-submenu"></span>
                                     <div class="submenu megamenu megamenu-shop">
                                         <div class="row">
 
                                             @foreach ($categoryWithSub as $value)
-
                                                 <div class="col-md-4 mt-3">
 
                                                     <div class="akasha-listitem style-01">
@@ -43,9 +42,10 @@
                                                             <ul class="listitem-list">
 
                                                                 @foreach ($value->subCategoryes as $subCategory)
-                                                                <li>
-                                                                    <a href="{{ route('mensproduct.page',['slug' => $subCategory->slug]) }}" target="_self">{{ $subCategory->title }}</a>
-                                                                </li>
+                                                                    <li>
+                                                                        <a href="{{ route('mensproduct.page', ['slug' => $subCategory->slug]) }}"
+                                                                            target="_self">{{ $subCategory->title }}</a>
+                                                                    </li>
                                                                 @endforeach
                                                             </ul>
                                                         </div>
@@ -53,11 +53,12 @@
 
                                                 </div>
                                             @endforeach
-                                    </div>
+                                        </div>
                                 </li>
                                 <li id="menu-item-229"
-                                    class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-229 parent parent-megamenu item-megamenu menu-item-has-children">
-                                    <a class="akasha-menu-item-title" title="shop" href="{{ route('allproduct.page') }}">Shop</a>
+                                    class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-229 parent parent-megamenu item-megamenu ">
+                                    <a class="akasha-menu-item-title" title="all products"
+                                        href="{{ route('allproduct.page') }}">All Products</a>
 
                                 </li>
 
@@ -67,39 +68,7 @@
                     <div class="header-control">
                         <div class="header-control-inner">
                             <div class="meta-dreaming">
-                                <ul class="wpml-menu">
-                                    {{-- <li class="menu-item akasha-dropdown block-language">
-                                        <a href="#" data-akasha="akasha-dropdown">
-                                            <img src="{{ asset('assets') }}/images/en.png"
-                                                 alt="en" width="18" height="12">
-                                            English
-                                        </a>
-                                        <span class="toggle-submenu"></span>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item">
-                                                <a href="#">
-                                                    <img src="{{ asset('assets') }}/images/it.png"
-                                                         alt="it" width="18" height="12">
-                                                    Italiano
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item">
-                                        <div class="wcml-dropdown product wcml_currency_switcher">
-                                            <ul>
-                                                <li class="wcml-cs-active-currency">
-                                                    <a class="wcml-cs-item-toggle">USD</a>
-                                                    <ul class="wcml-cs-submenu">
-                                                        <li>
-                                                            <a>EUR</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li> --}}
-                                </ul>
+
                                 <div class="header-search akasha-dropdown">
                                     <div class="header-search-inner" data-akasha="akasha-dropdown">
                                         <a href="#" class="link-dropdown block-link">
@@ -107,31 +76,18 @@
                                         </a>
                                     </div>
                                     <div class="block-search">
-                                        <form role="search" method="get"
-                                              class="form-search block-search-form akasha-live-search-form">
+                                        <form role="search" action="{{ route('search') }}" method="GET"
+                                            class="form-search block-search-form akasha-live-search-form">
+                                            @csrf
                                             <div class="form-content search-box results-search">
                                                 <div class="inner">
                                                     <input autocomplete="off" class="searchfield txt-livesearch input"
-                                                           name="s" value="" placeholder="Search here..." type="text">
+                                                        name="s" value="" placeholder="Search here..."
+                                                        type="text">
                                                 </div>
                                             </div>
                                             <input name="post_type" value="product" type="hidden">
                                             <input name="taxonomy" value="product_cat" type="hidden">
-                                            <div class="category">
-                                                <select title="product_cat" name="product_cat" id="64788262"
-                                                        class="category-search-option"
-                                                        tabindex="-1" style="display: none;">
-                                                    <option value="0">All Categories</option>
-                                                    <option class="level-0" value="light">Shoes</option>
-                                                    <option class="level-0" value="chair">Accessories</option>
-                                                    <option class="level-0" value="table">Bags</option>
-                                                    <option class="level-0" value="bed">Life style</option>
-                                                    <option class="level-0" value="new-arrivals">New arrivals</option>
-                                                    <option class="level-0" value="lamp">Summer Sale</option>
-                                                    <option class="level-0" value="specials">Specials</option>
-                                                    <option class="level-0" value="sofas">Women</option>
-                                                </select>
-                                            </div>
                                             <button type="submit" class="btn-submit">
                                                 <span class="flaticon-magnifying-glass-1"></span>
                                             </button>
@@ -146,27 +102,32 @@
 
                                     @auth
                                         <ul class="sub-menu">
-                                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--dashboard is-active">
+                                            <li
+                                                class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--dashboard is-active">
                                                 <a href="{{ route('customer.profile') }}">Profile</a>
                                             </li>
-                                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--orders">
+                                            <li
+                                                class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--orders">
                                                 <a href="{{ route('cart.page') }}">ViewCart</a>
                                             </li>
-                                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--downloads">
+                                            <li
+                                                class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--downloads">
                                                 <a href="{{ route('cutomer.checkout') }}">Checkout</a>
                                             </li>
 
-                                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--edit-account">
+                                            <li
+                                                class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--edit-account">
                                                 <a href="#">Account details</a>
                                             </li>
-                                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--customer-logout">
+                                            <li
+                                                class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--customer-logout">
                                                 <a href="{{ route('customer.logout') }}">Logout</a>
                                             </li>
                                         </ul>
                                     @else
-
                                         <ul class="sub-menu">
-                                            <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--dashboard is-active">
+                                            <li
+                                                class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--dashboard is-active">
                                                 <a href="/login">Login</a>
                                             </li>
 
@@ -181,18 +142,18 @@
                                             <span class="flaticon-bag"></span>
                                             <span class="count">
                                                 @php
-                                                $item = \Cart::getContent();
-                                                echo $item->count();
+                                                    $item = \Cart::getContent();
+                                                    echo $item->count();
                                                 @endphp</span>
                                         </a>
                                     </div>
                                     <div class="widget akasha widget_shopping_cart">
                                         <div class="widget_shopping_cart_content">
                                             <h3 class="minicart-title">Your Cart<span class="minicart-number-items">
-                                                @php
-                                                $item = \Cart::getContent();
-                                                echo $item->count();
-                                                @endphp</span></h3>
+                                                    @php
+                                                        $item = \Cart::getContent();
+                                                        echo $item->count();
+                                                    @endphp</span></h3>
                                             <ul class="akasha-mini-cart cart_list product_list_widget">
 
                                                 @php
@@ -200,19 +161,21 @@
                                                     $subTotal = \Cart::getSubTotal();
                                                 @endphp
 
-                                                @foreach ( $items as $value )
+                                                @foreach ($items as $value)
                                                     <li class="akasha-mini-cart-item mini_cart_item">
-                                                        <a href="{{ route('remove_item',[$value->id]) }}" class="remove remove_from_cart_button">×</a>
+                                                        <a href="{{ route('remove_item', [$value->id]) }}"
+                                                            class="remove remove_from_cart_button">×</a>
                                                         <a href="#">
                                                             <img src="{{ asset('assets/uploads/products') }}/{{ $value->attributes->product_img }}"
-                                                                    class="attachment-akasha_thumbnail size-akasha_thumbnail"
-                                                                    alt="img" width="600" height="778">{{ $value->name }}&nbsp;
+                                                                class="attachment-akasha_thumbnail size-akasha_thumbnail"
+                                                                alt="img" width="600"
+                                                                height="778">{{ $value->name }}&nbsp;
                                                         </a>
                                                         <span class="quantity">{{ $value->quantity }} × <span
                                                                 class="akasha-Price-amount amount"><span
-                                                                class="akasha-Price-currencySymbol">$</span>{{ $value->price*$value->quantity }}</span></span>
-                                                                <br>
-                                                        <span>Size:  {{ $value->attributes->size }}</span>
+                                                                    class="akasha-Price-currencySymbol">৳ </span>{{ $value->price * $value->quantity }}</span></span>
+                                                        <br>
+                                                        <span>Size: {{ $value->attributes->size }}</span>
                                                     </li>
                                                 @endforeach
 
@@ -220,11 +183,13 @@
                                             </ul>
                                             <p class="akasha-mini-cart__total total"><strong>Subtotal:</strong>
                                                 <span class="akasha-Price-amount amount"><span
-                                                        class="akasha-Price-currencySymbol">$</span>{{ $subTotal }}</span>
+                                                        class="akasha-Price-currencySymbol">৳ </span>{{ $subTotal }}</span>
                                             </p>
                                             <p class="akasha-mini-cart__buttons buttons">
-                                                <a href="{{ route('cart.page') }}" class="button akasha-forward">Viewcart</a>
-                                                <a href="{{ route('cutomer.checkout') }}" class="button checkout akasha-forward">Checkout</a>
+                                                <a href="{{ route('cart.page') }}"
+                                                    class="button akasha-forward">Viewcart</a>
+                                                <a href="{{ route('cutomer.checkout') }}"
+                                                    class="button checkout akasha-forward">Checkout</a>
                                             </p>
                                         </div>
                                     </div>
@@ -251,32 +216,21 @@
                         <span class="flaticon-magnifying-glass-1"></span>
                     </a>
                 </div>
+
                 <div class="block-search">
-                    <form role="search" method="get"
-                          class="form-search block-search-form akasha-live-search-form">
+                    <form role="search" action="{{ route('search') }}" method="GET"
+                        class="form-search block-search-form akasha-live-search-form">
+                        @csrf
+
                         <div class="form-content search-box results-search">
                             <div class="inner">
-                                <input autocomplete="off" class="searchfield txt-livesearch input" name="s" value=""
-                                       placeholder="Search here..." type="text">
+                                <input autocomplete="on" class="searchfield txt-livesearch input" name="search"
+                                    value="" placeholder="Search here..." type="text">
                             </div>
                         </div>
                         <input name="post_type" value="product" type="hidden">
                         <input name="taxonomy" value="product_cat" type="hidden">
-                        <div class="category">
-                            <select title="product_cat" name="product_cat"
-                                    class="category-search-option" tabindex="-1"
-                            >
-                                <option value="0">All Categories</option>
-                                <option class="level-0" value="light">Shoes</option>
-                                <option class="level-0" value="chair">Accessories</option>
-                                <option class="level-0" value="table">Bags</option>
-                                <option class="level-0" value="bed">Life style</option>
-                                <option class="level-0" value="new-arrivals">New arrivals</option>
-                                <option class="level-0" value="lamp">Summer Sale</option>
-                                <option class="level-0" value="specials">Specials</option>
-                                <option class="level-0" value="sofas">Women</option>
-                            </select>
-                        </div>
+
                         <button type="submit" class="btn-submit">
                             <span class="flaticon-magnifying-glass-1"></span>
                         </button>
@@ -286,16 +240,16 @@
             <ul class="wpml-menu">
                 <li class="menu-item akasha-dropdown block-language">
                     <a href="#" data-akasha="akasha-dropdown">
-                        <img src="{{ asset('assets') }}/images/en.png"
-                             alt="en" width="18" height="12">
+                        <img src="{{ asset('assets') }}/images/en.png" alt="en" width="18"
+                            height="12">
                         English
                     </a>
                     <span class="toggle-submenu"></span>
                     <ul class="sub-menu">
                         <li class="menu-item">
                             <a href="#">
-                                <img src="{{ asset('assets') }}/images/it.png"
-                                     alt="it" width="18" height="12">
+                                <img src="{{ asset('assets') }}/images/it.png" alt="it" width="18"
+                                    height="12">
                                 Italiano
                             </a>
                         </li>
@@ -319,7 +273,8 @@
         </div>
         <div class="header-mobile-mid">
             <div class="header-logo">
-                <a href="index.html"><img alt="Akasha" src="{{ asset('assets') }}/images/fabrist.png" class="logo"></a>
+                <a href="{{ route('home') }}"><img alt="Akasha" src="{{ asset('assets') }}/images/fabrist.png"
+                        class="logo"></a>
             </div>
         </div>
         <div class="header-mobile-right">
@@ -332,24 +287,30 @@
                         <ul class="sub-menu">
 
                             @auth
-                                <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--dashboard is-active">
+                                <li
+                                    class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--dashboard is-active">
                                     <a href="{{ route('customer.profile') }}">Profile</a>
                                 </li>
-                                <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--orders">
+                                <li
+                                    class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--orders">
                                     <a href="{{ route('cart.page') }}">ViewCart</a>
                                 </li>
-                                <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--downloads">
+                                <li
+                                    class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--downloads">
                                     <a href="{{ route('cutomer.checkout') }}">Checkout</a>
                                 </li>
 
-                                <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--edit-account">
+                                <li
+                                    class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--edit-account">
                                     <a href="#">Account details</a>
                                 </li>
-                                <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--customer-logout">
+                                <li
+                                    class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--customer-logout">
                                     <a href="{{ route('customer.logout') }}">Logout</a>
                                 </li>
-                                @else
-                                <li class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--customer-logout">
+                            @else
+                                <li
+                                    class="menu-item akasha-MyAccount-navigation-link akasha-MyAccount-navigation-link--customer-logout">
                                     <a href="/login">Login</a>
                                 </li>
                             @endauth
@@ -370,10 +331,10 @@
                         <div class="widget akasha widget_shopping_cart">
                             <div class="widget_shopping_cart_content">
                                 <h3 class="minicart-title">Your Cart<span class="minicart-number-items">
-                                    @php
-                                        $item = \Cart::getContent();
-                                        echo $item->count();
-                                    @endphp</span></h3>
+                                        @php
+                                            $item = \Cart::getContent();
+                                            echo $item->count();
+                                        @endphp</span></h3>
                                 <ul class="akasha-mini-cart cart_list product_list_widget">
 
                                     @php
@@ -381,29 +342,31 @@
                                         $subTotal = \Cart::getSubTotal();
                                     @endphp
 
-                                    @foreach ( $items as $value )
-
+                                    @foreach ($items as $value)
                                         <li class="akasha-mini-cart-item mini_cart_item">
-                                            <a href="{{ route('remove_item',[$value->id]) }}" class="remove remove_from_cart_button">×</a>
+                                            <a href="{{ route('remove_item', [$value->id]) }}"
+                                                class="remove remove_from_cart_button">×</a>
                                             <a href="#">
                                                 <img src="{{ asset('assets/uploads/products') }}/{{ $value->attributes->product_img }}"
-                                                        class="attachment-akasha_thumbnail size-akasha_thumbnail"
-                                                        alt="img" width="600" height="778">{{ $value->name }}&nbsp;
+                                                    class="attachment-akasha_thumbnail size-akasha_thumbnail"
+                                                    alt="img" width="600"
+                                                    height="778">{{ $value->name }}&nbsp;
                                             </a>
                                             <span class="quantity">{{ $value->quantity }} × <span
                                                     class="akasha-Price-amount amount"><span
-                                                    class="akasha-Price-currencySymbol">$</span>{{ $value->price*$value->quantity }}</span></span>
+                                                        class="akasha-Price-currencySymbol">৳</span>{{ $value->price * $value->quantity }}</span></span>
                                         </li>
                                     @endforeach
 
                                 </ul>
                                 <p class="akasha-mini-cart__total total"><strong>Subtotal:</strong>
                                     <span class="akasha-Price-amount amount"><span
-                                            class="akasha-Price-currencySymbol">$</span>{{ $subTotal }}</span>
+                                            class="akasha-Price-currencySymbol">৳</span>{{ $subTotal }}</span>
                                 </p>
                                 <p class="akasha-mini-cart__buttons buttons">
                                     <a href="{{ route('cart.page') }}" class="button akasha-forward">Viewcart</a>
-                                    <a href="{{ route('cutomer.checkout') }}" class="button checkout akasha-forward">Checkout</a>
+                                    <a href="{{ route('cutomer.checkout') }}"
+                                        class="button checkout akasha-forward">Checkout</a>
                                 </p>
                             </div>
                         </div>
