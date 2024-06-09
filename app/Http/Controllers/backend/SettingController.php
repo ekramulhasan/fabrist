@@ -17,7 +17,7 @@ class SettingController extends Controller
     public function general()
     {
 
-        return view('admin.page.settings.general');
+        return view('backend.setttins.generalSetting');
     }
 
     public function general_update(Request $request)

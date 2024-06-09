@@ -12,6 +12,7 @@ use App\Http\Controllers\backend\OrderController;
 use App\Http\Controllers\frontend\CartController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\backend\CouponController;
+use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\frontend\CheckOutController;
 use App\Http\Controllers\frontend\CustomerController;
@@ -176,6 +177,27 @@ Route::prefix( 'admin/' )->group( function () {
         // get subcategory & subsubcategory
         Route::get( 'subcategories/{category}', [SubcategoryController::class, 'get_subcategory'] )->name( 'subcategory.get' );
         Route::get( 'subsubcategories/{subcategory}', [SubsubcategoryController::class, 'get_subsubcategory'] )->name( 'subsubcategory.get' );
+
+            //Setting Management
+        Route::group(['as'=>'settings.', 'prefix'=>'settings'],function(){
+
+            //general setting
+            Route::get('general',[SettingController::class,'general'])->name('general');
+            Route::post('general_update',[SettingController::class,'general_update'])->name('general.update');
+
+            //apperance setting
+            Route::get('apperance',[SettingController::class,'apperance'])->name('apperance');
+            Route::post('apperance_update',[SettingController::class,'apperance_update'])->name('apperance.update');
+
+            //mail setting
+            Route::get('mail',[SettingController::class,'mail'])->name('mail');
+            Route::post('mail_update',[SettingController::class,'mail_update'])->name('mail.update');
+
+            //social login setting
+            Route::get('socialite',[SettingController::class,'socialiteView'])->name('socialite');
+            Route::post('socialite_update',[SettingController::class,'socialiteUpdate'])->name('socialite.update');
+
+        });
 
     } );
 

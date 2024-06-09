@@ -177,7 +177,7 @@
         </a>
         <ul id="setting">
           <li>
-            <a href="{{ route('testimonial.index') }}">
+            <a href="{{ route('settings.general') }}">
               <span class="label">General Setting</span>
             </a>
           </li>
