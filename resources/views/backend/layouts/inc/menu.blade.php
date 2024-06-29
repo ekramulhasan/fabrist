@@ -182,12 +182,12 @@
             </a>
           </li>
           <li>
-            <a href="{{ route('testimonial.create') }}">
+            <a href="{{ route('settings.apperance') }}">
               <span class="label">Apperance Setting</span>
             </a>
           </li>
           <li>
-            <a href="{{ route('testimonial.create') }}">
+            <a href="{{ route('settings.mail') }}">
               <span class="label">Mail Setting</span>
             </a>
           </li>

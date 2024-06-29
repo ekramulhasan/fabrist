@@ -6,6 +6,19 @@
 @push('admin_style')
     <link rel="stylesheet" href="{{ asset('assets/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css">
+
+    <style>
+        .ck-editor__editable[role="textbox"] {
+            /* editing area */
+            min-height: 200px;
+        }
+
+        .ck-content .image {
+            /* block images */
+            max-width: 80%;
+            margin: 20px auto;
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -89,8 +102,8 @@
                     <label class="form-label mt-3">Select Product Colors</label>
                     @foreach ($color_data as $color)
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="color_id[]" id="color_{{ $color->id }}"
-                                value="{{ $color->id }}">
+                            <input class="form-check-input" type="checkbox" name="color_id[]"
+                                id="color_{{ $color->id }}" value="{{ $color->id }}">
                             <label class="form-check-label" for="color_{{ $color->id }}">
                                 {{ $color->color_name }}
                             </label>
@@ -105,7 +118,8 @@
                             class="form-control @error('product_name')
                                         is-invalid
                                     @enderror"
-                            id="product_name" placeholder="enter product name" name="product_name">
+                            id="product_name" placeholder="enter product name" name="product_name"
+                            value="{{ old('product_name') }}">
 
                         @error('product_name')
                             <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
@@ -123,7 +137,7 @@
                 <div class="row">
 
 
-                    <div class="col-6 mb-3">
+                    <div class="col-3 mb-3">
 
 
                         <label for="product_price" class="form-label">Product Price</label>
@@ -131,7 +145,8 @@
                             class="form-control @error('product_price')
                                 is-invalid
                             @enderror"
-                            id="product_price" placeholder="enter product price" name="product_price" min="0">
+                            id="product_price" placeholder="enter product price" name="product_price" min="0"
+                            value="{{ old('product_price') }}">
 
                         @error('product_price')
                             <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
@@ -140,18 +155,53 @@
 
                     </div>
 
+                    <div class="col-3 mb-3">
 
-                    <div class="col-6 mb-3">
+
+                        <label for="product_code" class="form-label">Delete Price</label>
+                        <input type="number"
+                            class="form-control @error('delete_price')
+                                is-invalid
+                            @enderror"
+                            id="delete_price" placeholder="enter delete price" name="delete_price" min="0"
+                            value="{{ old('delete_price') }}">
+
+                        @error('delete_price')
+                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                        @enderror
+
+                    </div>
+
+                    <div class="col-3 mb-3">
+
+
+                        <label for="dis_per" class="form-label">Discount Percentage</label>
+                        <input type="number"
+                            class="form-control @error('dis_per')
+                                is-invalid
+                            @enderror"
+                            id="dis_per" placeholder="enter percentage" name="dis_per" min="0"
+                            value="{{ old('dis_per') }}">
+
+                        @error('dis_per')
+                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                        @enderror
+
+                    </div>
+
+
+                    <div class="col-3 mb-3">
 
 
                         <label for="product_code" class="form-label">Product Code</label>
-                        <input type="number"
-                            class="form-control @error('product_Code')
-                                is-invalid
-                            @enderror"
-                            id="product_code" placeholder="enter product code" name="product_code" min="0">
+                        <input type="text"
+                            class="form-control @error('product_code')
+                            is-invalid
+                        @enderror"
+                            id="product_code" placeholder="enter product code" name="product_code" min="0"
+                            value="{{ old('product_code') }}">
 
-                        @error('product_price')
+                        @error('product_code')
                             <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                         @enderror
 
@@ -174,7 +224,8 @@
                             class="form-control @error('stock_quantiry')
                                 is-invalid
                             @enderror"
-                            id="stock_quantiry" placeholder="enter stock quantity" name="stock_quantiry" min="0">
+                            id="stock_quantiry" placeholder="enter stock quantity" name="stock_quantiry" min="0"
+                            value="{{ old('stock_quantiry') }}">
 
                         @error('stock_quantiry')
                             <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
@@ -191,9 +242,10 @@
                             class="form-control @error('alert_quantity')
                                 is-invalid
                             @enderror"
-                            id="alert_quantity" placeholder="enter product code" name="alert_quantity" min="1">
+                            id="alert_quantity" placeholder="enter product code" name="alert_quantity" min="1"
+                            value="{{ old('alert_quantity') }}">
 
-                        @error('product_price')
+                        @error('alert_quantity')
                             <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                         @enderror
 
@@ -217,11 +269,11 @@
                             <div class="form-floating">
 
                                 <textarea
-                                    class="form-control @error('client_msg')
+                                    class="form-control @error('short_description')
                                 is-invalid
                                 @enderror"
-                                    placeholder="Short Description" id="short_description" style="height: 150px" name="short_description"></textarea>
-                                <label for="short_description"> Short Description</label>
+                                    placeholder="Short Description" id="short_description" style="height: 300px" name="short_description">{{ old('short_description') }}</textarea>
+
 
                                 @error('short_description')
                                     <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
@@ -239,8 +291,8 @@
                                     class="form-control @error('long_description')
                                 is-invalid
                                 @enderror"
-                                    placeholder="Long Description" id="short_description" style="height: 150px" name="long_description"></textarea>
-                                <label for="long_description"> Long Description</label>
+                                    placeholder="Long Description" id="long_description" style="height: 150px" name="long_description">{{ old('long_description') }}</textarea>
+
 
                                 @error('long_description')
                                     <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
@@ -250,7 +302,7 @@
                         </div>
 
 
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
 
                             <div class="form-floating">
 
@@ -266,14 +318,18 @@
                                 @enderror
                             </div>
 
-                        </div>
+                        </div> --}}
 
 
 
                         <div class="mb-3">
 
                             <label for="product_img" class="form-label">Product Image</label>
-                            <input type="file" class="form-control dropify" id="" name="product_img">
+                            <input type="file"
+                                class="form-control dropify @error('product_img')
+                                is-invalid
+                            @enderror"
+                                id="" name="product_img">
 
                             @error('product_img')
                                 <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
@@ -355,7 +411,8 @@
                 var subcategoryId = $(this).val();
 
                 $.ajax({
-                    url: "{{ route('subsubcategory.get', ':subcategory') }}".replace(':subcategory',
+                    url: "{{ route('subsubcategory.get', ':subcategory') }}".replace(
+                        ':subcategory',
                         subcategoryId),
                     method: 'GET',
                     success: function(response) {
@@ -372,5 +429,28 @@
                 });
             });
         });
+    </script>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#short_description'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#long_description'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
     </script>
 @endpush

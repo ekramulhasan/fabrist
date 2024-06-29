@@ -17,7 +17,7 @@
                     <div class="header-logo-nav">
                         <div class="header-logo">
                             <a href="{{ route('home') }}"><img alt="Akasha"
-                                    src="{{ asset('assets') }}/images/fabrist.png" class="logo"></a>
+                                    src="{{ asset('uploads/system_img') }}/{{ Setting('logo_img') }}" class="logo"></a>
                         </div>
                         <div class="box-header-nav menu-nocenter">
                             <ul id="menu-primary-menu"
@@ -237,7 +237,7 @@
                     </form><!-- block search -->
                 </div>
             </div>
-            <ul class="wpml-menu">
+            {{-- <ul class="wpml-menu">
                 <li class="menu-item akasha-dropdown block-language">
                     <a href="#" data-akasha="akasha-dropdown">
                         <img src="{{ asset('assets') }}/images/en.png" alt="en" width="18"
@@ -269,11 +269,11 @@
                         </ul>
                     </div>
                 </li>
-            </ul>
+            </ul> --}}
         </div>
         <div class="header-mobile-mid">
             <div class="header-logo">
-                <a href="{{ route('home') }}"><img alt="Akasha" src="{{ asset('assets') }}/images/fabrist.png"
+                <a href="{{ route('home') }}"><img alt="Akasha" src="{{ asset('uploads/system_img') }}/{{ Setting('logo_img') }}"
                         class="logo"></a>
             </div>
         </div>

@@ -1,4 +1,3 @@
-
 <main class="site-main main-container no-sidebar">
     <div class="container">
         <div class="row mt-5">
@@ -8,53 +7,61 @@
                         <div class="akasha-notices-wrapper"></div>
                         <div class="akasha-cart-form">
                             <table class="shop_table shop_table_responsive cart akasha-cart-form__contents"
-                                   cellspacing="0">
+                                cellspacing="0">
                                 <thead>
-                                <tr>
-                                    <th class="product-remove">&nbsp;</th>
-                                    <th class="product-thumbnail">&nbsp;</th>
-                                    <th class="product-name">Product</th>
-                                    <th class="product-price">Price</th>
-                                    <th class="product-quantity">Quantity</th>
-                                    <th class="product-subtotal">Total</th>
-                                </tr>
+                                    <tr>
+                                        <th class="product-remove">&nbsp;</th>
+                                        <th class="product-thumbnail">&nbsp;</th>
+                                        <th class="product-name">Product</th>
+                                        <th class="product-price">Price</th>
+                                        <th class="product-quantity">Quantity</th>
+                                        <th class="product-subtotal">Total</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
                                     @php
-                                    $items = \Cart::getContent();
-                                    $subTotal = \Cart::getSubTotal();
+                                        $items = \Cart::getContent();
+                                        $subTotal = \Cart::getSubTotal();
                                     @endphp
 
-                                    @foreach (  $items as $value  )
+                                    @foreach ($items as $value)
                                         <tr class="akasha-cart-form__cart-item cart_item">
                                             <td class="product-remove">
-                                                <a href="{{ route('remove_item',[$value->id]) }}"
-                                                    class="remove" aria-label="Remove this item" data-product_id="27"
-                                                    data-product_sku="885B712">×</a></td>
+                                                <a href="{{ route('remove_item', [$value->id]) }}" class="remove"
+                                                    aria-label="Remove this item" data-product_id="27"
+                                                    data-product_sku="885B712">×</a>
+                                            </td>
                                             <td class="product-thumbnail">
                                                 <a href="#"><img
                                                         src="{{ asset('assets/uploads/products') }}/{{ $value->attributes->product_img }}"
                                                         class="attachment-akasha_thumbnail size-akasha_thumbnail"
-                                                        alt="img" width="600" height="778"></a></td>
+                                                        alt="img" width="600" height="778"></a>
+                                            </td>
                                             <td class="product-name" data-title="Product">
-                                                <a href="#">{{ $value->name }}</a></td>
+                                                <a href="#">{{ $value->name }}</a>
+                                            </td>
                                             <td class="product-price" data-title="Price">
                                                 <span class="akasha-Price-amount amount"><span
-                                                        class="akasha-Price-currencySymbol">৳ </span>{{ $value->price }}</span></td>
+                                                        class="akasha-Price-currencySymbol">৳
+                                                    </span>{{ $value->price }}</span>
+                                            </td>
                                             <td class="product-quantity" data-title="Quantity">
                                                 <div class="quantity">
                                                     <span class="qty-label">Quantiy:</span>
-                                                    <div class="control">
-                                                        <a class="btn-number qtyminus quantity-minus" href="#">-</a>
-                                                        <input type="text"
-                                                                value="{{ $value->quantity  }}" title="Qty" class="input-qty input-text qty text">
-                                                        <a class="btn-number qtyplus quantity-plus" href="#">+</a>
+                                                    <div class="control ">
+
+                                                        <input type="text" value="{{ $value->quantity }}"
+                                                            title="Qty" class="input-qty input-text qty text"
+                                                            min="0" readonly>
+
                                                     </div>
                                                 </div>
                                             </td>
                                             <td class="product-subtotal" data-title="Total">
                                                 <span class="akasha-Price-amount amount"><span
-                                                        class="akasha-Price-currencySymbol">৳ </span>{{ $value->price*$value->quantity }}</span></td>
+                                                        class="akasha-Price-currencySymbol">৳
+                                                    </span>{{ $value->price * $value->quantity }}</span>
+                                            </td>
                                         </tr>
                                     @endforeach
                                     <tr>
@@ -63,8 +70,11 @@
                                                 @csrf
 
                                                 <div class="coupon mr-5">
-                                                    <label for="coupon_code">Coupon:</label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="Coupon code" required>
-                                                    <button type="submit" class="button" name="apply_coupon" value="Apply coupon">Apply coupon</button>
+                                                    <label for="coupon_code">Coupon:</label> <input type="text"
+                                                        name="coupon_code" class="input-text" id="coupon_code"
+                                                        value="" placeholder="Coupon code" required>
+                                                    <button type="submit" class="button" name="apply_coupon"
+                                                        value="Apply coupon">Apply coupon</button>
                                                 </div>
 
                                             </form>
@@ -72,9 +82,10 @@
                                             <div class="my-3 mr-3">
 
                                                 @if (Session::has('coupon'))
-                                                    <a href="{{ route('coupon.remove',['coupon_name']) }}"
-                                                        class="remove h4" aria-label="Remove this item">× <b class="text-danger">{{ Session::get('coupon')['coupon_name'] }}</b> is Applied</a>
-
+                                                    <a href="{{ route('coupon.remove', ['coupon_name']) }}"
+                                                        class="remove h4" aria-label="Remove this item">× <b
+                                                            class="text-danger">{{ Session::get('coupon')['coupon_name'] }}</b>
+                                                        is Applied</a>
                                                 @endif
                                             </div>
 
@@ -91,46 +102,46 @@
                                 <h2>Cart totals</h2>
                                 <table class="shop_table shop_table_responsive" cellspacing="0">
                                     <tbody>
-                                    <tr class="cart-subtotal">
-                                        <th>Subtotal</th>
-                                        <td data-title="Subtotal"><span class="akasha-Price-amount amount"><span
-                                                class="akasha-Price-currencySymbol">৳</span>
-                                                @if (Session::has('coupon'))
-                                                    {{ Session::get('coupon')['balance']}}
-                                                @else
-                                                    {{ $subTotal }}
-                                                @endif
-                                            </span>
-                                        </td>
+                                        <tr class="cart-subtotal">
+                                            <th>Subtotal</th>
+                                            <td data-title="Subtotal"><span class="akasha-Price-amount amount"><span
+                                                        class="akasha-Price-currencySymbol">৳</span>
+                                                    @if (Session::has('coupon'))
+                                                        {{ Session::get('coupon')['balance'] }}
+                                                    @else
+                                                        {{ $subTotal }}
+                                                    @endif
+                                                </span>
+                                            </td>
 
 
 
-                                    </tr>
-                                    <tr class="order-total">
-                                        <th>Total</th>
-                                        <td data-title="Total"><strong><span
-                                                class="akasha-Price-amount amount"><span
-                                                class="akasha-Price-currencySymbol">৳</span>
-                                                @if (Session::has('coupon'))
-                                                    {{ Session::get('coupon')['balance']}}
-                                                @else
-                                                    {{ $subTotal }}
-                                                @endif
-                                            </span></strong>
-                                        </td>
-                                    </tr>
+                                        </tr>
+                                        <tr class="order-total">
+                                            <th>Total</th>
+                                            <td data-title="Total"><strong><span
+                                                        class="akasha-Price-amount amount"><span
+                                                            class="akasha-Price-currencySymbol">৳</span>
+                                                        @if (Session::has('coupon'))
+                                                            {{ Session::get('coupon')['balance'] }}
+                                                        @else
+                                                            {{ $subTotal }}
+                                                        @endif
+                                                    </span></strong>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
 
-                                <div class="akasha-proceed-to-checkout my-3">
+                                {{-- <div class="akasha-proceed-to-checkout my-3">
                                     <a href="{{ route('cutomer.checkout') }}"
                                        class="checkout-button button alt akasha-forward">
                                        Order now</a>
-                                </div>
+                                </div> --}}
 
                                 <div class="akasha-proceed-to-checkout my-3">
                                     <a href="{{ route('cutomer.checkout') }}"
-                                       class="checkout-button button alt akasha-forward">
+                                        class="checkout-button button alt akasha-forward">
                                         Proceed to checkout</a>
                                 </div>
                             </div>

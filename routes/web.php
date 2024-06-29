@@ -12,7 +12,7 @@ use App\Http\Controllers\backend\OrderController;
 use App\Http\Controllers\frontend\CartController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\backend\CouponController;
-use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\backend\SettingController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\frontend\CheckOutController;
 use App\Http\Controllers\frontend\CustomerController;
@@ -155,6 +155,7 @@ Route::prefix( 'admin/' )->group( function () {
 
         //order and customer index
         Route::get( 'order', [OrderController::class, 'index'] )->name( 'order.data' );
+        Route::post( 'order_status', [OrderController::class, 'orderStatus'] )->name( 'order.status' );
         Route::get( 'customer', [CustomerData::class, 'index'] )->name( 'customer.data' );
         Route::get( 'customer-edit/{id}', [CustomerData::class, 'edit'] )->name( 'customer.edit' );
         Route::post( 'customer-update/{id}', [CustomerData::class, 'update'] )->name( 'customer.update' );

@@ -2,63 +2,57 @@
 
 namespace App\Http\Controllers\frontend;
 
-use Carbon\Carbon;
-use App\Models\Size;
+use App\Http\Controllers\Controller;
 use App\Models\Coupon;
 use App\Models\Product;
-use App\Models\District;
-use Darryldecode\Cart\Cart;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Models\Size;
 use Brian2694\Toastr\Facades\Toastr;
-use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-class CartController extends Controller
-{
-    public function cartPage(){
+class CartController extends Controller {
+    public function cartPage() {
 
-        $items = \Cart::getContent();
-        $total = \Cart::getTotal();
+        $items    = \Cart::getContent();
+        $total    = \Cart::getTotal();
         $subTotal = \Cart::getSubTotal();
 
-       return view('frontend.pages.cart',compact('items','subTotal','total'));
+        return view( 'frontend.pages.cart', compact( 'items', 'subTotal', 'total' ) );
     }
 
-
-    public function addTocart(Request $request){
+    public function addTocart( Request $request ) {
 
         // dd($request->all());
         $product_slug = $request->product_slug;
-        $product_qty = $request->quantity;
-        $size = Size::where('id',$request->size)->select('size_name')->first();
+        $product_qty  = $request->quantity;
+        $size         = Size::where( 'id', $request->size )->select( 'size_name' )->first();
 
-        $product = Product::whereSlug($product_slug)->first();
+        $product = Product::whereSlug( $product_slug )->first();
 
-        \Cart::add([
+        \Cart::add( [
 
-            'id' => $product->id,
-            'name' => $product->title,
-            'price' => $product->price,
-            'quantity' => $product_qty,
+            'id'         => $product->id,
+            'name'       => $product->title,
+            'price'      => $product->price,
+            'quantity'   => $product_qty,
             'attributes' => [
 
-                'product_img' => $product->product_img,
-                'weight' => 0,
+                'product_img'   => $product->product_img,
+                'weight'        => 0,
                 'product_stock' => $product->product_stock,
-                'size' => $size['size_name'],
+                'size'          => $size['size_name'],
 
             ],
 
-        ]);
+        ] );
 
-        Toastr::success('successfully added');
+        Toastr::success( 'successfully added' );
         return back();
 
     }
 
-
-    public function addWish(string $slug,){
+    public function addWish( string $slug, ) {
 
         // $product = Product::whereSlug($slug)->first();
 
@@ -89,78 +83,69 @@ class CartController extends Controller
 
         // ]);
 
-        Toastr::success('successfully added');
+        Toastr::success( 'successfully added' );
         return back();
 
     }
 
+    public function removeFromcart( $cart_id ) {
 
-    public function removeFromcart($cart_id){
+        \Cart::remove( $cart_id );
 
-        \Cart::remove($cart_id);
-
-        Toastr::info('delete item');
+        Toastr::info( 'delete item' );
         return back();
 
     }
 
-    public function couponApply(Request $request){
-
-
+    public function couponApply( Request $request ) {
 
         // if(!Auth::check()){
         //     Toastr::error('must be needed login');
         //     return redirect()->route('login.page');
         // }
 
-       $check = Coupon::where('coupon_name', $request->coupon_code)->first();
+        $check = Coupon::where( 'coupon_name', $request->coupon_code )->first();
 
-       if (Session::get('coupon')) {
+        if ( Session::get( 'coupon' ) ) {
 
-        Toastr::error('Already applied this coupon!!!');
-        return redirect()->back();
-
-       }
-
-       if ($check !=null) {
-
-            $check_validity = $check->validity_till > Carbon::now()->format('Y-m-d');
-
-            if ($check_validity) {
-
-                Session::put('coupon',[
-
-                    'coupon_name' => $check->coupon_name,
-                    'discount_amount' => (\Cart::getSubTotal() * $check->discount_amount)/100,
-                    'cart_total' => \Cart::getSubTotal(),
-                    'balance' => \Cart::getSubTotal() - (\Cart::getSubTotal() * $check->discount_amount)/100
-
-                ]);
-
-                Toastr::success('successfully coupon code applied !!!');
-                return redirect()->back();
-            }
-
-            else {
-                Toastr::error('coupon code expire');
-                return redirect()->back();
-            }
+            Toastr::error( 'Already applied this coupon!!!' );
+            return redirect()->back();
 
         }
 
-        else {
-            Toastr::error('invalid coupon code');
+        if ( $check != null ) {
+
+            $check_validity = $check->validity_till > Carbon::now()->format( 'Y-m-d' );
+
+            if ( $check_validity ) {
+
+                Session::put( 'coupon', [
+
+                    'coupon_name'     => $check->coupon_name,
+                    'discount_amount' => ( \Cart::getSubTotal() * $check->discount_amount ) / 100,
+                    'cart_total'      => \Cart::getSubTotal(),
+                    'balance'         => \Cart::getSubTotal() - ( \Cart::getSubTotal() * $check->discount_amount ) / 100,
+
+                ] );
+
+                Toastr::success( 'successfully coupon code applied !!!' );
+                return redirect()->back();
+            } else {
+                Toastr::error( 'coupon code expire' );
+                return redirect()->back();
+            }
+
+        } else {
+            Toastr::error( 'invalid coupon code' );
             return redirect()->back();
         }
 
-
     }
 
+    public function couponRemove( $coupon_name ) {
 
-    public function couponRemove($coupon_name){
-
-        Session::forget('coupon');
-        Toastr::success('successfully coupon remove');
+        Session::forget( 'coupon' );
+        Toastr::success( 'successfully coupon remove' );
         return redirect()->back();
 
     }

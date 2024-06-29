@@ -22,9 +22,10 @@ class ProductRequest extends FormRequest {
 
             'category_id'       => 'bail|required|numeric',
             'subcategory_id'    => 'bail|required|numeric',
-            'product_name'      => 'bail|required|string|max:255',
+            'product_name'      => 'bail|required|string|max:255|unique:products,title',
             'product_price'     => 'bail|required|min:0',
             'product_code'      => 'bail|required|unique:products,product_id',
+            'dis_per'           => 'bail|nullable|numeric',
             'stock_quantiry'    => 'bail|required|numeric|min:1',
             'alert_quantity'    => 'bail|required|numeric|min:1',
             'short_description' => 'bail|nullable|string',

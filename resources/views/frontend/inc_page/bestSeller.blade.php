@@ -40,6 +40,10 @@
                                 alt="Maternity Shoulder" width="270" height="350">
                         </a>
                         <div class="flash">
+                            @if (filled($value->discount_per))
+                                <span class="onsale"><span class="number">-{{ $value->discount_per }}%</span></span>
+                            @endif
+
                             <span class="onnew"><span class="text">New</span></span>
                         </div>
                         <a href="#" class="button yith-wcqv-button">Quick View</a>
@@ -56,7 +60,8 @@
                         <span class="price"><span class="akasha-Price-amount amount"><span
                                     class="akasha-Price-currencySymbol">৳ </span>{{ $value->price }}</span>
                     </div>
-                    <div class="group-button clearfix">
+
+                    {{-- <div class="group-button clearfix">
                         <div class="yith-wcwl-add-to-wishlist">
                             <div class="yith-wcwl-add-button show">
                                 <a href="#" class="add_to_wishlist">Add to Wishlist</a>
@@ -69,7 +74,7 @@
                         <div class="akasha product compare-button">
                             <a href="#" class="compare button">Compare</a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 

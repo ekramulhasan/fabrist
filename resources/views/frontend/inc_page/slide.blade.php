@@ -23,7 +23,7 @@
 
     >
         <div class="slide-wrap">
-            <img src="assets/images/banner1.png" alt="image">
+            <img src="{{ asset('uploads/system_img') }}/{{ Setting('slide_one') }}" alt="image">
             <div class="slide-info">
                 <div class="container">
                     {{-- <div class="slide-inner">
@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="slide-wrap">
-            <img src="assets/images/banner2.png" alt="image">
+            <img src="{{ asset('uploads/system_img') }}/{{ Setting('slide_two') }}" alt="image">
             <div class="slide-info">
                 <div class="container">
                     {{-- <div class="slide-inner">
@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="slide-wrap">
-            <img src="assets/images/banner1.png" alt="image">
+            <img src="{{ asset('uploads/system_img') }}/{{ Setting('slide_tree') }}" alt="image">
             <div class="slide-info">
                 <div class="container">
                     {{-- <div class="slide-inner">

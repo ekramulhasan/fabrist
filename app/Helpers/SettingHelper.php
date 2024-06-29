@@ -2,7 +2,7 @@
 
 use App\Models\Setting;
 
-if (!function_exists('DummyFunction')) {
+if (!function_exists('Setting')) {
 
     /**
      * description
@@ -10,13 +10,11 @@ if (!function_exists('DummyFunction')) {
      * @param
      * @return
      */
-    function DummyFunction()
+    function Setting($name,$default=null)
     {
-        function Setting($name,$default=null)
-        {
-    
-            return Setting::getByName($name,$default);
-    
-        }
+
+        return Setting::getByName($name,$default);
+        
+
     }
 }

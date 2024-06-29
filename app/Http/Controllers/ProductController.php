@@ -48,6 +48,8 @@ class ProductController extends Controller {
      */
     public function store( ProductRequest $request ) {
 
+        // dd($request->all());
+
         $products = Product::create( [
 
             'category_id'        => $request->category_id,
@@ -56,6 +58,8 @@ class ProductController extends Controller {
             'title'              => $request->product_name,
             'slug'               => Str::slug( $request->product_name ),
             'price'              => $request->product_price,
+            'delete_price'       => isset($request->delete_price,) ? $request->delete_price : null,
+            'discount_per'       => isset($request->dis_per,) ? $request->dis_per : null,
             'short_description'  => $request->short_description,
             'long_description'   => $request->long_description,
             'product_id'         => $request->product_code,
@@ -77,16 +81,22 @@ class ProductController extends Controller {
 
         }
 
-        foreach ( $request->color_id as $colorId ) {
 
-            DB::table( 'color_product' )->insert( [
+        if (isset($request->color_id)) {
 
-                'product_id' => $products->id,
-                'color_id'   => $colorId,
+            foreach ( $request->color_id as $colorId ) {
 
-            ] );
+                DB::table( 'color_product' )->insert( [
 
+                    'product_id' => $products->id,
+                    'color_id'   => $colorId,
+
+                ] );
+
+            }
         }
+
+
 
         $this->img_upload( $request, $products->id );
         $this->multiple_img_upload( $request, $products->id );
@@ -131,6 +141,8 @@ class ProductController extends Controller {
             'title'              => $request->product_name,
             'slug'               => Str::slug( $request->product_name ),
             'price'              => $request->product_price,
+            'delete_price'       => isset($request->delete_price) ? $request->delete_price : null,
+            'discount_per'       => isset($request->dis_per,) ? $request->dis_per : null,
             'short_description'  => $request->short_description,
             'long_description'   => $request->long_description,
             'product_id'         => $request->product_code,
@@ -152,15 +164,19 @@ class ProductController extends Controller {
 
         }
 
-        foreach ( $request->color_id as $colorId ) {
 
-            DB::table( 'color_product' )->insert( [
+        if (isset($request->color_id)) {
 
-                'product_id' => $update_product->id,
-                'color_id'   => $colorId,
+            foreach ( $request->color_id as $colorId ) {
 
-            ] );
+                DB::table( 'color_product' )->insert( [
 
+                    'product_id' => $update_product->id,
+                    'color_id'   => $colorId,
+
+                ] );
+
+            }
         }
 
         $this->img_upload( $request, $update_product->id );

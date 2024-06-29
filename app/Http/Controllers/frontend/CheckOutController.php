@@ -91,17 +91,17 @@ class CheckOutController extends Controller {
 
         // dd( $request->all() );
 
-        foreach (\Cart::getContent() as $value ) {
+        foreach ( \Cart::getContent() as $value ) {
 
             $product_stock = Product::find( $value->id );
 
-            if ($product_stock->product_stock < $value->quantity) {
-               //cart destroy
-              \Cart::remove( $value->id );
-              //session destroy
-              Session::forget( 'coupon' );
-            Toastr::error( 'this product stock out', 'sorry' );
-            return redirect()->route( 'home' );
+            if ( $product_stock->product_stock < $value->quantity ) {
+                //cart destroy
+                \Cart::remove( $value->id );
+                //session destroy
+                Session::forget( 'coupon' );
+                Toastr::error( 'this product stock out', 'sorry' );
+                return redirect()->route( 'home' );
             }
 
         }
@@ -140,6 +140,7 @@ class CheckOutController extends Controller {
                 'product_qty'   => $value->quantity,
                 'product_price' => $value->price,
                 'product_size'  => $value->attributes->size,
+                'product_img'   => $value->attributes->product_img,
 
             ] );
 
@@ -163,24 +164,23 @@ class CheckOutController extends Controller {
         Notification::send( $user, new InvoiceNotification( $order_data, $user_data ) );
 
         Toastr::success( 'your order placed successfully', 'success' );
-        return redirect()->route('home');
+        return redirect()->route( 'home' );
     }
 
     public function directOrder( orderRequest $request ) {
 
-        foreach (\Cart::getContent() as $value ) {
+        foreach ( \Cart::getContent() as $value ) {
 
             $product_stock = Product::find( $value->id );
 
-            if ($product_stock->product_stock < $value->quantity) {
-               //cart destroy
-              \Cart::remove( $value->id );
-              //session destroy
-              Session::forget( 'coupon' );
-            Toastr::error( 'this product stock out', 'sorry' );
-            return redirect()->route( 'home' );
+            if ( $product_stock->product_stock < $value->quantity ) {
+                //cart destroy
+                \Cart::remove( $value->id );
+                //session destroy
+                Session::forget( 'coupon' );
+                Toastr::error( 'this product stock out', 'sorry' );
+                return redirect()->route( 'home' );
             }
-
 
         }
 
@@ -220,6 +220,7 @@ class CheckOutController extends Controller {
                 'product_qty'   => $value->quantity,
                 'product_price' => $value->price,
                 'product_size'  => $value->attributes->size,
+                'product_img'   => $value->attributes->product_img,
 
             ] );
 
