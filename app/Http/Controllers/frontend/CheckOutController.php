@@ -24,8 +24,10 @@ class CheckOutController extends Controller {
 
         $carts       = \Cart::getContent();
         $total_price = \Cart::getSubTotal();
-        $district    = District::select( 'id', 'name', 'bn_name' )->get();
+        $district    = District::select( 'id', 'district_name_en')->get();
         $user_data   = Auth::user();
+
+        // dd( $district );
 
         return view( 'frontend.pages.checkout', compact( 'carts', 'total_price', 'district', 'user_data' ) );
 
@@ -60,7 +62,7 @@ class CheckOutController extends Controller {
 
         $carts       = \Cart::getContent();
         $total_price = \Cart::getSubTotal();
-        $district    = District::select( 'id', 'name', 'bn_name' )->get();
+        $district    = District::select( 'id', 'district_name_en' )->get();
         $user_data   = Auth::user();
 
         // dd($carts);
@@ -82,7 +84,7 @@ class CheckOutController extends Controller {
 
     public function loadAjax( $district_id ) {
 
-        $upazila = Upazila::where( 'district_id', $district_id )->select( 'id', 'name' )->get();
+        $upazila = Upazila::where( 'district_id', $district_id )->select( 'id', 'upazila_name_en' )->get();
         return response()->json( $upazila, 200 );
 
     }

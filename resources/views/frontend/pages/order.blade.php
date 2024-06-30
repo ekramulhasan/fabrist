@@ -137,7 +137,7 @@
                             $.each(data, function(key, value) {
 
                                 $('#upazila_id').append('<option value="' + value.id +
-                                    '">' + value.name + '</option>')
+                                    '">' + value.upazila_name_en + '</option>')
 
                             })
                         }

@@ -78,7 +78,7 @@
                                                         <option selected disabled>Select a district</option>
 
                                                         @foreach ($district as $value)
-                                                            <option value="{{ $value->id }}">{{ $value->name }}
+                                                            <option value="{{ $value->id }}">{{ $value->district_name_en }}
                                                             </option>
                                                         @endforeach
 
